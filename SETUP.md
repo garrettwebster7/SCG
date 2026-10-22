@@ -29,11 +29,9 @@ That creates every table, function, trigger, RLS policy and grant, plus the two
 **private** storage buckets (`quote-uploads`, `agreements`). It runs as one
 transaction: if anything fails, nothing is applied.
 
-Run it **once**, on the **empty** project only. It replays `supabase/archive/` in
-the order in [`supabase/archive/README.md`](supabase/archive/README.md) and then
-`supabase/migrations/`. Some of those files rewrite rows, so re-running it on a
-database with data is not safe. It was tested end to end on a clean Postgres, and
-the result matches `supabase/schema.sql` (225 columns, 26 policies, same functions).
+Run it **once**, on the **empty** project only. It is a snapshot of the production
+schema (no data), so it stops at the first `create table` that already exists; it is
+never a way to update an existing database.
 
 For future schema changes, add a new file to `supabase/migrations/` and run just
 that file.
