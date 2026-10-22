@@ -52,7 +52,7 @@ export default function AboutPage() {
               </p>
               <div className="flex flex-wrap gap-3">
                 <a href="/#quote" className="cta-primary text-base">
-                  Get a Free Quote
+                  Get a Free Quote!
                 </a>
                 <a href={links.call} className="cta-secondary text-base">
                   Call {phoneDisplay}
@@ -133,7 +133,7 @@ export default function AboutPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <a href="/#quote" className="rounded-full bg-[#2b2f33] px-7 py-3.5 text-base font-bold text-white transition hover:bg-[#3a3f44]">
-                Get a Free Quote
+                Get a Free Quote!
               </a>
               <a href={links.call} className="rounded-full border-2 border-[#2b2f33] px-7 py-3.5 text-base font-bold text-[#2b2f33]">
                 Call Now

@@ -76,7 +76,7 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">
               <a href="/#quote" className="cta-primary text-base">
-                Get a Free Quote
+                Get a Free Quote!
               </a>
               <a href={links.call} className="cta-secondary text-base">
                 Call {phoneDisplay}
@@ -186,7 +186,7 @@ export default function Home() {
               ))}
               <div className="mt-2 flex flex-wrap items-center gap-4">
                 <a href="/#quote" className="cta-primary">
-                  Get a Free Quote
+                  Get a Free Quote!
                 </a>
                 <Link
                   href="/about"
@@ -295,7 +295,7 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <a href="/#quote" className="rounded-full bg-[#2b2f33] px-7 py-3.5 text-base font-bold text-white transition hover:bg-[#3a3f44]">
-                Get a Free Quote
+                Get a Free Quote!
               </a>
               <a href={links.call} className="rounded-full border-2 border-[#2b2f33] px-7 py-3.5 text-base font-bold text-[#2b2f33]">
                 Call Now
@@ -345,7 +345,7 @@ export default function Home() {
       </main>
 
       <div className="mobile-bar">
-        <a href="/#quote" className="cta-primary flex-1 justify-center">Free Quote</a>
+        <a href="/#quote" className="cta-primary flex-1 justify-center">Free Quote!</a>
         <a href={links.call} className="cta-secondary flex-1 justify-center">Call</a>
         <a href={links.text} className="cta-secondary flex-1 justify-center">Text</a>
       </div>

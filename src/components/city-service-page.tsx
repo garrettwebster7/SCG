@@ -90,7 +90,7 @@ export function CityServicePage({
               ))}
               <div className="mt-2 flex flex-wrap gap-3">
                 <a href="#quote" className="cta-primary text-base">
-                  Get Free Quote
+                  Get Free Quote!
                 </a>
                 <a href={links.call} className="cta-secondary text-base">
                   Call {phoneDisplay}
@@ -277,7 +277,7 @@ export function CityServicePage({
       </main>
 
       <div className="mobile-bar">
-        <a href="#quote" className="cta-primary flex-1 justify-center">Free Quote</a>
+        <a href="#quote" className="cta-primary flex-1 justify-center">Free Quote!</a>
         <a href={links.call} className="cta-secondary flex-1 justify-center">Call</a>
         <a href={links.text} className="cta-secondary flex-1 justify-center">Text</a>
       </div>

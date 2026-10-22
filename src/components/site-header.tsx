@@ -141,7 +141,7 @@ export function SiteHeader({ activeService }: SiteHeaderProps) {
             <span>{phoneDisplay}</span>
           </a>
           <a href="/#quote" className="hdr-quote">
-            Free Quote
+            Free Quote!
           </a>
         </div>
 
@@ -178,7 +178,7 @@ export function SiteHeader({ activeService }: SiteHeaderProps) {
               Text Now
             </a>
             <a href="/#quote" className="hdr-quote" onClick={close}>
-              Free Quote
+              Free Quote!
             </a>
           </div>
         </div>
