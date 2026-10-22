@@ -38,13 +38,13 @@ const marqueeImages = galleryImages.slice(0, 14);
 
 const homeBeforeAfter = [
   {
-    before: "/images/before_driveway.png",
-    after: "/images/after_driveway.png",
+    before: "/images/home_driveway_before.jpg",
+    after: "/images/home_driveway_after.jpg",
     label: "Driveway Replacement",
   },
   {
-    before: "/images/back_patio_before.png",
-    after: "/images/back_patio_after.png",
+    before: "/images/home_patio_before.jpg",
+    after: "/images/home_patio_after.jpg",
     label: "Backyard Patio",
   },
 ];

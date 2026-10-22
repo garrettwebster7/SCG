@@ -585,18 +585,30 @@ button.marquee-item:hover { border-color: rgba(217, 146, 43, 0.6); }
   overflow: hidden;
   cursor: ew-resize;
   user-select: none;
-  touch-action: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
 }
+.ba-slider:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
 .ba-layer { position: absolute; inset: 0; }
-.ba-img { object-fit: cover; }
+.ba-img { object-fit: cover; pointer-events: none; }
+.ba-before { clip-path: inset(0 calc(100% - var(--ba-pos, 50%)) 0 0); will-change: clip-path; }
 .ba-divider {
   position: absolute;
   top: 0;
   bottom: 0;
+  left: var(--ba-pos, 50%);
   width: 2px;
   background: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.35);
   transform: translateX(-50%);
   pointer-events: none;
+  will-change: left;
+}
+.ba-glide .ba-before { transition: clip-path 0.35s cubic-bezier(0.22, 1, 0.36, 1); }
+.ba-glide .ba-divider { transition: left 0.35s cubic-bezier(0.22, 1, 0.36, 1); }
+@media (prefers-reduced-motion: reduce) {
+  .ba-glide .ba-before, .ba-glide .ba-divider { transition: none; }
 }
 .ba-handle {
   position: absolute;
@@ -612,9 +624,9 @@ button.marquee-item:hover { border-color: rgba(217, 146, 43, 0.6); }
   align-items: center;
   justify-content: center;
   box-shadow: 0 2px 12px rgba(0,0,0,0.5);
-  cursor: ew-resize;
-  pointer-events: auto;
+  transition: transform 0.15s ease;
 }
+.ba-slider:active .ba-handle { transform: translate(-50%, -50%) scale(1.08); }
 .ba-label {
   position: absolute;
   bottom: 0.75rem;
