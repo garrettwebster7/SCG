@@ -12,6 +12,8 @@ export const TRADE_WORDS = [
   "hoa", "hvac", "llc", "nds", "psi", "sq", "ft", "lf", "cy", "yd", "yds", "mil", "pre", "precast",
   "regrade", "regrading", "downspout", "downspouts", "dumpster", "bobcat", "skidsteer", "stoop",
   "flatwork", "inhibitive", "broomed", "troweled", "troweling", "underlayment", "doweled", "doweling", "edger", "edgers",
+  // Service-area places the dictionary doesn't know.
+  "chatham", "riverton", "williamsville", "petersburg", "divernon", "glenarm", "sangamon", "taylorville", "grandview",
 ] as const;
 
 // Real words that are almost always a slip in a quote, underlined anyway.
@@ -65,7 +67,7 @@ function known(word: string, isWord: (w: string) => boolean): boolean {
   if (word.length < 2) return true;
   const lower = word.toLowerCase();
   if (TRADE.has(lower)) return true;
-  // The dictionary is case-aware: "raleigh" is wrong but "Raleigh" is right,
+  // The dictionary is case-aware: "springfield" is wrong but "Springfield" is right,
   // and a capitalised first word of a sentence should pass as its lower case.
   return isWord(word) || isWord(lower) || isWord(lower[0].toUpperCase() + lower.slice(1));
 }

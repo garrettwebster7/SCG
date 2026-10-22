@@ -10,7 +10,7 @@ import { ConfirmActions } from "./confirm-actions";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: { absolute: "Confirm Your Job | Raleigh Concrete Group" },
+  title: { absolute: "Confirm Your Job | Springfield Concrete Group" },
   robots: { index: false, follow: false },
 };
 
@@ -35,7 +35,7 @@ export default async function ConfirmJobPage({ params }: { params: Promise<{ tok
     <main className="cq-wrap">
       <div className="cq-card">
         <header className="cq-head">
-          <Image src="/images/logo_horizontal.png" alt={businessName} width={967} height={243} className="cq-logo" priority />
+          <Image src="/images/scg-logo-horizontal.png" alt={businessName} width={715} height={138} className="cq-logo" priority />
           <p className="cq-eyebrow">Confirm Your Job</p>
         </header>
 

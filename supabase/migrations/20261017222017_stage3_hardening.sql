@@ -1,4 +1,4 @@
--- Raleigh Concrete Group - stage 3: database hygiene
+-- Springfield Concrete Group - stage 3: database hygiene
 -- Applied to production 2026-10-17 as migration 20261017222017 (already live;
 -- do not run again). Undo: undo/20261017222017_stage3_hardening.undo.sql.
 -- The state it was written against: ../snapshots/2026-10-17-pre-stage3.sql.

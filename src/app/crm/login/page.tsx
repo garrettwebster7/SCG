@@ -6,7 +6,7 @@ import { crmBase } from "@/lib/crm/nav";
 import { LoginForm } from "./login-form";
 
 export const metadata: Metadata = {
-  title: { absolute: "CRM Login | Raleigh Concrete Group" },
+  title: { absolute: "CRM Login | Springfield Concrete Group" },
   robots: { index: false, follow: false },
 };
 
@@ -29,7 +29,7 @@ export default async function CrmLoginPage({
   return (
     <main className="crm-auth">
       <div className="crm-auth-card">
-        <Image src="/images/logo_horizontal.png" alt="Raleigh Concrete Group" width={967} height={243} className="crm-auth-logo" priority />
+        <Image src="/images/scg-logo-horizontal.png" alt="Springfield Concrete Group" width={715} height={138} className="crm-auth-logo" priority />
         <h1 className="crm-auth-title">{t.login.title}</h1>
         <p className="crm-auth-sub">{t.login.subtitle}</p>
         <LoginForm base={base} next={next} locale={locale} />

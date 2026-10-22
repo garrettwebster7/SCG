@@ -43,7 +43,7 @@ export async function GET(request: Request) {
 
   try {
     const res = await fetch(endpoint, {
-      headers: { "User-Agent": "RaleighConcreteGroup/1.0 (quote form)" },
+      headers: { "User-Agent": "SpringfieldConcreteGroup/1.0 (quote form)" },
     });
     if (!res.ok) {
       return NextResponse.json({ suggestions: [] });

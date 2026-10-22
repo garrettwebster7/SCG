@@ -28,7 +28,7 @@ import {
 
 export const dynamic = "force-dynamic";
 
-// Daily Vercel Cron, 13:00 UTC (9am EDT / 8am EST). Protected by CRON_SECRET (Bearer token).
+// Daily Vercel Cron, 14:00 UTC (9am CDT / 8am CST). Protected by CRON_SECRET (Bearer token).
 //   0. Flush texts quiet hours held overnight.
 //   1. Ask the customer to confirm a job ~2 days out.
 //   2. Remind the crew 3 days out, the day before and the morning of; soonest first, 15 min apart per person.
@@ -36,8 +36,8 @@ export const dynamic = "force-dynamic";
 //   4. Follow up a sent quote unanswered after 48h.
 // Hobby plan allows one run a day, so thresholds can be overshot by ~24h. Night-before visit reminders are
 // /api/cron/visit-reminders.
-// Why 13:00: this run is the floor under the quiet-hours queue, so earlier is better, but 12:00 UTC is
-// 7am EST (inside quiet hours). Exactly 8am all year needs /api/cron/drain (see that file).
+// Why 14:00: this run is the floor under the quiet-hours queue, so earlier is better, but 13:00 UTC is
+// 7am CST (inside quiet hours). Exactly 8am all year needs /api/cron/drain (see that file).
 
 export async function GET(request: Request) {
   if (!cronAuthorized(request)) {

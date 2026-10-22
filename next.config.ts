@@ -20,17 +20,9 @@ const NO_REFERRER = { key: "Referrer-Policy", value: "no-referrer" };
 // ── Retired city+service URLs ────────────────────────────────────────────────
 // Every city+service pair with no hand-written copy in
 // src/lib/site-data.ts's `cityServiceLocalContent` gets a permanent (301)
-// redirect to its service page, so Google transfers the signal instead of
-// just losing the URL. These pairs used to be generated from a sentence
-// template with the city name swapped in, which is why Search Console
-// reported "Duplicate, Google chose different canonical" on
-// /chapel-hill/stamped-decorative-concrete and left most of the sitemap at
-// "Discovered - currently not indexed": there wasn't enough unique content
-// per page to justify the crawl.
-//
-// Raleigh's four bespoke pages (/raleigh/concrete-driveways, etc.) are NOT
-// redirected - they're real pages Search Console already prefers and
-// docs/seo.md targets directly.
+// redirect to its service page. Templated city+service pages with the city
+// name swapped in get treated by Google as duplicates and left unindexed, so
+// only pairs with unique copy get a page.
 //
 // Derived from site-data so a pair can never be un-published without also
 // gaining a redirect, and never gain a redirect while it still has a page.
@@ -49,8 +41,8 @@ const nextConfig: NextConfig = {
   // The quote PDF reads the logo from disk; files in public/ aren't in a
   // serverless function's bundle unless named here.
   outputFileTracingIncludes: {
-    "/q/[token]/pdf": ["./public/images/logo_horizontal.png"],
-    "/crm/api/quote-pdf": ["./public/images/logo_horizontal.png"],
+    "/q/[token]/pdf": ["./public/images/scg-logo-horizontal.png"],
+    "/crm/api/quote-pdf": ["./public/images/scg-logo-horizontal.png"],
   },
   async redirects() {
     return [

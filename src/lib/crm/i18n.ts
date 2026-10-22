@@ -825,7 +825,7 @@ const en = {
     confirm: "Confirm password",
     phone: "Mobile number for job alerts",
     phoneHint: "This is where we'll text you when a job is assigned to you. Leave it as-is if it's already right.",
-    badPhone: "Enter a valid US mobile number, e.g. (919) 555-1234.",
+    badPhone: "Enter a valid US mobile number, e.g. (217) 555-1234.",
     create: "Create my account",
     creating: "Creating your account…",
     needName: "Enter your full name.",
@@ -840,7 +840,7 @@ const en = {
     eyebrow: "Crew Onboarding",
     invalidEyebrow: "Invite unavailable",
     invalidTitle: "This link isn't valid",
-    invalidNote: "It may have already been used, been cancelled, or expired. Ask Raleigh Concrete Group to text you a new one.",
+    invalidNote: "It may have already been used, been cancelled, or expired. Ask Springfield Concrete Group to text you a new one.",
   },
   common: {
     cancel: "Cancel",

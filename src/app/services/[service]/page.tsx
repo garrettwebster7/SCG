@@ -14,11 +14,10 @@ export function generateStaticParams() {
 
 export const dynamicParams = false;
 
-// Slugs with a bespoke /raleigh/<slug> page (the P1 targets in docs/seo.md). This page must NOT title
-// itself "<Service> Raleigh NC" for those, or two of our pages compete for the same phrase. Other services
-// keep the Raleigh-branded title.
-const SLUGS_WITH_OWN_RALEIGH_PAGE = new Set(
-  serviceSlugs.filter((slug) => isCityServicePair("raleigh", slug)),
+// Slugs with a bespoke /springfield/<slug> page. This page must NOT title itself "<Service> Springfield IL"
+// for those, or two of our pages compete for the same phrase. Other services keep the city in the title.
+const SLUGS_WITH_OWN_SPRINGFIELD_PAGE = new Set(
+  serviceSlugs.filter((slug) => isCityServicePair("springfield", slug)),
 );
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -29,11 +28,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: "Service Not Found" };
   }
 
-  const hasOwnRaleighPage = SLUGS_WITH_OWN_RALEIGH_PAGE.has(content.slug);
-  const title = hasOwnRaleighPage ? `${content.name} | Raleigh Concrete Group` : `${content.name} Raleigh NC`;
-  const ogTitle = hasOwnRaleighPage
-    ? `${content.name} | Raleigh Concrete Group`
-    : `${content.name} in Raleigh, NC | Raleigh Concrete Group`;
+  // The root layout's title template appends "| Springfield Concrete Group".
+  const hasOwnCityPage = SLUGS_WITH_OWN_SPRINGFIELD_PAGE.has(content.slug);
+  const title = hasOwnCityPage ? content.name : `${content.name} Springfield IL`;
+  const ogTitle = hasOwnCityPage
+    ? `${content.name} | Springfield Concrete Group`
+    : `${content.name} in Springfield, IL | Springfield Concrete Group`;
 
   return {
     title,

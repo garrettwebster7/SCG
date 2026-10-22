@@ -9,7 +9,7 @@ const EFFECTIVE_DATE = "June 17, 2026";
 export const metadata: Metadata = {
   title: "SMS Terms of Service",
   description:
-    "SMS Terms of Service for Raleigh Concrete Group: consent, message frequency, rates, STOP/HELP opt-out, supported carriers, and privacy, in accordance with A2P 10DLC requirements.",
+    "SMS Terms of Service for Springfield Concrete Group: consent, message frequency, rates, STOP/HELP opt-out, supported carriers, and privacy, in accordance with A2P 10DLC requirements.",
   alternates: { canonical: "/terms" },
 };
 
@@ -108,7 +108,7 @@ export default function TermsPage() {
             <div className="flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-5">
               <span className="font-headline text-2xl text-ivory">{businessName}</span>
               <p className="text-right text-xs font-semibold uppercase tracking-[0.14em] text-slate-300">
-                {businessName} &middot; Concrete &amp; Hardscaping &middot; {phoneDisplay}
+                {businessName} &middot; Springfield, IL &middot; {phoneDisplay}
               </p>
             </div>
           </div>

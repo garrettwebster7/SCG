@@ -38,10 +38,12 @@ const MARGIN = 48;
 const CONTENT_W = PAGE_W - MARGIN * 2;
 const FOOTER_H = 30;
 
-const INK = rgb(0.11, 0.11, 0.12);
-const MUTED = rgb(0.42, 0.42, 0.45);
-const RULE = rgb(0.85, 0.85, 0.87);
-const SHADE = rgb(0.96, 0.96, 0.97);
+// Brand: Foundry Charcoal #2B2F33, Slab Gray #6B7075, Cured Concrete #D9D9D3, Rebar Amber #D9922B.
+const INK = rgb(0x2b / 255, 0x2f / 255, 0x33 / 255);
+const MUTED = rgb(0x6b / 255, 0x70 / 255, 0x75 / 255);
+const RULE = rgb(0xd9 / 255, 0xd9 / 255, 0xd3 / 255);
+const SHADE = rgb(0.965, 0.965, 0.955);
+const ACCENT = rgb(0xd9 / 255, 0x92 / 255, 0x2b / 255);
 
 /** Text the standard fonts can draw: no control characters, anything outside WinAnsi folded or dropped. */
 export function pdfText(s: string, charset: Set<number>): string {
@@ -233,7 +235,7 @@ async function layout(data: QuotePdfData, logoPng: Uint8Array | null, scale: num
   y -= 13;
   drawRight(t(data.website), PAGE_W - MARGIN, 9.5, regular, MUTED);
   y = PAGE_H - MARGIN - logoH - 18;
-  rule(y);
+  page.drawLine({ start: { x: MARGIN, y }, end: { x: PAGE_W - MARGIN, y }, thickness: 2, color: ACCENT });
 
   // ── Title and who it's for ──
   y -= k(30);

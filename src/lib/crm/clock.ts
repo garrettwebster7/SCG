@@ -1,8 +1,8 @@
-// Every "today", on-screen time and send decision goes through here, in North Carolina time: servers are
+// Every "today", on-screen time and send decision goes through here, in Central time: servers are
 // UTC and phones are set to anything.
-// A named zone, not -05:00: Eastern is EDT eight months a year. Client-safe (pure Intl).
+// A named zone, not -05:00: Central is CDT eight months a year. Client-safe (pure Intl).
 
-export const BUSINESS_TZ = "America/New_York";
+export const BUSINESS_TZ = "America/Chicago";
 
 // Quiet hours: nothing goes out from 7pm to 8am, to anyone.
 export const QUIET_FROM_HOUR = 19;
@@ -82,7 +82,7 @@ export function inQuietHours(at: Date = now()): boolean {
 export function nextSendableAt(at: Date = now()): Date {
   if (!inQuietHours(at)) return at;
   const { y, mo, d, h } = partsIn(at);
-  // Before 8am is still the same Raleigh date; after 7pm rolls to the next.
+  // Before 8am is still the same Springfield date; after 7pm rolls to the next.
   const day = h < QUIET_UNTIL_HOUR ? { y, mo, d } : dayAfter(y, mo, d);
   return instantAt(day.y, day.mo, day.d, QUIET_UNTIL_HOUR, 0);
 }

@@ -32,7 +32,7 @@ import { JobVisit } from "./job-visit";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: { absolute: "Job Details | Raleigh Concrete Group" },
+  title: { absolute: "Job Details | Springfield Concrete Group" },
   robots: { index: false, follow: false },
 };
 
@@ -142,7 +142,7 @@ export default async function JobPage({ params }: { params: Promise<{ token: str
       month: "long",
       day: "numeric",
     });
-  // Raleigh time, with the hour, so stamps match the phone in hand and "this
+  // Business-timezone time, with the hour, so stamps match the phone in hand and "this
   // morning" differs from "last Tuesday".
   const fmtStamp = (iso: string) =>
     new Date(iso).toLocaleString("en-US", {
@@ -207,7 +207,7 @@ export default async function JobPage({ params }: { params: Promise<{ token: str
     <main className="job-wrap">
       {session.staff.role !== "owner" && <CrewViewBeacon token={token} />}
       <div className="job-card">
-        <Image src="/images/logo_horizontal.png" alt={businessName} width={967} height={243} className="job-logo" priority />
+        <Image src="/images/scg-logo-horizontal.png" alt={businessName} width={715} height={138} className="job-logo" priority />
 
         <div className="job-head">
           <h1 className="job-title">{t.contractorJob.title}</h1>

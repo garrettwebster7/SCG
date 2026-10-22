@@ -64,7 +64,7 @@ export function ServicePage({ service }: { service: Service }) {
       <JsonLd
         data={[
           serviceSchema({
-            name: `${service.name} in Raleigh, NC`,
+            name: `${service.name} in Springfield, IL`,
             serviceType: service.name,
             description: service.blurb,
             slug: service.slug,
@@ -87,11 +87,11 @@ export function ServicePage({ service }: { service: Service }) {
           ]}
         />
         <section className="relative overflow-hidden py-12 md:py-16">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_30%,rgba(194,104,42,0.18),transparent_48%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_30%,rgba(217,146,43,0.18),transparent_48%)]" />
           <div className="relative mx-auto grid w-full max-w-6xl gap-10 px-4 md:px-8 lg:grid-cols-2 lg:items-center">
             <div>
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-amber-accent">
-                Concrete Raleigh
+                Springfield, IL
               </p>
               <h1 className="mb-5 font-headline text-5xl leading-[0.95] text-ivory md:text-7xl">
                 {service.name}
@@ -100,16 +100,16 @@ export function ServicePage({ service }: { service: Service }) {
               <CtaBar />
               <div className="mt-8 grid max-w-sm grid-cols-3 gap-3">
                 <div className="stat-card text-center">
-                  <p className="stat-value">5.0★</p>
-                  <p className="stat-label">Google Rated</p>
+                  <p className="stat-value">Vetted</p>
+                  <p className="stat-label">Crews</p>
                 </div>
                 <div className="stat-card text-center">
                   <p className="stat-value">Free</p>
                   <p className="stat-label">Quotes</p>
                 </div>
                 <div className="stat-card text-center">
-                  <p className="stat-value">Trusted</p>
-                  <p className="stat-label">Local Crew</p>
+                  <p className="stat-value">Local</p>
+                  <p className="stat-label">Springfield Company</p>
                 </div>
               </div>
             </div>
@@ -117,7 +117,7 @@ export function ServicePage({ service }: { service: Service }) {
             <div className="overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/50">
               <Image
                 src={service.image}
-                alt={`${service.name} in Raleigh, NC`}
+                alt={`${service.name} in Springfield, IL`}
                 width={1200}
                 height={900}
                 className="h-full w-full object-cover"
@@ -135,7 +135,7 @@ export function ServicePage({ service }: { service: Service }) {
               <div className="overflow-hidden rounded-xl border border-white/10">
                 <Image
                   src={clipboardImage}
-                  alt="Raleigh Concrete Group estimator with clipboard discussing a commercial scope"
+                  alt="Springfield Concrete Group estimator with clipboard discussing a commercial scope"
                   width={1000}
                   height={750}
                   className="h-full w-full object-cover"
@@ -185,8 +185,8 @@ export function ServicePage({ service }: { service: Service }) {
                 <BeforeAfterSlider
                   beforeSrc={service.beforeAfter.before}
                   afterSrc={service.beforeAfter.after}
-                  beforeAlt={`Raleigh ${service.name} before`}
-                  afterAlt={`Raleigh ${service.name} after`}
+                  beforeAlt={`${service.name} before`}
+                  afterAlt={`${service.name} after`}
                 />
                 <p className="mt-2 text-center text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
                   {service.beforeAfter.label} · Drag to Compare
@@ -196,7 +196,7 @@ export function ServicePage({ service }: { service: Service }) {
               <div className="overflow-hidden rounded-2xl border border-white/10">
                 <Image
                   src={secondaryShowcaseImage}
-                  alt={`${serviceSingular(service)} project in Raleigh`}
+                  alt={`${serviceSingular(service)} project`}
                   width={1000}
                   height={750}
                   className="h-full w-full object-cover"
@@ -214,22 +214,22 @@ export function ServicePage({ service }: { service: Service }) {
         </section>
 
         <section className="mx-auto w-full max-w-6xl px-4 pb-12 md:px-8" id="quote">
-          <div className="rounded-3xl bg-ivory p-8 text-center text-[#2b1a12] md:p-12">
-            <h2 className="mb-3 font-headline text-4xl text-[#2b1a12] md:text-5xl">
+          <div className="rounded-3xl bg-ivory p-8 text-center text-[#2b2f33] md:p-12">
+            <h2 className="mb-3 font-headline text-4xl text-[#2b2f33] md:text-5xl">
               Get Your Free {serviceSingular(service)} Quote
             </h2>
-            <p className="mx-auto mb-7 max-w-2xl text-[#2b1a12]/80">
+            <p className="mx-auto mb-7 max-w-2xl text-[#2b2f33]/80">
               Tell us a little about your project and we&apos;ll get you a free, written price.
               For driveways and slabs we can often quote without coming out. Just add your address.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              <a href="#quote" className="rounded-full bg-[#2b1a12] px-7 py-3.5 text-base font-bold text-white transition hover:bg-[#3a241a]">
+              <a href="#quote" className="rounded-full bg-[#2b2f33] px-7 py-3.5 text-base font-bold text-white transition hover:bg-[#3a3f44]">
                 Get My Free Quote
               </a>
-              <a href={links.call} className="rounded-full border-2 border-[#2b1a12] px-7 py-3.5 text-base font-bold text-[#2b1a12]">
+              <a href={links.call} className="rounded-full border-2 border-[#2b2f33] px-7 py-3.5 text-base font-bold text-[#2b2f33]">
                 Call Now
               </a>
-              <a href={links.text} className="rounded-full border-2 border-[#2b1a12] px-7 py-3.5 text-base font-bold text-[#2b1a12]">
+              <a href={links.text} className="rounded-full border-2 border-[#2b2f33] px-7 py-3.5 text-base font-bold text-[#2b2f33]">
                 Text Now
               </a>
             </div>
@@ -268,7 +268,7 @@ export function ServicePage({ service }: { service: Service }) {
                 Privacy Policy
               </Link>
               <p className="text-right text-xs font-semibold uppercase tracking-[0.14em] text-slate-300">
-                {businessName} · Concrete &amp; Hardscaping · {phoneDisplay}
+                {businessName} · Springfield, IL · {phoneDisplay}
               </p>
             </div>
           </div>

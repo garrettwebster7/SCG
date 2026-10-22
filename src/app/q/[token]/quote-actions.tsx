@@ -178,7 +178,7 @@ export function QuoteActions({
     setMode("schedule");
   }
 
-  // Raleigh days, not the phone's zone; the server checks the same floor.
+  // Springfield days, not the phone's zone; the server checks the same floor.
   const minDate = useMemo(() => ymdInDays(LEAD_TIME_DAYS), []);
 
   // Warn early about a taken day so they don't offer three we can't use.

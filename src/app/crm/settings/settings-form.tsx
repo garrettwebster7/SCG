@@ -44,7 +44,7 @@ export function SettingsForm({ fullName, phone, email, role, locale }: Props) {
           defaultValue={phone}
           type="tel"
           inputMode="tel"
-          placeholder="(919) 555-1234"
+          placeholder="(217) 555-1234"
           autoComplete="tel"
         />
         <small className="crm-muted crm-sm">

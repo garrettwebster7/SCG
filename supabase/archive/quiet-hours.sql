@@ -1,7 +1,7 @@
--- Raleigh Concrete Group - quiet hours (no CUSTOMER texts 7pm to 8am Eastern)
+-- Springfield Concrete Group - quiet hours (no CUSTOMER texts 7pm to 8am Central)
 -- Run this in Supabase → SQL Editor. Safe to re-run.
 --
--- A text to a CUSTOMER raised between 7pm and 8am Eastern isn't sent and isn't
+-- A text to a CUSTOMER raised between 7pm and 8am Central isn't sent and isn't
 -- dropped: it's held, and it goes out at 8am. (The owner and the crew are on
 -- the job and get theirs at any hour - the gate is on the send's role, not the
 -- clock alone.) The message log is where it waits, because the log already

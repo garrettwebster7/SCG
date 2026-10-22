@@ -43,7 +43,7 @@ export function NewQuoteForm({ contractors }: { contractors: ContractorOption[] 
         </label>
         <label className="crm-field">
           <span>Phone</span>
-          <input name="phone" type="tel" className="crm-input" placeholder="919-555-0142" required />
+          <input name="phone" type="tel" className="crm-input" placeholder="217-555-0142" required />
         </label>
       </div>
 

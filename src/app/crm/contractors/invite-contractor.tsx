@@ -20,7 +20,7 @@ export function InviteContractor() {
         <div className="crm-editor-row">
           <label className="crm-field">
             <span>Their phone number</span>
-            <input name="phone" type="tel" className="crm-input" placeholder="(919) 555-1234" required />
+            <input name="phone" type="tel" className="crm-input" placeholder="(217) 555-1234" required />
           </label>
           <label className="crm-field">
             <span>Name (optional, pre-fills their form)</span>

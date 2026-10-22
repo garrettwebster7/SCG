@@ -16,11 +16,11 @@ import { fitQuotePdf, pdfText, unwrapLines, wrapText, type QuotePdfData } from "
 const buildQuotePdf = async (d: QuotePdfData, logo: Uint8Array | null) => (await fitQuotePdf(d, logo)).pdf;
 
 const base: QuotePdfData = {
-  businessName: "Raleigh Concrete Group",
-  phone: "(919) 873-3919",
-  website: "raleighconcrete.net",
+  businessName: "Springfield Concrete Group",
+  phone: "(217) 555-0100",
+  website: "springfieldconcretegroup.com",
   customerName: "Pat Example",
-  address: "123 Main St, Raleigh",
+  address: "123 Main St, Springfield",
   service: "Concrete driveway",
   issuedOn: "October 22, 2026",
   goodThrough: "November 21, 2026",
@@ -31,7 +31,7 @@ const base: QuotePdfData = {
   total: "$8,400",
   totalNote: null,
   linkLabel: "Ready to go ahead? Approve your quote online:",
-  quoteUrl: "https://raleighconcrete.net/q/0123456789abcdef",
+  quoteUrl: "https://springfieldconcretegroup.com/q/0123456789abcdef",
 };
 
 // The raw file with every compressed stream inflated, so a check can't miss
@@ -146,7 +146,7 @@ test("a long quote flows onto more pages instead of running off the bottom", asy
 });
 
 test("the real logo embeds", async () => {
-  const png = new Uint8Array(readFileSync(new URL("../../../public/images/logo_horizontal.png", import.meta.url)));
+  const png = new Uint8Array(readFileSync(new URL("../../../public/images/scg-logo-horizontal.png", import.meta.url)));
   const pdf = await buildQuotePdf(base, png);
   assert.ok(plainBytes(pdf).includes("/Subtype /Image"));
 });

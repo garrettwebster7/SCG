@@ -153,7 +153,7 @@ async function deliver(to: string, message: string): Promise<SendResult> {
 /**
  * Send now, or hold until morning.
  *
- * Quiet hours (7pm-8am Eastern) are a courtesy to CUSTOMERS: their texts are
+ * Quiet hours (7pm-8am Central) are a courtesy to CUSTOMERS: their texts are
  * written to the log with a `send_after` and delivered by the flush, which
  * every send and both crons run on their way past.
  *

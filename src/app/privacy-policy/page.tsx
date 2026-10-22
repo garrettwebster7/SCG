@@ -4,13 +4,14 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { businessName, links, locationKeys, locations, phoneDisplay, phoneHref } from "@/lib/site-data";
 
-const CONTACT_EMAIL = "info@raleighconcrete.net";
+// TODO: real contact email.
+const CONTACT_EMAIL = "info@springfieldconcretegroup.com";
 const LAST_UPDATED = "June 17, 2026";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Privacy Policy for Raleigh Concrete Group, including how we handle SMS/text messaging consent and data in accordance with A2P 10DLC requirements.",
+    "Privacy Policy for Springfield Concrete Group, including how we handle SMS/text messaging consent and data in accordance with A2P 10DLC requirements.",
   alternates: { canonical: "/privacy-policy" },
 };
 
@@ -160,7 +161,7 @@ export default function PrivacyPolicyPage() {
             <div className="flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-5">
               <span className="font-headline text-2xl text-ivory">{businessName}</span>
               <p className="text-right text-xs font-semibold uppercase tracking-[0.14em] text-slate-300">
-                {businessName} &middot; Concrete &amp; Hardscaping &middot; {phoneDisplay}
+                {businessName} &middot; Springfield, IL &middot; {phoneDisplay}
               </p>
             </div>
           </div>

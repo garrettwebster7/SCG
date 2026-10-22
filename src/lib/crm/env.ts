@@ -37,7 +37,8 @@ export const UPLOAD_BUCKET = "quote-uploads";
 export const AGREEMENT_BUCKET = "agreements";
 
 // Origin for the customer/contractor links we text out.
-export const SITE_ORIGIN = (process.env.NEXT_PUBLIC_SITE_URL || "https://raleighconcrete.net").replace(/\/$/, "");
+// TODO: placeholder domain until NEXT_PUBLIC_SITE_URL is set.
+export const SITE_ORIGIN = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.springfieldconcretegroup.com").replace(/\/$/, "");
 
 // Re-exported for server code; client components import from ./constants.
 export { STATUSES, STATUS_LABELS, type Status } from "./constants";

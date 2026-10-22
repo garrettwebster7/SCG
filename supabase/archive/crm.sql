@@ -1,4 +1,4 @@
--- Raleigh Concrete Group - CRM extension
+-- Springfield Concrete Group - CRM extension
 -- Run this AFTER schema.sql, once, in Supabase → SQL Editor. Safe to re-run.
 --
 -- Adds: staff (owner + contractors), CRM columns on quote_requests (status,
@@ -280,7 +280,7 @@ create policy "owner reads login attempts" on public.login_attempts
 --    staff row and flips it to owner:
 --
 insert into public.staff (id, email, full_name, role, active)
-select id, email, 'Noah', 'owner', true
+select id, email, 'Your Name', 'owner', true
 from auth.users
-where email = 'noah@raleighconcrete.net'
+where email = 'you@example.com'
 on conflict (id) do update set role = 'owner', active = true;

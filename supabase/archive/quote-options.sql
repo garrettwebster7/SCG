@@ -1,4 +1,4 @@
--- Raleigh Concrete Group - quote line items the customer answers one by one
+-- Springfield Concrete Group - quote line items the customer answers one by one
 -- Run this AFTER crm.sql, once, in Supabase → SQL Editor. Safe to re-run.
 --
 -- Until now a quote was one price. That works for "pour this patio" and breaks

@@ -1,4 +1,4 @@
--- Raleigh Concrete Group - live public schema
+-- Springfield Concrete Group - live public schema
 --
 -- REFERENCE ONLY - DO NOT RUN. This is what the production database looks like,
 -- not a script to build it. To change the database, add a file to

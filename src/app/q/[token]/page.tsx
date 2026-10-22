@@ -16,7 +16,7 @@ import { ViewBeacon } from "./view-beacon";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: { absolute: "Your Quote | Raleigh Concrete Group" },
+  title: { absolute: "Your Quote | Springfield Concrete Group" },
   robots: { index: false, follow: false },
 };
 
@@ -98,7 +98,7 @@ export default async function CustomerQuotePage({ params }: { params: Promise<{ 
     return (
       <main className="cq-wrap">
         <div className="cq-confirm">
-          <Image src="/images/logo_horizontal.png" alt={businessName} width={967} height={243} className="cq-logo" priority />
+          <Image src="/images/scg-logo-horizontal.png" alt={businessName} width={715} height={138} className="cq-logo" priority />
           <p className="cq-confirm-eyebrow cq-confirm-eyebrow-muted">Quote expired</p>
           <h1 className="cq-confirm-title">Hi {firstName}, this quote has expired.</h1>
           <p className="cq-confirm-note">
@@ -258,15 +258,15 @@ export default async function CustomerQuotePage({ params }: { params: Promise<{ 
 
           <p className="cq-confirm-note">
             {awaitingDate
-              ? "If none of those days end up working, we'll call you to find one that does. Thanks for choosing Raleigh Concrete Group."
-              : "We'll text a reminder before we arrive. Thanks for choosing Raleigh Concrete Group."}
+              ? "If none of those days end up working, we'll call you to find one that does. Thanks for choosing Springfield Concrete Group."
+              : "We'll text a reminder before we arrive. Thanks for choosing Springfield Concrete Group."}
           </p>
           <ContactButtons />
           <Image
-            src="/images/logo_horizontal.png"
+            src="/images/scg-logo-horizontal.png"
             alt={businessName}
-            width={967}
-            height={243}
+            width={715}
+            height={138}
             className="cq-confirm-logo"
             priority
           />
@@ -287,10 +287,10 @@ export default async function CustomerQuotePage({ params }: { params: Promise<{ 
           </p>
           <ContactButtons />
           <Image
-            src="/images/logo_horizontal.png"
+            src="/images/scg-logo-horizontal.png"
             alt={businessName}
-            width={967}
-            height={243}
+            width={715}
+            height={138}
             className="cq-confirm-logo"
             priority
           />
@@ -326,7 +326,7 @@ export default async function CustomerQuotePage({ params }: { params: Promise<{ 
   // claims, per policy in site-data.ts.
   const trust = (
     <ul className="cq-trust">
-      <li>Local Raleigh crew</li>
+      <li>Local Springfield crew</li>
       <li>Clear pricing, no surprises</li>
       <li>We show up when we say</li>
     </ul>
@@ -336,7 +336,7 @@ export default async function CustomerQuotePage({ params }: { params: Promise<{ 
       <ViewBeacon token={token} />
       <div className="cq-card">
         <header className="cq-head">
-          <Image src="/images/logo_horizontal.png" alt={businessName} width={967} height={243} className="cq-logo" priority />
+          <Image src="/images/scg-logo-horizontal.png" alt={businessName} width={715} height={138} className="cq-logo" priority />
           <p className="cq-eyebrow">Your Concrete Quote</p>
         </header>
 
@@ -436,7 +436,7 @@ export default async function CustomerQuotePage({ params }: { params: Promise<{ 
         </dl>
 
         {/* One real testimonial, just below the decision point. */}
-        {hasPrice && (
+        {hasPrice && testimonials.length > 0 && (
           <blockquote className="cq-review">
             <p>&ldquo;{testimonials[0].quote}&rdquo;</p>
             <footer>

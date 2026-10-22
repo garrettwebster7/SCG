@@ -1,4 +1,4 @@
--- Raleigh Concrete Group - the payment ledger
+-- Springfield Concrete Group - the payment ledger
 -- Run this AFTER crm.sql and appointments.sql, once, in Supabase → SQL Editor.
 -- Safe to re-run.
 --

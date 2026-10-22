@@ -1,4 +1,4 @@
--- Raleigh Concrete Group - a change request can ask for a second deposit
+-- Springfield Concrete Group - a change request can ask for a second deposit
 -- Run this AFTER change-order-lines.sql.
 --
 -- SUPERSEDED by stage1-price-lockdown.sql, which replaces the

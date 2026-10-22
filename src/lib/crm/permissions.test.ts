@@ -66,7 +66,7 @@ test("the column groups are exactly the guard's", () => {
 // them - numeric can arrive as a string.
 const base = {
   name: "Dave Smith",
-  phone: "9195550142",
+  phone: "2175550142",
   email: "dave@example.com",
   quote_amount: "8250.00",
   discount_accepted: false,
@@ -120,7 +120,7 @@ function anotherValue(column: string, job: JobForPermissions): unknown {
   if (column === "customer_response") return now === null ? "declined" : null;
   if (column.endsWith("_at")) return "2026-10-17T09:00:00.000Z";
   if (column.endsWith("_note")) return "something else";
-  if (column === "phone") return "9195550199";
+  if (column === "phone") return "2175550199";
   if (column === "email") return "someone@example.com";
   if (column === "fee_rate") return 0;
   return typeof now === "number" ? now + 1 : 100;
@@ -238,7 +238,7 @@ test("the phone and email refusal says who changes them", () => {
   );
   assert.ok(jobPatchRefusal(CREW, open, { email: null }));
   // Written back as they are is not a change.
-  assert.equal(jobPatchRefusal(CREW, approved, { phone: "9195550142", email: "dave@example.com" }), null);
+  assert.equal(jobPatchRefusal(CREW, approved, { phone: "2175550142", email: "dave@example.com" }), null);
 });
 
 test("an unknown role is held to the contractor's rules", () => {
@@ -433,7 +433,7 @@ test("every guarded column the write carries is pinned too, at its value when ch
     status: "lost",
     quote_amount: 6000,
     discount_accepted: true,
-    phone: "9195550199",
+    phone: "2175550199",
     internal_notes: "gone with another crew",
   });
   assert.deepEqual(basis, {
@@ -442,7 +442,7 @@ test("every guarded column the write carries is pinned too, at its value when ch
     change_requested_at: null,
     quote_amount: "8250.00",
     discount_accepted: false,
-    phone: "9195550142",
+    phone: "2175550142",
   });
 });
 

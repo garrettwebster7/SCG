@@ -47,7 +47,7 @@ export function CityServicePage({
       <JsonLd
         data={[
           serviceSchema({
-            name: `${service.name} in ${city}, NC`,
+            name: `${service.name} in ${city}, IL`,
             serviceType: service.name,
             description: service.blurb,
             slug: service.slug,
@@ -74,11 +74,11 @@ export function CityServicePage({
         />
 
         <section className="relative overflow-hidden py-12 md:py-16">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_30%,rgba(194,104,42,0.18),transparent_48%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_30%,rgba(217,146,43,0.18),transparent_48%)]" />
           <div className="relative mx-auto grid w-full max-w-6xl gap-10 px-4 md:px-8 lg:grid-cols-2 lg:items-center">
             <div>
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-amber-accent">
-                Serving {city}, NC
+                Serving {city}, IL
               </p>
               <h1 className="mb-5 font-headline text-4xl leading-[1] text-ivory md:text-6xl">
                 {content.heading}
@@ -114,7 +114,7 @@ export function CityServicePage({
                 <div className="overflow-hidden rounded-2xl border border-white/10">
                   <Image
                     src={service.image}
-                    alt={`${serviceSingular(service)} project in ${city}, NC`}
+                    alt={`${serviceSingular(service)} project in ${city}, IL`}
                     width={1000}
                     height={750}
                     className="h-full w-full object-cover"
@@ -161,21 +161,21 @@ export function CityServicePage({
         </section>
 
         <section className="mx-auto w-full max-w-6xl px-4 pb-12 md:px-8" id="quote">
-          <div className="rounded-3xl bg-ivory p-8 text-center text-[#2b1a12] md:p-12">
-            <h2 className="mb-3 font-headline text-4xl text-[#2b1a12] md:text-5xl">
+          <div className="rounded-3xl bg-ivory p-8 text-center text-[#2b2f33] md:p-12">
+            <h2 className="mb-3 font-headline text-4xl text-[#2b2f33] md:text-5xl">
               Free {serviceSingular(service)} Quote in {city}
             </h2>
-            <p className="mx-auto mb-7 max-w-2xl text-[#2b1a12]/80">
+            <p className="mx-auto mb-7 max-w-2xl text-[#2b2f33]/80">
               Tell us a little about your project and we&apos;ll get you a free, written price.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              <a href="#quote" className="rounded-full bg-[#2b1a12] px-7 py-3.5 text-base font-bold text-white transition hover:bg-[#3a241a]">
+              <a href="#quote" className="rounded-full bg-[#2b2f33] px-7 py-3.5 text-base font-bold text-white transition hover:bg-[#3a3f44]">
                 Get My Free Quote
               </a>
-              <a href={links.call} className="rounded-full border-2 border-[#2b1a12] px-7 py-3.5 text-base font-bold text-[#2b1a12]">
+              <a href={links.call} className="rounded-full border-2 border-[#2b2f33] px-7 py-3.5 text-base font-bold text-[#2b2f33]">
                 Call Now
               </a>
-              <a href={links.text} className="rounded-full border-2 border-[#2b1a12] px-7 py-3.5 text-base font-bold text-[#2b1a12]">
+              <a href={links.text} className="rounded-full border-2 border-[#2b2f33] px-7 py-3.5 text-base font-bold text-[#2b2f33]">
                 Text Now
               </a>
             </div>
@@ -269,7 +269,7 @@ export function CityServicePage({
                 Privacy Policy
               </Link>
               <p className="text-right text-xs font-semibold uppercase tracking-[0.14em] text-slate-300">
-                {businessName} &middot; Concrete &amp; Hardscaping &middot; {city}, NC &middot; {phoneDisplay}
+                {businessName} &middot; {city}, IL &middot; {phoneDisplay}
               </p>
             </div>
           </div>

@@ -1,4 +1,4 @@
--- Raleigh Concrete Group - check stage 1 (price lockdown) on the real database
+-- Springfield Concrete Group - check stage 1 (price lockdown) on the real database
 --
 -- Run AFTER migrations/20261017221826_stage1_price_lockdown.sql, as the SQL editor's own role (postgres),
 -- the whole file at once. It opens its own transaction and ends in ROLLBACK, and

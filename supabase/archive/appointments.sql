@@ -1,4 +1,4 @@
--- Raleigh Concrete Group - back-to-back quote visits + per-contractor hours
+-- Springfield Concrete Group - back-to-back quote visits + per-contractor hours
 -- Run this AFTER crm.sql, scheduling.sql and locale.sql, once, in Supabase →
 -- SQL Editor. Safe to re-run.
 --

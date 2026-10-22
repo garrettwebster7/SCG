@@ -1,58 +1,58 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Sora } from "next/font/google";
+import { Inter, Roboto_Slab } from "next/font/google";
 
 import { Clarity } from "@/components/clarity";
 import { JsonLd } from "@/components/json-ld";
 import { QuoteModalRoot } from "@/components/quote-modal";
 import { VercelInsights } from "@/components/vercel-insights";
 import { localBusinessSchema, websiteSchema } from "@/lib/seo";
+import { siteUrl } from "@/lib/site-data";
 import "./globals.css";
 
-const headline = Bebas_Neue({
+const headline = Roboto_Slab({
   variable: "--font-headline",
-  weight: "400",
+  weight: ["700", "800", "900"],
   subsets: ["latin"],
 });
 
-const body = Sora({
+const body = Inter({
   variable: "--font-body",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "Raleigh Concrete Group | Concrete Driveways, Patios & Pavers",
-    template: "%s | Raleigh Concrete Group",
+    default: "Springfield Concrete Group | Concrete Driveways, Patios & Repair in Springfield, IL",
+    template: "%s | Springfield Concrete Group",
   },
   description:
-    "Raleigh Concrete Group builds concrete driveways, patios, walkways, retaining walls and pavers across Raleigh, Cary, Apex, Wake Forest and Durham, NC. On time, clear pricing, and free written quotes.",
-  metadataBase: new URL("https://www.raleighconcrete.net"),
+    "Springfield Concrete Group builds and repairs concrete driveways, patios, walkways, slabs and steps in Springfield, IL and nearby communities. Clear written quotes and vetted crews.",
+  metadataBase: new URL(siteUrl),
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Raleigh Concrete Group",
-    description:
-      "Driveways, patios, retaining walls and pavers across the Triangle, built to last. Get a free written quote.",
-    url: "https://www.raleighconcrete.net",
-    siteName: "Raleigh Concrete Group",
+    title: "Springfield Concrete Group",
+    description: "Solid work. Straight answers. Concrete driveways, patios and repairs in Springfield, IL.",
+    url: siteUrl,
+    siteName: "Springfield Concrete Group",
     type: "website",
-    // Solid white, not transparent: iMessage and WhatsApp render a transparent logo as a black square in dark mode.
+    // Solid background, not transparent: iMessage and WhatsApp render a transparent logo as a black square in dark mode.
+    // TODO: replace with an SCG share image (stacked logo on white, 2000x2000).
     images: [
       {
-        url: "/images/imessage-preview-image.png",
-        width: 2000,
-        height: 2000,
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
         type: "image/png",
-        alt: "Raleigh Concrete Group",
+        alt: "Springfield Concrete Group",
       },
     ],
   },
   twitter: {
     // The artwork is square; summary_large_image would crop it.
     card: "summary",
-    title: "Raleigh Concrete Group",
-    description:
-      "Driveways, patios, retaining walls and pavers across the Triangle, built to last.",
-    images: ["/images/imessage-preview-image.png"],
+    title: "Springfield Concrete Group",
+    description: "Solid work. Straight answers. Concrete driveways, patios and repairs in Springfield, IL.",
+    images: ["/images/og-image.png"],
   },
 };
 

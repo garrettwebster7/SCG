@@ -1,4 +1,4 @@
--- Raleigh Concrete Group - two ways to do the same job
+-- Springfield Concrete Group - two ways to do the same job
 -- Run this AFTER crm.sql and quote-options.sql, once, in Supabase → SQL Editor.
 -- Safe to re-run.
 --

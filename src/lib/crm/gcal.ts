@@ -10,7 +10,7 @@ import type { Quote } from "./types";
 const CLIENT_ID = process.env.GOOGLE_CLIENT_ID || "";
 const CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET || "";
 export const GOOGLE_REDIRECT_URI = process.env.GOOGLE_REDIRECT_URI || "";
-const TZ = process.env.GOOGLE_CALENDAR_TZ || "America/New_York";
+const TZ = process.env.GOOGLE_CALENDAR_TZ || "America/Chicago";
 
 const SCOPE = [
   "https://www.googleapis.com/auth/calendar.events",

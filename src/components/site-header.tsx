@@ -8,6 +8,7 @@ import {
   businessName,
   commercialNav,
   links,
+  logos,
   phoneDisplay,
   residentialNav,
   type NavLink,
@@ -114,10 +115,10 @@ export function SiteHeader({ activeService }: SiteHeaderProps) {
       <div className="header-inner">
         <Link href="/" className="logo-lockup" onClick={close} aria-label={businessName}>
           <Image
-            src="/images/logo_horizontal_light.png"
+            src={logos.horizontalLight}
             alt={businessName}
-            width={967}
-            height={243}
+            width={715}
+            height={138}
             className="h-11 w-auto md:h-12"
             priority
           />
@@ -140,7 +141,7 @@ export function SiteHeader({ activeService }: SiteHeaderProps) {
             <span>{phoneDisplay}</span>
           </a>
           <a href="/#quote" className="hdr-quote">
-            Free Estimate
+            Free Quote
           </a>
         </div>
 
@@ -177,7 +178,7 @@ export function SiteHeader({ activeService }: SiteHeaderProps) {
               Text Now
             </a>
             <a href="/#quote" className="hdr-quote" onClick={close}>
-              Free Estimate
+              Free Quote
             </a>
           </div>
         </div>

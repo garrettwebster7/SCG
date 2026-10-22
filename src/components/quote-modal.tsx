@@ -753,8 +753,8 @@ function Modal({ onClose }: { onClose: () => void }) {
             {/* SMS consent disclosure (A2P 10DLC), shown before submitting. */}
             {mode && isLastStep && (
               <p className="qm-consent">
-                By submitting this form, you agree to receive text messages from Raleigh Concrete
-                Group about your quote request, appointment reminders, and project updates. Message
+                By submitting this form, you agree to receive text messages from Springfield
+                Concrete Group about your quote request, appointment reminders, and project updates. Message
                 frequency varies. Message &amp; data rates may apply. Reply HELP for help or STOP to
                 unsubscribe at any time. See our{" "}
                 <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="qm-consent-link">

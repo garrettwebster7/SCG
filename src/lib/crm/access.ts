@@ -15,10 +15,11 @@ const allowedRoles = parseCsv(process.env.CRM_ALLOWED_ROLES);
 // open to any account. CRM_ALLOWED_EMAILS / CRM_ALLOWED_DOMAINS override it.
 function companyDomain(): string {
   try {
-    const url = process.env.NEXT_PUBLIC_SITE_URL || "https://raleighconcrete.net";
+    // TODO: placeholder domain until NEXT_PUBLIC_SITE_URL is set.
+    const url = process.env.NEXT_PUBLIC_SITE_URL || "https://www.springfieldconcretegroup.com";
     return new URL(url).hostname.replace(/^www\./, "").toLowerCase();
   } catch {
-    return "raleighconcrete.net";
+    return "springfieldconcretegroup.com";
   }
 }
 

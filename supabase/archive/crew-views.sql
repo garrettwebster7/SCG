@@ -1,4 +1,4 @@
--- Raleigh Concrete Group - how often each contractor opens each job
+-- Springfield Concrete Group - how often each contractor opens each job
 --
 -- One row per (job, contractor): how many times they opened the job page, and
 -- when first and last. Owner-only to read. Written only by the server (service

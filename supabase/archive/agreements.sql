@@ -1,4 +1,4 @@
--- Raleigh Concrete Group - signed agreements
+-- Springfield Concrete Group - signed agreements
 -- Run this AFTER crm.sql, once, in Supabase → SQL Editor. Safe to re-run.
 --
 -- Stores the contracts you send out through DocuSeal. DocuSeal itself is managed

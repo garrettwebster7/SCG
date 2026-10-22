@@ -33,9 +33,9 @@ test("leaves trade words, measurements, abbreviations and links alone", () => {
     "4x8 slab, 6in thick, 3,500 PSI, 600 sq ft, 2nd pour, 10-mil vapor barrier.",
     "HOA approval and NDS pop-up emitters. TOTAL PROJECT PRICE: $6,700.",
     "Backfill and dress the edges; final walkthrough with the customer.",
-    "See https://raleighconcrete.net/q/abc or email office@example.com.",
+    "See https://springfieldconcretegroup.com/q/abc or email office@example.com.",
     "Customer's driveway, don't pour until the tie-in and pre-pour inspection pass.",
-    "Raleigh, Cary and Wake Forest. Tear out the old stoop.",
+    "Springfield, Chatham and Rochester. Tear out the old stoop.",
   ];
   for (const s of ok) assert.deepEqual(flagged(s), [], s);
 });

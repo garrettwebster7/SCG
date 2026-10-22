@@ -1,17 +1,21 @@
-# Raleigh Concrete Group - Website
+# Springfield Concrete Group - Website
 
-Multi-city local services site in the **exact format of mammothcoat.com** (Next.js App Router +
-Tailwind v4), rebranded for Raleigh Concrete Group: homepage location picker → per-city pages with
-**draggable before/after sliders**, an **auto-rotating gallery carousel**, services, process,
-reviews, and a quote form.
+Multi-city local services site and CRM (Next.js App Router + Tailwind v4) for Springfield Concrete
+Group (SCG), Springfield, Illinois: homepage → service pages, per-city pages with **draggable
+before/after sliders**, an **auto-rotating gallery carousel**, process, reviews (real ones only) and a
+quote form that saves to Supabase.
 
-## Structure (mirrors the mammoth repo)
+Brand: Foundry Charcoal `#2B2F33`, Rebar Amber `#D9922B` (text on amber is charcoal), Cured Concrete
+`#D9D9D3`, Slab Gray `#6B7075`, Trust Green `#2F6B4F`; headlines in Roboto Slab, body in Inter;
+tagline "Solid work. Straight answers."
+
+## Structure
 
 ```
 src/
   app/
-    layout.tsx          # fonts (Bebas Neue + Sora), site metadata
-    globals.css         # brand theme + all component styles (amber recolor)
+    layout.tsx          # fonts (Roboto Slab + Inter), site metadata
+    globals.css         # brand theme + all component styles
     page.tsx            # homepage: hero + "Select Your Location"
     [location]/page.tsx # static per-city route (generateStaticParams)
   components/
@@ -37,18 +41,18 @@ Everything lives in `src/lib/site-data.ts`:
 - **`galleryImages`**, **`sharedBeforeAfter`**, **`testimonials`**.
 
 ## Before launch - final touches
-1. **Phone** - set to `(919) 873-3919` in `site-data.ts`. ✅
+1. **Phone** - placeholder `(217) 555-0100` in `site-data.ts` (`phoneDisplay`, `phoneHref`, `textHref`). Replace before launch.
 2. **Photos** - real project photos + logos are in `public/images/`. ✅ (They're large PNGs;
    Vercel's image optimization handles resizing automatically, but you can compress them for
    faster builds.)
-3. **Domain** - `https://www.raleighconcrete.net` in `src/app/layout.tsx` (`metadataBase`).
+3. **Domain** - placeholder `https://www.springfieldconcretegroup.com`; set `NEXT_PUBLIC_SITE_URL` in Vercel (read by `site-data.ts` and `seo.ts`).
 4. **Reviews** - swap the testimonials for real Google reviews (never fabricate).
 
 ## Quote funnel → Supabase
 Clicking any **Get Free Quote** button opens a multi-step modal (`src/components/quote-modal.tsx`):
 
 1. **Choose a path** - Online quote (fastest) or In-person visit.
-2. **Address** - with free autocomplete (Photon/OpenStreetMap, no API key needed), biased to Raleigh.
+2. **Address** - with free autocomplete (Photon/OpenStreetMap, no API key needed), biased to Springfield, IL.
 3a. **Online:** upload photos/video (saved to Supabase Storage) so we can quote from satellite + pics.
 3b. **In-person:** pick a day and an hourly slot from the crew's own working hours.
 4. **Contact** - name, phone, email → saved as a lead.
@@ -134,7 +138,7 @@ funnel steps are also sent to Clarity as custom events (`quote_close_contact`,
 `quote_submit_schedule`, ...), so you can filter recordings to people who gave
 up on a given step and watch what happened.
 
-## CRM (crm.raleighconcrete.net)
+## CRM (crm.springfieldconcretegroup.com)
 A login-protected back office for managing quotes, plus two public token links you text out.
 All of it runs over Supabase's REST/Auth APIs (no extra packages).
 
@@ -146,9 +150,9 @@ All of it runs over Supabase's REST/Auth APIs (no extra packages).
 - **Settings** (`/crm/settings`): your name + alert number; owners also pick the **primary contractor** that new quotes auto-assign to.
 - **Customers** (`/crm/customers`): quotes auto-grouped by phone/email with won-value totals.
 - **Calendar** (`/crm/calendar`): a month view of booked jobs (`scheduled_date`) and in-person quote visits (`visit_date`). Click any item to open the deal. Owners can connect Google Calendar here.
-- **Customer quote link** (`https://raleighconcrete.net/q/<public_token>`): branded, no-login page showing the price + summary; the customer accepts (and schedules) or declines right there.
-- **Job confirmation link** (`https://raleighconcrete.net/confirm/<public_token>`): sent in the 2-day reminder so the customer can confirm or ask to reschedule.
-- **Contractor job link** (`https://raleighconcrete.net/job/<job_token>`): the photos, address (Maps link) and customer contact. Requires a CRM sign-in, and a contractor only sees jobs assigned to them.
+- **Customer quote link** (`https://springfieldconcretegroup.com/q/<public_token>`): branded, no-login page showing the price + summary; the customer accepts (and schedules) or declines right there.
+- **Job confirmation link** (`https://springfieldconcretegroup.com/confirm/<public_token>`): sent in the 2-day reminder so the customer can confirm or ask to reschedule.
+- **Contractor job link** (`https://springfieldconcretegroup.com/job/<job_token>`): the photos, address (Maps link) and customer contact. Requires a CRM sign-in, and a contractor only sees jobs assigned to them.
 
 **Deal lifecycle + automatic texts**
 The customer hears from us at most six times, and only when something they care
@@ -342,13 +346,13 @@ there. So:
    **Database** below for where its state is written down and how to change it.
 2. Confirm Vercel env vars exist: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY` (the CRM needs the service-role key).
 3. Create your owner login: Supabase → **Authentication → Users → Add user** (email + password), then run only the promote snippet at the bottom of `supabase/archive/crm.sql` (never the whole file).
-4. **Subdomain:** in Vercel → Project → **Domains**, add `crm.raleighconcrete.net`; in your DNS registrar add the **CNAME** Vercel shows (typically `crm` → `cname.vercel-dns.com`). Routing to the CRM is already wired in `src/middleware.ts`. (Until DNS is live you can also reach it at `raleighconcrete.net/crm`.)
+4. **Subdomain:** in Vercel → Project → **Domains**, add `crm.springfieldconcretegroup.com`; in your DNS registrar add the **CNAME** Vercel shows (typically `crm` → `cname.vercel-dns.com`). Routing to the CRM is already wired in `src/middleware.ts`. (Until DNS is live you can also reach it at `springfieldconcretegroup.com/crm`.)
 
 **Hook your text automation up to the links**
 Your Supabase automation already fires on new `quote_requests` rows. Each row now also has
 `public_token` and `job_token` columns - build the URLs in your message template:
-- Contractor text (with photos): `https://raleighconcrete.net/job/{{ job_token }}`
-- Customer text (their quote): `https://raleighconcrete.net/q/{{ public_token }}`
+- Contractor text (with photos): `https://springfieldconcretegroup.com/job/{{ job_token }}`
+- Customer text (their quote): `https://springfieldconcretegroup.com/q/{{ public_token }}`
 
 **English / Spanish**
 Every CRM screen a contractor can reach renders in **English or Spanish**, per person. They choose
@@ -407,10 +411,10 @@ send it, and DocuSeal emails the signer and hosts the signing page. The CRM is t
 The app texts you and your crew automatically: a **new lead** texts the owner; **assigning** a job
 texts that contractor their job link; and when a contractor advances a job the owner gets a heads-up.
 Add these Vercel env vars (no SQL needed):
-- `OWNER_PHONE` - your number for owner alerts (e.g. `+19198733919`).
+- `OWNER_PHONE` - your number for owner alerts (e.g. `+12175550100`).
 - **Quo (OpenPhone)** - the default when `QUO_API_KEY` is set:
   - `QUO_API_KEY` - from Quo → Settings → API (used as the `Authorization` header).
-  - `QUO_FROM` - your Quo number in E.164 (e.g. `+19198733919`).
+  - `QUO_FROM` - your Quo number in E.164 (e.g. `+12175550100`).
   - `QUO_USER_ID` *(optional)* - send as a specific workspace member.
   - Note: Quo requires completed **US carrier (A2P) registration** to text US numbers.
 - `SMS_PROVIDER` *(optional override)* - `quo`, `twilio`, or `custom`.
@@ -431,11 +435,11 @@ these apart:
   `QUO_USER_ID` to default to the number's owner.
 - **Accepted** but no text arrives - the provider took it; the hold-up is carrier delivery.
 
-`QUO_FROM` must be E.164 (`+19198733919`) or a Quo phone ID (`PN…`). Leave the number blank in the
+`QUO_FROM` must be E.164 (`+12175550100`) or a Quo phone ID (`PN…`). Leave the number blank in the
 test panel to text every owner number at once.
 
 Customer-facing text settings:
-- `OWNER_NAME` *(optional)* - first name used to introduce the business in the **first** text a customer gets (default `Noah`), e.g. "this is Noah with Raleigh Concrete Group". Every later message speaks as the business, so a name here doesn't tie the whole thread to one person.
+- `OWNER_NAME` *(optional)* - first name used to introduce the business in the **first** text a customer gets (default `Noah`), e.g. "this is Noah with Springfield Concrete Group". Every later message speaks as the business, so a name here doesn't tie the whole thread to one person.
 - `GOOGLE_REVIEW_URL` *(optional)* - overrides the Google review link in the post-job thank-you text. Defaults to https://g.page/r/Cf1V-s7AJLEaEAI/review.
 
 **Daily reminders (Vercel Cron)**
@@ -523,7 +527,7 @@ A held message shows in the job's **Texts sent** log as "Waiting until 8:00 AM" 
 **Time is Eastern, everywhere**
 `src/lib/crm/clock.ts` owns every reading of the clock: `now()`, today's date, day arithmetic, quiet hours. Vercel runs in UTC and phones are set to whatever their owners set them to, so anything asking "what day is it" or printing a timestamp goes through there and comes back in `America/New_York` - Eastern, which is EST in winter and EDT in summer, not a pinned -05:00 that would be an hour out all summer.
 
-Time itself is the host clock, not an NTP query: serverless functions get outbound TCP only (NTP is UDP/123), and Vercel's AWS instances are already disciplined by Amazon's own time service, which is steadier than a public pool server reached over the internet. Settings → **Time & quiet hours** shows the current Raleigh time, whether texts are sending right now, and a drift check against a public HTTPS host's `Date` header as a second opinion.
+Time itself is the host clock, not an NTP query: serverless functions get outbound TCP only (NTP is UDP/123), and Vercel's AWS instances are already disciplined by Amazon's own time service, which is steadier than a public pool server reached over the internet. Settings → **Time & quiet hours** shows the current business-timezone time, whether texts are sending right now, and a drift check against a public HTTPS host's `Date` header as a second opinion.
 
 > If you also send texts from a Make.com scenario, disable that scenario (or the SMS step) to avoid sending duplicate messages, since the app now texts directly through Quo.
 
@@ -787,7 +791,7 @@ Setup (one-time):
    - **Credentials → Create OAuth client ID → Web application**. Add an **Authorized redirect URI** that matches `GOOGLE_REDIRECT_URI` below exactly.
 3. Add these Vercel env vars:
    - `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` - from the OAuth client.
-   - `GOOGLE_REDIRECT_URI` - e.g. `https://crm.raleighconcrete.net/api/google/callback` (must be registered in step 2, exactly).
+   - `GOOGLE_REDIRECT_URI` - e.g. `https://crm.springfieldconcretegroup.com/api/google/callback` (must be registered in step 2, exactly).
    - `GOOGLE_CALENDAR_TZ` *(optional)* - IANA zone for timed visit events (default `America/New_York`).
 4. Redeploy, then go to **CRM → Calendar** and click **Connect Google Calendar** (owner only). The contractor's login email is the address that receives invites.
 
@@ -864,7 +868,7 @@ screen is wrong for a day.
    secret). `STRIPE_PUB_KEY` is not used - checkout is a server-side redirect to
    Stripe's hosted page, so no publishable key ever reaches the browser.
 2. Stripe → **Developers → Event destinations** → endpoint
-   `https://www.raleighconcrete.net/api/stripe/webhook`, with **Events from:
+   `https://www.springfieldconcretegroup.com/api/stripe/webhook`, with **Events from:
    Connected accounts**. This is not optional: direct charges belong to the
    connected account, so with the default "Your account" scope you receive
    **zero** `checkout.session.completed` events and every payment silently stays

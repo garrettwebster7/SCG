@@ -1,4 +1,4 @@
--- Raleigh Concrete Group - leads that exist to be practised on
+-- Springfield Concrete Group - leads that exist to be practised on
 -- Run in Supabase → SQL Editor. Safe to re-run.
 --
 -- Testing a payment means recording a real row in quote_payments: the same
@@ -45,7 +45,7 @@ where email ilike '%test%'
 
 -- ── Backfill ────────────────────────────────────────────────────────────────
 -- LOOK at this list before running the update under it. `%test%` is a weak
--- filter - it matches "Noah test 2" and "James Test" as well as "Testv3",
+-- filter - it matches "Sam test 2" and "James Test" as well as "Testv3",
 -- which is the point - and a real customer whose name happens to contain it
 -- would be quietly written out of your revenue.
 select id, name, status, quote_amount, created_at,

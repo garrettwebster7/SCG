@@ -1,4 +1,4 @@
--- Raleigh Concrete Group - undo stage 3 (hardening)
+-- Springfield Concrete Group - undo stage 3 (hardening)
 -- Puts the database back as it was read on 2026-10-17, before
 -- migrations/20261017222017_stage3_hardening.sql ran. See supabase/snapshots/2026-10-17-pre-stage3.sql.
 -- Safe to re-run.

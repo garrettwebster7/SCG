@@ -11,7 +11,7 @@ const QUOTE_KINDS = new Set(["quote_ready", "quote_updated"]);
 // Every text this job produced and whether it left. Sends are best-effort (an outage must never fail a
 // quote), so this is the trace, kept on the job. <details> instead of a modal so it works without client
 // JS; failures show the provider's own words.
-// Raleigh time, matching the phone in your hand.
+// Springfield time, matching the phone in your hand.
 function fmt(iso: string) {
   return new Date(iso).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short", timeZone: BUSINESS_TZ });
 }

@@ -1,4 +1,4 @@
--- Raleigh Concrete Group - stage 1: a contractor cannot lower an agreed price
+-- Springfield Concrete Group - stage 1: a contractor cannot lower an agreed price
 -- Applied to production 2026-10-17 as migration 20261017221826 (already live;
 -- do not run again). Undo: undo/20261017221826_stage1_price_lockdown.undo.sql.
 -- Check it: verify/20261017221826_stage1_price_lockdown.verify.sql (ends in ROLLBACK).

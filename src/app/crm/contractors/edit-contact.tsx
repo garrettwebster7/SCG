@@ -55,7 +55,7 @@ export function EditContact({
           type="tel"
           className="crm-input"
           defaultValue={phone ?? ""}
-          placeholder="(919) 555-1234"
+          placeholder="(217) 555-1234"
         />
       </label>
       {/*

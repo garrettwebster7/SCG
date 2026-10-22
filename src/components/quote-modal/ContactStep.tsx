@@ -5,7 +5,7 @@ import { AddressAutocomplete } from "./AddressAutocomplete";
 import { isValidPhone, StepHead, type FormState } from "./shared";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-// (919) 555-0123 while adding digits only (formatting on backspace re-adds what they deleted). Anything
+// (217) 555-0123 while adding digits only (formatting on backspace re-adds what they deleted). Anything
 // that isn't a plain 10-digit number is left as typed.
 function formatPhone(next: string, prev: string): string {
   if (next.length < prev.length) return next;
@@ -63,12 +63,12 @@ export function ContactStep({
         autoComplete="tel"
         maxLength={32}
         inputMode="tel"
-        placeholder="(919) 555-0123"
+        placeholder="(217) 555-0123"
       />
       {/* Fixed-height slot so the address field below doesn't move. */}
       <span className="qm-ac-status qm-slot">
         {data.phone.trim() !== "" && !isValidPhone(data.phone)
-          ? "Enter a 10-digit number, like (919) 555-0123."
+          ? "Enter a 10-digit number, like (217) 555-0123."
           : "We text your price here. No spam."}
       </span>
       <label className="qm-label">Address of the job</label>

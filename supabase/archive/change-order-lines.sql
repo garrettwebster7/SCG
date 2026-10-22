@@ -1,4 +1,4 @@
--- Raleigh Concrete Group - a change order can carry its own price breakdown
+-- Springfield Concrete Group - a change order can carry its own price breakdown
 -- Run this AFTER change-orders.sql and quote-options.sql.
 --
 -- SUPERSEDED by stage1-price-lockdown.sql, which replaces the

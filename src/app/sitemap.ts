@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
 
-import { cityServicePairs, locationKeys, services } from "@/lib/site-data";
+import { cityServicePairs, locationKeys, services, siteUrl } from "@/lib/site-data";
 
-const BASE_URL = "https://www.raleighconcrete.net";
+const BASE_URL = siteUrl.replace(/\/$/, "");
 
 // Only URLs with real content: `cityServicePairs` derives from the hand-written `cityServiceLocalContent`.
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -11,7 +11,7 @@ import { LogoutButton } from "./logout-button";
 import { ForceReset } from "./force-reset";
 
 export const metadata: Metadata = {
-  title: { absolute: "CRM | Raleigh Concrete Group" },
+  title: { absolute: "CRM | Springfield Concrete Group" },
   robots: { index: false, follow: false },
 };
 
@@ -60,9 +60,9 @@ export default async function CrmLayout({ children }: { children: React.ReactNod
                 { href: "/settings", label: t.nav.settings },
               ]}
             />
-            <Link href={`${base}/`} className="crm-logo" aria-label="Raleigh Concrete Group CRM">
+            <Link href={`${base}/`} className="crm-logo" aria-label="Springfield Concrete Group CRM">
               <span className="crm-logo-badge">
-                <Image src="/images/logo_horizontal.png" alt="Raleigh Concrete Group" width={967} height={243} priority />
+                <Image src="/images/scg-logo-horizontal-on-dark.png" alt="Springfield Concrete Group" width={715} height={138} priority />
               </span>
               <span className="crm-logo-tag">CRM</span>
             </Link>

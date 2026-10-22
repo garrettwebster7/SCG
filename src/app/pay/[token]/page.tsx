@@ -19,7 +19,7 @@ import { PayPanel } from "./pay-panel";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: { absolute: "Pay for Your Project | Raleigh Concrete Group" },
+  title: { absolute: "Pay for Your Project | Springfield Concrete Group" },
   robots: { index: false, follow: false },
 };
 
@@ -74,7 +74,7 @@ export default async function PayPage({
     return (
       <main className="cq-wrap">
         <div className="cq-confirm">
-          <Image src="/images/logo_horizontal.png" alt={businessName} width={967} height={243} className="cq-logo" priority />
+          <Image src="/images/scg-logo-horizontal.png" alt={businessName} width={715} height={138} className="cq-logo" priority />
           <p className="cq-confirm-eyebrow cq-confirm-eyebrow-muted">Nothing due</p>
           <h1 className="cq-confirm-title">Hi {firstName}, there&apos;s nothing to pay here yet.</h1>
           <p className="cq-confirm-note">
@@ -102,7 +102,7 @@ export default async function PayPage({
     <main className="cq-wrap">
       <div className="cq-card pay-card">
         <header className="cq-head">
-          <Image src="/images/logo_horizontal.png" alt={businessName} width={967} height={243} className="cq-logo" priority />
+          <Image src="/images/scg-logo-horizontal.png" alt={businessName} width={715} height={138} className="cq-logo" priority />
           <p className="cq-eyebrow">{settled ? "Paid in full" : "Your payment"}</p>
         </header>
 

@@ -1,4 +1,4 @@
--- Raleigh Concrete Group - give the quotes already out there the longer clock
+-- Springfield Concrete Group - give the quotes already out there the longer clock
 -- Run this in Supabase → SQL Editor. Safe to re-run.
 --
 -- QUOTE_TTL_DAYS went from 7 to 10 because customers were going off to collect

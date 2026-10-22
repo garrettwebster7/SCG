@@ -1,4 +1,4 @@
--- Raleigh Concrete Group - snapshot of the LIVE database before stage 1
+-- Springfield Concrete Group - snapshot of the LIVE database before stage 1
 -- (price lockdown), read on 2026-10-17 from the production project.
 --
 -- REFERENCE ONLY. Do not run this file. It is what the catalog said at the

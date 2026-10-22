@@ -1,4 +1,4 @@
--- Raleigh Concrete Group - quote forms that were started but never sent
+-- Springfield Concrete Group - quote forms that were started but never sent
 -- Run once in Supabase -> SQL Editor. Safe to re-run. (Applied to the live
 -- database on 24 Sep 2026.)
 --

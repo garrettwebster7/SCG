@@ -13,7 +13,7 @@ import { businessName, phoneDisplay } from "@/lib/site-data";
 
 // A fixed file, never a path built from the request. Bundled for both routes by
 // outputFileTracingIncludes in next.config.ts.
-const LOGO_PATH = path.join(process.cwd(), "public", "images", "logo_horizontal.png");
+const LOGO_PATH = path.join(process.cwd(), "public", "images", "scg-logo-horizontal.png");
 let logoBytes: Promise<Uint8Array | null> | null = null;
 function logo(): Promise<Uint8Array | null> {
   logoBytes ??= readFile(LOGO_PATH).then(
@@ -122,7 +122,7 @@ export async function quotePdfResponse({
   return new Response(new Uint8Array(pdf), {
     headers: {
       "Content-Type": "application/pdf",
-      "Content-Disposition": `attachment; filename="Raleigh-Concrete-Group-Quote-${who}.pdf"`,
+      "Content-Disposition": `attachment; filename="Springfield-Concrete-Group-Quote-${who}.pdf"`,
       "Cache-Control": "private, no-store",
       "X-Content-Type-Options": "nosniff",
     },

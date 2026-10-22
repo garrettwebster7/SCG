@@ -14,19 +14,20 @@ import {
 } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "About Raleigh Concrete Group | Local Concrete Contractor",
+  title: "About Us | Local Concrete Company in Springfield, IL",
   description:
-    "Raleigh Concrete Group is a locally run concrete contractor serving Raleigh and the Triangle since 2020, with 20+ years of combined crew experience, honest pricing and clean job sites.",
+    "Springfield Concrete Group is a Springfield, Illinois concrete company. Vetted crews, clear written quotes and one company accountable for every project.",
   alternates: { canonical: "/about" },
 };
 
+// Core values from the brand guide.
 const promises = [
-  "We answer the phone and keep you in the loop",
-  "We show up when we say we will",
-  "Our estimates are clear and free",
-  "We take pride in the finish work",
-  "We leave the job site clean",
-  "We build it to last",
+  "Solid: we build it right so it lasts, from base prep to final finish",
+  "Straight: clear written quotes, no surprise charges, honest timelines",
+  "Local: we live and work here, and our reputation is built one neighbor at a time",
+  "Accountable: one company stands behind every pour",
+  "Every contractor is screened for experience, references, insurance and quality",
+  "We protect your property and leave the job site clean",
 ];
 
 export default function AboutPage() {
@@ -35,7 +36,7 @@ export default function AboutPage() {
       <SiteHeader />
       <main>
         <section className="relative overflow-hidden py-12 md:py-16">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_30%,rgba(194,104,42,0.18),transparent_48%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_30%,rgba(217,146,43,0.18),transparent_48%)]" />
           <div className="relative mx-auto grid w-full max-w-6xl gap-10 px-4 md:px-8 lg:grid-cols-2 lg:items-center">
             <div>
               <span className="mb-3 block text-xs font-bold uppercase tracking-[0.22em] text-amber-accent">
@@ -45,10 +46,9 @@ export default function AboutPage() {
                 About {businessName}
               </h1>
               <p className="mb-4 max-w-lg text-lg leading-relaxed text-slate-300">
-                We&apos;re a locally run concrete contractor working with homeowners and businesses
-                across Raleigh and the surrounding Triangle. We started the company in 2020 with a
-                pretty simple idea: do dependable concrete work, communicate like professionals,
-                price things honestly, and build stuff that lasts.
+                Springfield Concrete Group is a local concrete company serving Springfield, Illinois
+                and the surrounding area. Our goal is simple: make hiring a concrete contractor
+                simple, honest and predictable. One call, one clear quote, one accountable company.
               </p>
               <div className="flex flex-wrap gap-3">
                 <a href="/#quote" className="cta-primary text-base">
@@ -62,7 +62,7 @@ export default function AboutPage() {
             <div className="overflow-hidden rounded-2xl border border-white/10">
               <Image
                 src={trustImage}
-                alt="Raleigh Concrete Group walking a homeowner through their quote"
+                alt="Springfield Concrete Group walking a homeowner through their quote"
                 width={1000}
                 height={750}
                 className="h-full w-full object-cover"
@@ -77,22 +77,20 @@ export default function AboutPage() {
         <section className="mx-auto w-full max-w-3xl px-4 pb-12 md:px-8">
           <div className="space-y-5 text-lg leading-relaxed text-slate-300">
             <p>
-              We&apos;ve been pouring concrete around the Triangle since 2020, and the people doing
-              the work bring more than 20 years of combined hands-on concrete experience, on
-              everything from residential driveways and patios to commercial flatwork. Whether
-              it&apos;s stamped concrete, sidewalks, slabs or a full driveway, our team knows how to
-              build surfaces that hold up to North Carolina weather and everyday use.
+              We handle driveways, patios, walkways, slabs, steps, stamped and decorative concrete,
+              and repairs. Every job is done by a vetted crew of independent contractors working under
+              the SCG name, standards and warranty, so you get the dependability of a larger company
+              and the craftsmanship of local specialists.
             </p>
             <p>
-              We care about the things that actually show up in the finished product: solid site
-              prep, clean finishes, durable materials, and proven installation methods. And we manage
-              the whole project from start to finish, so you&apos;re never left guessing about what
-              happens next.
+              Every project is held to one standard: proper prep, quality materials, clean finishing
+              and clear communication from quote to final walkthrough. That includes base prep,
+              drainage and mix choices made for Central Illinois freeze-thaw winters.
             </p>
             <p>
-              Our goal is simple. We want to become one of the most trusted concrete contractors in
-              the Raleigh area by doing good work and treating every project like it matters, because
-              it does.
+              When you hire SCG, one company is accountable for your project. We want to be the first
+              name Central Illinois homeowners and property managers think of for concrete, and we
+              plan to earn that one job at a time.
             </p>
           </div>
         </section>
@@ -100,7 +98,7 @@ export default function AboutPage() {
         <section className="mx-auto w-full max-w-6xl px-4 pb-14 md:px-8">
           <div className="grid gap-8 rounded-3xl border border-white/10 bg-white/5 p-6 md:grid-cols-2 md:p-10">
             <div>
-              <h2 className="mb-5 font-headline text-3xl text-ivory">Why Homeowners Choose Us</h2>
+              <h2 className="mb-5 font-headline text-3xl text-ivory">What We Stand For</h2>
               <ul className="space-y-3">
                 {promises.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-slate-200">
@@ -113,7 +111,7 @@ export default function AboutPage() {
             <div className="overflow-hidden rounded-2xl border border-white/10">
               <Image
                 src={clipboardImage}
-                alt="Raleigh Concrete Group contractor preparing a written estimate"
+                alt="Springfield Concrete Group crew lead preparing a written estimate"
                 width={1000}
                 height={750}
                 className="h-full w-full object-cover"
@@ -125,20 +123,19 @@ export default function AboutPage() {
         </section>
 
         <section className="mx-auto w-full max-w-6xl px-4 pb-12 md:px-8" id="quote">
-          <div className="rounded-3xl bg-ivory p-8 text-center text-[#2b1a12] md:p-12">
-            <h2 className="mb-3 font-headline text-4xl text-[#2b1a12] md:text-5xl">
+          <div className="rounded-3xl bg-ivory p-8 text-center text-[#2b2f33] md:p-12">
+            <h2 className="mb-3 font-headline text-4xl text-[#2b2f33] md:text-5xl">
               Let&apos;s Talk About Your Project
             </h2>
-            <p className="mx-auto mb-7 max-w-2xl text-[#2b1a12]/80">
+            <p className="mx-auto mb-7 max-w-2xl text-[#2b2f33]/80">
               Whether you need a new driveway, a stamped patio, a slab, a walkway or commercial
-              flatwork, we&apos;d be glad to take a look and get you a free quote, usually the same
-              day.
+              flatwork, we&apos;ll measure, explain the options and send you a free written quote.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              <a href="/#quote" className="rounded-full bg-[#2b1a12] px-7 py-3.5 text-base font-bold text-white transition hover:bg-[#3a241a]">
-                Get a Free Estimate
+              <a href="/#quote" className="rounded-full bg-[#2b2f33] px-7 py-3.5 text-base font-bold text-white transition hover:bg-[#3a3f44]">
+                Get a Free Quote
               </a>
-              <a href={links.call} className="rounded-full border-2 border-[#2b1a12] px-7 py-3.5 text-base font-bold text-[#2b1a12]">
+              <a href={links.call} className="rounded-full border-2 border-[#2b2f33] px-7 py-3.5 text-base font-bold text-[#2b2f33]">
                 Call Now
               </a>
             </div>
@@ -171,7 +168,7 @@ export default function AboutPage() {
                   Privacy Policy
                 </Link>
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-300 md:text-right">
-                  {businessName} &middot; Concrete &amp; Hardscaping &middot; {phoneDisplay}
+                  {businessName} &middot; Springfield, IL &middot; {phoneDisplay}
                 </p>
               </div>
             </div>

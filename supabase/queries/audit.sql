@@ -1,5 +1,5 @@
 -- ═══════════════════════════════════════════════════════════════════════════
--- Raleigh Concrete Group - full health check
+-- Springfield Concrete Group - full health check
 -- Run in Supabase → SQL Editor. READ ONLY. Nothing in this file changes a row.
 -- ═══════════════════════════════════════════════════════════════════════════
 --

@@ -98,7 +98,7 @@ export function TestSms({
       <form action={formAction} className="crm-editor">
         <label className="crm-field">
           <span>Send to (leave blank to text every owner number)</span>
-          <input name="to" className="crm-input" placeholder="(919) 555-1234" />
+          <input name="to" className="crm-input" placeholder="(217) 555-1234" />
         </label>
         <div className="crm-editor-foot">
           <button type="submit" className="crm-btn crm-btn-primary" disabled={pending}>

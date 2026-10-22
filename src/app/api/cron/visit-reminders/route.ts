@@ -22,7 +22,7 @@ export async function GET(request: Request) {
     return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
   }
 
-  // 6pm ET is inside business hours, so this also clears anything still queued from the morning.
+  // 6pm CT is inside business hours, so this also clears anything still queued from the morning.
   const flushed = await flushHeldMessages();
 
   const tomorrow = ymdInDays(1);

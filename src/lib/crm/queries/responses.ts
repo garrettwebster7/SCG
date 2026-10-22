@@ -161,7 +161,7 @@ export async function recordCustomerResponse(
     eventType = "customer_declined";
   } else {
     // Approving doesn't book a day: the customer proposes dates and the job
-    // stays "approved" until the crew confirms one. Both sides are Raleigh
+    // stays "approved" until the crew confirms one. Both sides are Springfield
     // calendar dates, so this is a plain string comparison.
     const min = ymdInDays(LEAD_TIME_DAYS);
     const seen = new Set<string>();

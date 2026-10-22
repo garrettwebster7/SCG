@@ -1,4 +1,4 @@
--- Raleigh Concrete Group - a held text that fails to send is tried again
+-- Springfield Concrete Group - a held text that fails to send is tried again
 -- Run this AFTER cancel-held-text.sql, once, in Supabase SQL Editor. Safe to re-run.
 --
 -- The queue claims a row before it sends it: sent_at is stamped first, so a

@@ -71,7 +71,7 @@ export function AddressAutocomplete({
           lookup(e.target.value);
         }}
         onFocus={() => suggestions.length && setShowList(true)}
-        placeholder="123 Main St, Raleigh, NC"
+        placeholder="123 Main St, Springfield, IL"
         autoComplete="off"
         inputMode="text"
       />

@@ -13,6 +13,7 @@ import {
   coreServices,
   galleryImages,
   getLocationFaqs,
+  isCityServicePair,
   links,
   locations,
   phoneDisplay,
@@ -32,11 +33,11 @@ const processSteps = [
   },
   {
     label: "We Confirm On-Site",
-    body: "For patios and walls, we swing by to check the base, the grading and the details, then lock in your final price in writing.",
+    body: "A crew lead measures, checks the base and grading, explains the options and sends a written quote.",
   },
   {
     label: "We Build & Clean Up",
-    body: "Our experienced crew gets the job done on schedule, cleans up after themselves, and treats your property like it's our own.",
+    body: "A vetted crew does the work to SCG's standards, cleans up, and walks the finished job with you.",
   },
 ];
 
@@ -65,8 +66,8 @@ export function LocationPage({ locationKey }: LocationPageProps) {
       <JsonLd
         data={[
           serviceSchema({
-            name: `Concrete & Hardscaping in ${location.city}, NC`,
-            serviceType: "Concrete & Hardscaping",
+            name: `Concrete Contractor in ${location.city}, IL`,
+            serviceType: "Concrete Contractor",
             description: location.description,
             slug: location.key,
             url: `/${location.key}`,
@@ -88,7 +89,7 @@ export function LocationPage({ locationKey }: LocationPageProps) {
           ]}
         />
         <section className="relative overflow-hidden py-14 md:py-20">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_30%,rgba(194,104,42,0.18),transparent_48%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_30%,rgba(217,146,43,0.18),transparent_48%)]" />
           <div className="relative mx-auto grid w-full max-w-6xl gap-10 px-4 md:px-8 lg:grid-cols-2 lg:items-center">
             <div>
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-amber-accent">
@@ -101,16 +102,16 @@ export function LocationPage({ locationKey }: LocationPageProps) {
               <SharedCtaBar />
               <div className="mt-8 grid max-w-sm grid-cols-3 gap-3">
                 <div className="stat-card text-center">
-                  <p className="stat-value">5.0★</p>
-                  <p className="stat-label">Google Rated</p>
+                  <p className="stat-value">Free</p>
+                  <p className="stat-label">Written Quotes</p>
                 </div>
                 <div className="stat-card text-center">
-                  <p className="stat-value">1-3 Day</p>
-                  <p className="stat-label">Installs</p>
+                  <p className="stat-value">Vetted</p>
+                  <p className="stat-label">Crews</p>
                 </div>
                 <div className="stat-card text-center">
-                  <p className="stat-value">Trusted</p>
-                  <p className="stat-label">Local Crew</p>
+                  <p className="stat-value">Local</p>
+                  <p className="stat-label">Springfield Company</p>
                 </div>
               </div>
             </div>
@@ -118,7 +119,7 @@ export function LocationPage({ locationKey }: LocationPageProps) {
             <div className="overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/50">
               <Image
                 src={location.heroImage}
-                alt={`${location.city} concrete and hardscaping project`}
+                alt={`Concrete project near ${location.city}, IL`}
                 width={1200}
                 height={900}
                 className="h-full w-full object-cover"
@@ -132,7 +133,7 @@ export function LocationPage({ locationKey }: LocationPageProps) {
 
         <section className="border-y border-white/10 bg-black/20">
           <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-5 md:px-8">
-            <p className="font-headline text-2xl text-amber-accent">Why Raleigh Concrete Group?</p>
+            <p className="font-headline text-2xl text-amber-accent">Why Springfield Concrete Group?</p>
             <div className="flex flex-wrap gap-4">
               {valueProps.map((point) => (
                 <span key={point} className="flex items-center gap-2 text-sm font-semibold text-ivory">
@@ -186,7 +187,11 @@ export function LocationPage({ locationKey }: LocationPageProps) {
             {coreServices.map((service) => (
               <Link
                 key={service.slug}
-                href={`/${location.key}/${service.slug}`}
+                href={
+                  isCityServicePair(location.key, service.slug)
+                    ? `/${location.key}/${service.slug}`
+                    : `/services/${service.slug}`
+                }
                 className="group rounded-2xl border border-amber-accent/30 bg-amber-accent/5 p-5 transition hover:-translate-y-1 hover:border-amber-accent/60 hover:bg-amber-accent/10"
               >
                 <h3 className="mb-2 font-headline text-2xl text-ivory">
@@ -214,41 +219,40 @@ export function LocationPage({ locationKey }: LocationPageProps) {
           </div>
         </section>
 
-        <section className="mx-auto w-full max-w-6xl px-4 pb-14 md:px-8">
-          <div className="mb-6 flex items-end justify-between gap-4">
-            <h2 className="font-headline text-4xl text-ivory">What Customers Say</h2>
-            <span className="text-sm font-bold text-amber-accent">5.0★ on Google</span>
-          </div>
-          <div className="grid gap-4 md:grid-cols-3">
-            {testimonials.slice(0, 3).map((item) => (
-              <blockquote key={`${item.name}-${item.city}`} className="rounded-2xl border border-white/10 bg-black/20 p-5">
-                <p className="mb-4 text-slate-100">&ldquo;{item.quote}&rdquo;</p>
-                <footer className="text-sm font-semibold text-slate-300">
-                  {item.name} · {item.city}
-                </footer>
-              </blockquote>
-            ))}
-          </div>
-        </section>
+        {/* Real reviews only; hidden until testimonials has entries. */}
+        {testimonials.length > 0 && (
+          <section className="mx-auto w-full max-w-6xl px-4 pb-14 md:px-8">
+            <h2 className="mb-6 font-headline text-4xl text-ivory">What Customers Say</h2>
+            <div className="grid gap-4 md:grid-cols-3">
+              {testimonials.slice(0, 3).map((item) => (
+                <blockquote key={`${item.name}-${item.city}`} className="rounded-2xl border border-white/10 bg-black/20 p-5">
+                  <p className="mb-4 text-slate-100">&ldquo;{item.quote}&rdquo;</p>
+                  <footer className="text-sm font-semibold text-slate-300">
+                    {item.name} · {item.city}
+                  </footer>
+                </blockquote>
+              ))}
+            </div>
+          </section>
+        )}
 
         <section className="mx-auto w-full max-w-6xl px-4 pb-14 md:px-8" id="quote">
-          <div className="rounded-3xl bg-ivory p-8 text-center text-[#2b1a12] md:p-12">
-            <h2 className="mb-3 font-headline text-4xl text-[#2b1a12] md:text-5xl">
+          <div className="rounded-3xl bg-ivory p-8 text-center text-[#2b2f33] md:p-12">
+            <h2 className="mb-3 font-headline text-4xl text-[#2b2f33] md:text-5xl">
               Get Your Free {location.city} Quote
             </h2>
-            <p className="mx-auto mb-7 max-w-2xl text-[#2b1a12]/80">
-              Tell us a little about your project and we&apos;ll get you a price, usually the same
-              day. For driveways and slabs we can often quote without coming out. Just add your
-              address.
+            <p className="mx-auto mb-7 max-w-2xl text-[#2b2f33]/80">
+              Tell us about your project and we&apos;ll send a free written quote. For driveways and
+              slabs we can often start from your address.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              <a href="#quote" className="rounded-full bg-[#2b1a12] px-7 py-3.5 text-base font-bold text-white transition hover:bg-[#3a241a]">
+              <a href="#quote" className="rounded-full bg-[#2b2f33] px-7 py-3.5 text-base font-bold text-white transition hover:bg-[#3a3f44]">
                 Get My Free Quote
               </a>
-              <a href={links.call} className="rounded-full border-2 border-[#2b1a12] px-7 py-3.5 text-base font-bold text-[#2b1a12]">
+              <a href={links.call} className="rounded-full border-2 border-[#2b2f33] px-7 py-3.5 text-base font-bold text-[#2b2f33]">
                 Call Now
               </a>
-              <a href={links.text} className="rounded-full border-2 border-[#2b1a12] px-7 py-3.5 text-base font-bold text-[#2b1a12]">
+              <a href={links.text} className="rounded-full border-2 border-[#2b2f33] px-7 py-3.5 text-base font-bold text-[#2b2f33]">
                 Text Now
               </a>
             </div>
@@ -281,7 +285,7 @@ export function LocationPage({ locationKey }: LocationPageProps) {
                 Privacy Policy
               </Link>
               <p className="text-right text-xs font-semibold uppercase tracking-[0.14em] text-slate-300">
-                {businessName} · Concrete &amp; Hardscaping · {location.city}, NC · {phoneDisplay}
+                {businessName} · {location.city}, IL · {phoneDisplay}
               </p>
             </div>
           </div>

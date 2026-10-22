@@ -1,4 +1,4 @@
--- Raleigh Concrete Group - the owner can waive part of the office fee on a job
+-- Springfield Concrete Group - the owner can waive part of the office fee on a job
 --
 -- SUPERSEDED by stage1-price-lockdown.sql, which replaces the
 -- guard_quote_money_columns() defined here. Once stage 1 is in, do not re-run

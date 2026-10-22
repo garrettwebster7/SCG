@@ -12,6 +12,7 @@ import {
 } from "@/lib/crm/queries";
 import { isValidUsPhone, leadReference, UUID_RE } from "@/lib/quote-submit";
 import { clientIp, rateLimit } from "@/lib/rate-limit";
+import { phoneDisplay } from "@/lib/site-data";
 
 // All quote submissions go through here: validated server-side and inserted
 // with the service-role key, while RLS blocks the anon key from the table, so
@@ -57,7 +58,7 @@ function asString(v: unknown, max: number): string {
 
 // Shown whenever the request did NOT reach the database. Always with the
 // number: "try again" is a dead end if we're what's broken.
-const SAVE_FAILED = "We couldn't save your request just now. Please call or text us at (919) 873-3919.";
+const SAVE_FAILED = `We couldn't save your request just now. Please call or text us at ${phoneDisplay}.`;
 
 // Every failure uses this shape, with an explicit `saved: false` so no response
 // can be mistaken for a save (see src/lib/quote-submit.ts).
@@ -220,7 +221,7 @@ async function handle(request: Request) {
   // Generous: every refusal is someone told to phone instead.
   if (await rateLimit(`quote:${ip}`, 12, 10 * 60 * 1000)) {
     console.warn("[quote] rate limited", { ip });
-    return fail(429, "Too many requests. Please call or text us at (919) 873-3919.");
+    return fail(429, `Too many requests. Please call or text us at ${phoneDisplay}.`);
   }
 
   // ── Validate ──
@@ -248,7 +249,7 @@ async function handle(request: Request) {
 
   if (trapped && !isFullAddress(address)) {
     console.warn("[quote] spam-trap field filled and no full address - rejected", { ip });
-    return fail(422, "Please check your details, or call or text us at (919) 873-3919.", { fields: ["address"] });
+    return fail(422, `Please check your details, or call or text us at ${phoneDisplay}.`, { fields: ["address"] });
   }
 
   // Notes for the office, at the top of the details, shown on the lead card and

@@ -1,4 +1,4 @@
--- Raleigh Concrete Group - why the Money page disagrees with reality
+-- Springfield Concrete Group - why the Money page disagrees with reality
 -- Run in Supabase → SQL Editor. Sections 1 to 7 only READ. Nothing changes
 -- until you get to section 8, and section 8 is opt-in line by line.
 --

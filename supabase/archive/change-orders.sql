@@ -1,4 +1,4 @@
--- Raleigh Concrete Group - change orders on a job that's already agreed
+-- Springfield Concrete Group - change orders on a job that's already agreed
 -- Run this once in Supabase → SQL Editor. Safe to re-run.
 --
 -- A customer who rings up a week before the pour wanting the patio two feet

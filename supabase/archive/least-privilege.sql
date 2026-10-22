@@ -1,4 +1,4 @@
--- Raleigh Concrete Group - least privilege on the money columns
+-- Springfield Concrete Group - least privilege on the money columns
 -- Run this AFTER crm.sql and payments.sql, once, in Supabase -> SQL Editor.
 --
 -- SUPERSEDED by stage1-price-lockdown.sql, which replaces the

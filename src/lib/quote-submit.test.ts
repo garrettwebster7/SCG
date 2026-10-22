@@ -49,18 +49,18 @@ test("visit_booked rides along on a confirmed save and doesn't change what count
 });
 
 test("a lead needs a US phone number and nothing else from this module", () => {
-  assert.equal(isValidUsPhone("(919) 555-0123"), true);
-  assert.equal(isValidUsPhone("+1 919.555.0123"), true);
+  assert.equal(isValidUsPhone("(217) 555-0123"), true);
+  assert.equal(isValidUsPhone("+1 217.555.0123"), true);
   assert.equal(isValidUsPhone("555-0123"), false);
-  assert.equal(isValidUsPhone("2 919 555 0123"), false);
+  assert.equal(isValidUsPhone("2 217 555 0123"), false);
   assert.equal(isValidUsPhone(""), false);
 });
 
 test("the text-us fallback carries what they typed, to our number", () => {
   const href = smsFallbackHref("tel:+19198733919", {
     name: "Ann Lee",
-    phone: "919-555-0123",
-    address: "1 Oak St, Cary, NC",
+    phone: "217-555-0123",
+    address: "1 Oak St, Chatham, IL",
     service: "Patio",
     mode: "inperson",
     when: "",
@@ -68,7 +68,7 @@ test("the text-us fallback carries what they typed, to our number", () => {
   assert.ok(href.startsWith("sms:+19198733919?&body="));
   const body = decodeURIComponent(href.split("body=")[1]);
   assert.match(body, /Name: Ann Lee/);
-  assert.match(body, /Address: 1 Oak St, Cary, NC/);
+  assert.match(body, /Address: 1 Oak St, Chatham, IL/);
   assert.match(body, /in-person visit/);
   assert.doesNotMatch(body, /Visit:/);
 });

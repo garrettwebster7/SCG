@@ -134,7 +134,7 @@ export function JoinForm({
           value={alertPhone}
           onChange={(e) => setAlertPhone(e.target.value)}
           autoComplete="tel"
-          placeholder="(919) 555-1234"
+          placeholder="(217) 555-1234"
           required
         />
       </label>

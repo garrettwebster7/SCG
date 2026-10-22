@@ -1,4 +1,4 @@
--- Raleigh Concrete Group - quote request storage
+-- Springfield Concrete Group - quote request storage
 -- Run this once in your Supabase project: Dashboard → SQL Editor → New query → paste → Run.
 -- Safe to re-run: every statement is idempotent.
 

@@ -1,4 +1,4 @@
--- Raleigh Concrete Group - quote funnel analytics
+-- Springfield Concrete Group - quote funnel analytics
 -- Run once in Supabase -> SQL Editor. Safe to re-run.
 --
 -- One row per thing a visitor did in the quote form: opened it, reached a

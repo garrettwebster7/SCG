@@ -13,7 +13,7 @@ import type { ScheduleState } from "./types";
 // Every price this customer has been given, newest first (the top row is what they hold now). The job row
 // only stores the current quote.
 
-// Raleigh time.
+// Springfield time.
 function stamp(iso: string) {
   return new Date(iso).toLocaleString("en-US", {
     month: "short",

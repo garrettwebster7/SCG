@@ -7,7 +7,7 @@ import { QUOTE_TTL_DAYS } from "../constants";
 import { usd as money } from "../fees";
 import { type SendResult, samePhone, sendSmsResult, sendSms, alertOwner } from "./send";
 import {
-  OWNER_NAME,
+  INTRO,
   BUSINESS,
   OPT_OUT_LINE,
   CALL_NUMBER,
@@ -60,7 +60,7 @@ export async function notifyCustomerReceived(q: QuoteInfo): Promise<void> {
         // call, not a booking.
         text([
           `Hi ${firstName(q.name)},`,
-          `this is ${OWNER_NAME} with ${BUSINESS}. We got your request for a free in-person quote.`,
+          `${INTRO}. We got your request for a free in-person quote.`,
           "",
           "We'll call or text you shortly to set a time that works for you.",
           "",
@@ -69,7 +69,7 @@ export async function notifyCustomerReceived(q: QuoteInfo): Promise<void> {
       : q.quote_type === "inperson"
       ? text([
           `Hi ${firstName(q.name)},`,
-          `this is ${OWNER_NAME} with ${BUSINESS}. You're set for your free in-person quote:`,
+          `${INTRO}. You're set for your free in-person quote:`,
           "",
           `${prettyDay(q.visit_date)}${q.visit_time ? ` at ${q.visit_time}` : ""}`,
           "",
@@ -82,7 +82,7 @@ export async function notifyCustomerReceived(q: QuoteInfo): Promise<void> {
         // don't put us in their calendar.
         text([
           `Hi ${firstName(q.name)},`,
-          `this is ${OWNER_NAME} with ${BUSINESS}. Thanks for reaching out.`,
+          `${INTRO}. Thanks for reaching out.`,
           "",
           "We got your request and we're looking over the details now. We'll follow up soon with next steps, and reach out if we need anything else about the project.",
           ...(dayOrNull(q.visit_date)
@@ -195,7 +195,7 @@ export async function notifyVisitBooked(q: QuoteInfo): Promise<void> {
     q.phone,
     text([
       `Hi ${firstName(q.name)},`,
-      `this is ${OWNER_NAME} with ${BUSINESS}, confirming your free estimate:`,
+      `${INTRO}, confirming your free estimate:`,
       "",
       `${prettyDay(q.visit_date)}${q.visit_time ? ` at ${q.visit_time}` : ""}`,
       "",

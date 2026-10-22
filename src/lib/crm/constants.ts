@@ -41,7 +41,7 @@ export const STALE_LEAD_HOURS = 48;
 // Days after a site visit before the lead needs attention again.
 export const VISIT_GRACE_DAYS = 2;
 
-// Minimum gap between visit START times for one contractor (a drive across Raleigh). A gap rather than
+// Minimum gap between visit START times for one contractor (a drive across Springfield). A gap rather than
 // fixed slots, so an odd booked time like 9:30 blocks both 9:00 and 10:00.
 export const VISIT_GAP_MINUTES = 60;
 
@@ -114,7 +114,7 @@ export const DEFAULT_VISIT_SLOTS = slotsFor(DEFAULT_WORK_HOURS);
 
 /**
  * Weekday of a YYYY-MM-DD, 0=Sunday, read in UTC: `new Date("2026-03-08")` is midnight UTC, the evening
- * of the 7th in Raleigh, so a local weekday would be a day early.
+ * of the 7th in Springfield, so a local weekday would be a day early.
  */
 export function weekdayOf(ymd: string): number {
   const [y, m, d] = ymd.split("-").map(Number);
@@ -248,7 +248,7 @@ export function requestedVisitOf(q: Visitable): string | null {
   return q.quote_type === "online" ? (q.visit_date ?? null) : null;
 }
 
-// Days before a booked job the crew gets a reminder; 0 is the morning of (cron runs ~10am ET).
+// Days before a booked job the crew gets a reminder; 0 is the morning of (cron runs ~9am CT).
 export const CREW_REMINDER_DAYS = [3, 1, 0];
 
 // Line items. A quote with none is a single-price quote.

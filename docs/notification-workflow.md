@@ -141,7 +141,7 @@ job (see ⑥). Customers are not reminded more than once.
 │ ⑤ DATE MOVES (any time after ④)                                     │
 │    Same card, "Change date"                                         │
 ├─────────────────────────────────────────────────────────────────────┤
-│ CUSTOMER  "your project with Raleigh Concrete Group has been moved  │
+│ CUSTOMER  "your project with Springfield Concrete Group has been moved  │
 │            from: / Friday, August 29th at 1:30 PM / to: /           │
 │            Saturday, August 30th at 2:30 PM" (each on its own line) │
 │            (time-only changes on the same day notify too)           │
@@ -195,9 +195,9 @@ job (see ⑥). Customers are not reminded more than once.
                                  │
                                  ▼
 ┌─────────────────────────────────────────────────────────────────────┐
-│ ⑥ THE RUN-UP (daily cron, ~10am ET)                                 │
+│ ⑥ THE RUN-UP (daily cron, ~9am CT)                                 │
 ├─────────────────────────────────────────────────────────────────────┤
-│ CREW  3 days out │ full brief + "call Noah ASAP if you can't make   │
+│ CREW  3 days out │ full brief + "call us ASAP if you can't make     │
 │       1 day out  │ it, or if anything about the schedule changes"   │
 │       morning of │ Each stage is recorded so a re-run can't double  │
 │                  │ text. Moving the date starts the run again.      │
@@ -268,8 +268,8 @@ that happens to drain the queue:
 
 | Drain | When |
 |-------|------|
-| `/api/cron/reminders` | 13:00 UTC - 8am EST, **9am EDT** |
-| `/api/cron/visit-reminders` | 22:00 UTC - 5pm EST, **6pm EDT** |
+| `/api/cron/reminders` | 14:00 UTC - 8am CST, **9am CDT** |
+| `/api/cron/visit-reminders` | 23:00 UTC - 5pm CST, **6pm CDT** |
 | Any outbound text, on its way past | Whenever one is sent |
 | Opening the CRM | Whenever staff use the app |
 | `/api/cron/drain` | Only if wired up in `vercel.json` - see that file |
@@ -418,7 +418,7 @@ reminders, the date-moved text):
 
 ```
 Hi James,
-your project with Raleigh Concrete Group has been moved from:
+your project with Springfield Concrete Group has been moved from:
 
 Friday, August 29th at 1:30 PM
 to:
@@ -433,9 +433,9 @@ making it any easier to read:
 
 ```
 Customer: Jane Doe
-Phone: (919) 555-1234
+Phone: (217) 555-1234
 Service: Driveway replacement
-Address: 123 Main St, Raleigh, NC
+Address: 123 Main St, Springfield, IL
 Scheduled: Monday, August 17th at 9:00 AM
 ```
 
@@ -477,16 +477,16 @@ Job Type:
 Driveway replacement
 
 Customer Phone:
-(919) 555-1234
+(217) 555-1234
 
 Address:
-123 Main St, Raleigh NC
+123 Main St, Springfield IL
 
 Details:
 Cracked driveway, about 600 sq ft, would like it
 replaced before the fall.
 
-https://raleighconcrete.net/job/abc123
+https://springfieldconcretegroup.com/job/abc123
 ```
 
 Address and Details are only included when the customer gave them. Details is
@@ -553,7 +553,7 @@ minus whoever performed the action.
 | Customer answers a change order | CHANGE APPROVED or CHANGE TURNED DOWN + the new total, what was already collected and what's left |
 | The office corrects a payment they recorded | PAYMENT CORRECTED + the old and new figure, what's left to collect, what they now owe the office, and who corrected it |
 | Date confirmed / moved | JOB BOOKED or DATE CHANGED + brief |
-| **3 days / 1 day / morning of** | **JOB REMINDER + brief + "call Noah right away if you can't make it"** |
+| **3 days / 1 day / morning of** | **JOB REMINDER + brief + "call us right away if you can't make it"** |
 | Customer declines | Declined |
 | Customer can't confirm | Reach out |
 

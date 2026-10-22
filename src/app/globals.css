@@ -1,11 +1,17 @@
 @import "tailwindcss";
 
+/* Brand: Foundry Charcoal #2B2F33, Rebar Amber #D9922B, Cured Concrete #D9D9D3, Slab Gray #6B7075,
+   Trust Green #2F6B4F. Text on amber is charcoal, never white. */
 :root {
-  --amber: #c2682a;
-  --amber-dark: #a8551f;
+  --charcoal: #2b2f33;
+  --concrete: #d9d9d3;
+  --slate: #6b7075;
+  --trust-green: #2f6b4f;
+  --amber: #d9922b;
+  --amber-dark: #b8771c;
   --ivory: #f5f3ef;
-  --charcoal-start: #1c2024;
-  --charcoal-end: #33373c;
+  --charcoal-start: #24282c;
+  --charcoal-end: #2b2f33;
 }
 
 @theme inline {
@@ -36,8 +42,9 @@ body {
 
 /* ─── Typography ─────────────────────────────────────── */
 .font-headline {
-  font-family: var(--font-headline), sans-serif;
-  letter-spacing: 0.02em;
+  font-family: var(--font-headline), serif;
+  font-weight: 800;
+  letter-spacing: -0.005em;
 }
 
 /* ─── Buttons ────────────────────────────────────────── */
@@ -47,7 +54,7 @@ body {
   gap: 0.4rem;
   border-radius: 999px;
   background: var(--amber);
-  color: #fff;
+  color: var(--charcoal);
   font-weight: 700;
   padding: 0.78rem 1.5rem;
   border: none;
@@ -58,7 +65,7 @@ body {
 .cta-primary:hover {
   background: var(--amber-dark);
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(194, 104, 42, 0.38);
+  box-shadow: 0 8px 24px rgba(217, 146, 43, 0.38);
 }
 
 .cta-secondary {
@@ -123,7 +130,7 @@ body {
   display: block;
 }
 button.marquee-item { transition: border-color 0.2s ease, transform 0.2s ease; }
-button.marquee-item:hover { border-color: rgba(194, 104, 42, 0.6); }
+button.marquee-item:hover { border-color: rgba(217, 146, 43, 0.6); }
 .marquee-img {
   width: 100%;
   height: 100%;
@@ -137,13 +144,13 @@ button.marquee-item:hover { border-color: rgba(194, 104, 42, 0.6); }
 @keyframes glow-pulse {
   0%, 100% {
     box-shadow:
-      0 0 8px 1px rgba(194, 104, 42, 0.55),
-      0 0 20px 4px rgba(194, 104, 42, 0.28);
+      0 0 8px 1px rgba(217, 146, 43, 0.55),
+      0 0 20px 4px rgba(217, 146, 43, 0.28);
   }
   50% {
     box-shadow:
-      0 0 14px 4px rgba(194, 104, 42, 0.85),
-      0 0 36px 10px rgba(194, 104, 42, 0.42);
+      0 0 14px 4px rgba(217, 146, 43, 0.85),
+      0 0 36px 10px rgba(217, 146, 43, 0.42);
   }
 }
 
@@ -156,7 +163,7 @@ button.marquee-item:hover { border-color: rgba(194, 104, 42, 0.6); }
   background: rgba(20, 22, 27, 0.96);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(194, 104, 42, 0.20);
+  border-bottom: 1px solid rgba(217, 146, 43, 0.20);
 }
 
 .header-inner {
@@ -260,7 +267,7 @@ button.marquee-item:hover { border-color: rgba(194, 104, 42, 0.6); }
   padding: 0.5rem;
   border-radius: 0.9rem;
   background: rgba(24, 27, 33, 0.99);
-  border: 1px solid rgba(194, 104, 42, 0.28);
+  border: 1px solid rgba(217, 146, 43, 0.28);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
   opacity: 0;
   visibility: hidden;
@@ -294,12 +301,12 @@ button.marquee-item:hover { border-color: rgba(194, 104, 42, 0.6); }
   transition: background 120ms, color 120ms;
 }
 .nav-dropdown-link:hover {
-  background: rgba(194, 104, 42, 0.16);
+  background: rgba(217, 146, 43, 0.16);
   color: var(--ivory);
 }
 .nav-dropdown-link--active {
   background: var(--amber);
-  color: #fff;
+  color: var(--charcoal);
 }
 
 /* Legacy location nav (kept for any older references) */
@@ -326,7 +333,7 @@ button.marquee-item:hover { border-color: rgba(194, 104, 42, 0.6); }
 }
 .nav-pill--active {
   background: var(--amber);
-  color: #fff;
+  color: var(--charcoal);
   border-color: var(--amber);
 }
 
@@ -365,7 +372,7 @@ button.marquee-item:hover { border-color: rgba(194, 104, 42, 0.6); }
   padding: 0.52rem 1.3rem;
   font-size: 0.9rem;
   font-weight: 800;
-  color: #fff;
+  color: var(--charcoal);
   background: var(--amber);
   text-decoration: none;
   white-space: nowrap;
@@ -433,7 +440,7 @@ button.marquee-item:hover { border-color: rgba(194, 104, 42, 0.6); }
   transition: background 120ms;
 }
 .mobile-nav-link:hover { background: rgba(255,255,255,0.08); color: var(--ivory); }
-.mobile-nav-link--active { background: var(--amber); color: #fff; }
+.mobile-nav-link--active { background: var(--amber); color: var(--charcoal); }
 
 /* Mobile collapsible service groups */
 .mobile-group {
@@ -471,7 +478,7 @@ button.marquee-item:hover { border-color: rgba(194, 104, 42, 0.6); }
   flex-direction: column;
   gap: 0.1rem;
   padding: 0.1rem 0 0.4rem 0.6rem;
-  border-left: 2px solid rgba(194, 104, 42, 0.3);
+  border-left: 2px solid rgba(217, 146, 43, 0.3);
   margin-left: 0.9rem;
 }
 .mobile-group-items .mobile-nav-link {
@@ -545,11 +552,11 @@ button.marquee-item:hover { border-color: rgba(194, 104, 42, 0.6); }
   width: 2.6rem;
   border-radius: 999px;
   background: var(--amber);
-  color: #fff;
+  color: var(--charcoal);
   font-family: var(--font-headline), sans-serif;
   font-size: 1.5rem;
   line-height: 1;
-  box-shadow: 0 8px 22px rgba(194, 104, 42, 0.45);
+  box-shadow: 0 8px 22px rgba(217, 146, 43, 0.45);
 }
 .process-title {
   font-family: var(--font-headline), sans-serif;
@@ -768,17 +775,17 @@ button.marquee-item:hover { border-color: rgba(194, 104, 42, 0.6); }
 .qf-field > span {
   font-size: 0.82rem;
   font-weight: 700;
-  color: #2b1a12;
+  color: #2b2f33;
 }
 .qf-field input,
 .qf-field select,
 .qf-field textarea {
   border-radius: 0.6rem;
-  border: 1.5px solid rgba(43, 26, 18, 0.2);
+  border: 1.5px solid rgba(43, 47, 51, 0.2);
   background: #fff;
   padding: 0.7rem 0.85rem;
   font-size: 1rem;
-  color: #2b1a12;
+  color: #2b2f33;
   font-family: inherit;
 }
 .qf-field input:focus,
@@ -786,11 +793,11 @@ button.marquee-item:hover { border-color: rgba(194, 104, 42, 0.6); }
 .qf-field textarea:focus {
   outline: none;
   border-color: var(--amber);
-  box-shadow: 0 0 0 3px rgba(194, 104, 42, 0.16);
+  box-shadow: 0 0 0 3px rgba(217, 146, 43, 0.16);
 }
 .qf-submit { justify-content: center; margin-top: 0.2rem; }
 .qf-note { font-size: 0.9rem; font-weight: 600; }
-.qf-note--ok { color: #2f6b46; }
+.qf-note--ok { color: #2f6b4f; }
 .qf-note--err { color: #b3402f; }
 
 .estimate-consent {
@@ -799,7 +806,7 @@ button.marquee-item:hover { border-color: rgba(194, 104, 42, 0.6); }
   align-items: flex-start;
   font-size: 0.78rem;
   line-height: 1.5;
-  color: rgba(43, 26, 18, 0.78);
+  color: rgba(43, 47, 51, 0.78);
 }
 .estimate-consent input[type="checkbox"] {
   margin-top: 0.15rem;
@@ -808,7 +815,7 @@ button.marquee-item:hover { border-color: rgba(194, 104, 42, 0.6); }
   flex: 0 0 auto;
   accent-color: var(--amber);
 }
-.estimate-consent a { color: #8a5a2b; text-decoration: underline; font-weight: 600; }
+.estimate-consent a { color: #8a5a14; text-decoration: underline; font-weight: 600; }
 
 @media (max-width: 560px) {
   .qf-row { grid-template-columns: 1fr; }
@@ -874,7 +881,7 @@ button.marquee-item:hover { border-color: rgba(194, 104, 42, 0.6); }
   height: 100dvh;
   max-height: 100dvh;
   background: var(--ivory);
-  color: #2b1a12;
+  color: #2b2f33;
   border-radius: 0;
   box-shadow: 0 -10px 50px rgba(0, 0, 0, 0.5);
   animation: qm-rise 240ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -902,8 +909,8 @@ button.marquee-item:hover { border-color: rgba(194, 104, 42, 0.6); }
   height: 34px;
   border-radius: 50%;
   border: none;
-  background: rgba(43, 26, 18, 0.08);
-  color: #2b1a12;
+  background: rgba(43, 47, 51, 0.08);
+  color: #2b2f33;
   cursor: pointer;
   transition: background 140ms;
   display: inline-flex;
@@ -911,13 +918,13 @@ button.marquee-item:hover { border-color: rgba(194, 104, 42, 0.6); }
   justify-content: center;
 }
 .qm-close svg { width: 18px; height: 18px; }
-.qm-close:hover { background: rgba(43, 26, 18, 0.16); }
+.qm-close:hover { background: rgba(43, 47, 51, 0.16); }
 
 .qm-progress {
   height: 4px;
   width: 100%;
   flex: 0 0 auto;
-  background: rgba(43, 26, 18, 0.1);
+  background: rgba(43, 47, 51, 0.1);
   border-radius: 1.5rem 1.5rem 0 0;
   overflow: hidden;
 }
@@ -969,11 +976,11 @@ button.marquee-item:hover { border-color: rgba(194, 104, 42, 0.6); }
   font-size: 2.2rem;
   line-height: 1.02;
   letter-spacing: 0.01em;
-  color: #2b1a12;
+  color: #2b2f33;
   margin: 0 0 0.4rem;
   padding-right: 2.5rem; /* clear of the close button */
 }
-.qm-sub { color: rgba(43, 26, 18, 0.78); font-size: 1rem; line-height: 1.45; margin: 0 0 1.2rem; }
+.qm-sub { color: rgba(43, 47, 51, 0.78); font-size: 1rem; line-height: 1.45; margin: 0 0 1.2rem; }
 
 /* Sentence case, full size. Small uppercase labels are harder to read at a
    glance, and a glance is all most people give a form on their phone. */
@@ -981,10 +988,10 @@ button.marquee-item:hover { border-color: rgba(194, 104, 42, 0.6); }
   display: block;
   font-size: 0.98rem;
   font-weight: 700;
-  color: #2b1a12;
+  color: #2b2f33;
   margin-bottom: 0.4rem;
 }
-.qm-optional { font-weight: 500; font-size: 0.85rem; color: rgba(43, 26, 18, 0.62); margin-left: 0.2rem; }
+.qm-optional { font-weight: 500; font-size: 0.85rem; color: rgba(43, 47, 51, 0.62); margin-left: 0.2rem; }
 .qm-mt { margin-top: 1rem; }
 
 /* 17px text: iOS zooms the page into any field under 16px, and a zoomed form
@@ -993,21 +1000,21 @@ button.marquee-item:hover { border-color: rgba(194, 104, 42, 0.6); }
   width: 100%;
   min-height: 3.25rem;
   border-radius: 0.8rem;
-  border: 1.5px solid rgba(43, 26, 18, 0.22);
+  border: 1.5px solid rgba(43, 47, 51, 0.22);
   background: #fff;
   padding: 0.85rem 1rem;
   font-size: 1.0625rem;
-  color: #2b1a12;
+  color: #2b2f33;
   font-family: inherit;
   color-scheme: light;
 }
-.qm-input::placeholder, .qm-autocomplete > input::placeholder { color: rgba(43, 26, 18, 0.45); }
+.qm-input::placeholder, .qm-autocomplete > input::placeholder { color: rgba(43, 47, 51, 0.45); }
 textarea.qm-input { min-height: 0; resize: vertical; }
-.qm-input option { background-color: #fff; color: #2b1a12; }
+.qm-input option { background-color: #fff; color: #2b2f33; }
 .qm-input:focus {
   outline: none;
   border-color: var(--amber);
-  box-shadow: 0 0 0 3px rgba(194, 104, 42, 0.16);
+  box-shadow: 0 0 0 3px rgba(217, 146, 43, 0.16);
 }
 
 /* Choice cards: icon, one line of what it is, one line of what happens, and
@@ -1022,39 +1029,39 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   gap: 0.9rem;
   padding: 1.1rem 1rem 1.1rem 1.1rem;
   border-radius: 1rem;
-  border: 2px solid rgba(43, 26, 18, 0.14);
+  border: 2px solid rgba(43, 47, 51, 0.14);
   background: #fff;
   cursor: pointer;
   font: inherit;
-  color: #2b1a12;
+  color: #2b2f33;
   transition: border-color 140ms, transform 120ms, box-shadow 140ms;
 }
 .qm-choice:hover {
   border-color: var(--amber);
-  box-shadow: 0 10px 26px rgba(194, 104, 42, 0.16);
+  box-shadow: 0 10px 26px rgba(217, 146, 43, 0.16);
 }
 .qm-choice:active { transform: scale(0.985); }
-.qm-choice--main { border-color: var(--amber); background: #fff7f0; }
+.qm-choice--main { border-color: var(--amber); background: #fbf5ea; }
 .qm-choice-icon {
   display: inline-flex; align-items: center; justify-content: center;
   width: 3rem; height: 3rem; border-radius: 0.8rem;
-  background: rgba(194, 104, 42, 0.12); color: var(--amber-dark);
+  background: rgba(217, 146, 43, 0.12); color: var(--amber-dark);
 }
-.qm-choice--main .qm-choice-icon { background: var(--amber); color: #fff; }
+.qm-choice--main .qm-choice-icon { background: var(--amber); color: var(--charcoal); }
 .qm-choice-icon svg { width: 26px; height: 26px; }
 .qm-choice-text { display: flex; flex-direction: column; gap: 0.2rem; min-width: 0; }
 .qm-choice-title {
   font-family: var(--font-headline), sans-serif;
   font-size: 1.6rem;
   line-height: 1;
-  color: #2b1a12;
+  color: #2b2f33;
 }
-.qm-choice-desc { font-size: 0.95rem; color: rgba(43, 26, 18, 0.75); line-height: 1.35; }
+.qm-choice-desc { font-size: 0.95rem; color: rgba(43, 47, 51, 0.75); line-height: 1.35; }
 .qm-choice-badge {
   position: absolute;
   top: -0.7rem;
   left: 1rem;
-  background: #2b1a12;
+  background: #2b2f33;
   color: #fff;
   font-size: 0.75rem;
   font-weight: 700;
@@ -1062,8 +1069,8 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   border-radius: 999px;
 }
 .qm-choice-arrow { width: 22px; height: 22px; color: var(--amber-dark); }
-.qm-choice-foot { text-align: center; font-size: 0.95rem; color: rgba(43, 26, 18, 0.75); margin: 0.25rem 0 1rem; }
-.qm-choice-foot a { color: #2b1a12; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.qm-choice-foot { text-align: center; font-size: 0.95rem; color: rgba(43, 47, 51, 0.75); margin: 0.25rem 0 1rem; }
+.qm-choice-foot a { color: #2b2f33; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 
 /* Service tiles: every option visible, one tap each. */
 .qm-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem; }
@@ -1072,20 +1079,20 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   min-height: 3.4rem;
   padding: 0.7rem 0.8rem;
   border-radius: 0.8rem;
-  border: 1.5px solid rgba(43, 26, 18, 0.2);
+  border: 1.5px solid rgba(43, 47, 51, 0.2);
   background: #fff;
   font: inherit;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.2;
-  color: #2b1a12;
+  color: #2b2f33;
   text-align: left;
   cursor: pointer;
   transition: border-color 130ms, background 130ms;
 }
 .qm-tile:hover { border-color: var(--amber); }
 .qm-tile:active { transform: scale(0.98); }
-.qm-tile--on { border-color: var(--amber); background: var(--amber); color: #fff; padding-right: 2rem; }
+.qm-tile--on { border-color: var(--amber); background: var(--amber); color: var(--charcoal); padding-right: 2rem; }
 .qm-tile-check { position: absolute; right: 0.6rem; top: 50%; width: 18px; height: 18px; transform: translateY(-50%); }
 
 /* Address autocomplete */
@@ -1094,17 +1101,17 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   width: 100%;
   min-height: 3.25rem;
   border-radius: 0.8rem;
-  border: 1.5px solid rgba(43, 26, 18, 0.22);
+  border: 1.5px solid rgba(43, 47, 51, 0.22);
   background: #fff;
   padding: 0.85rem 1rem;
   font-size: 1.0625rem;
-  color: #2b1a12;
+  color: #2b2f33;
   font-family: inherit;
 }
 .qm-autocomplete > input:focus {
   outline: none;
   border-color: var(--amber);
-  box-shadow: 0 0 0 3px rgba(194, 104, 42, 0.16);
+  box-shadow: 0 0 0 3px rgba(217, 146, 43, 0.16);
 }
 .qm-suggestions {
   position: absolute;
@@ -1116,7 +1123,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   margin: 0;
   padding: 0.3rem;
   background: #fff;
-  border: 1px solid rgba(43, 26, 18, 0.15);
+  border: 1px solid rgba(43, 47, 51, 0.15);
   border-radius: 0.7rem;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
   max-height: 240px;
@@ -1130,12 +1137,12 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   padding: 0.75rem 0.8rem;
   border-radius: 0.5rem;
   font-size: 1rem;
-  color: #2b1a12;
+  color: #2b2f33;
   cursor: pointer;
 }
-.qm-suggestions button:hover { background: rgba(194, 104, 42, 0.1); }
-.qm-ac-status { display: block; margin-top: 0.4rem; font-size: 0.85rem; color: rgba(43, 26, 18, 0.7); }
-.qm-ac-ok { display: flex; align-items: center; gap: 0.3rem; color: #2f6b46; font-weight: 700; }
+.qm-suggestions button:hover { background: rgba(217, 146, 43, 0.1); }
+.qm-ac-status { display: block; margin-top: 0.4rem; font-size: 0.85rem; color: rgba(43, 47, 51, 0.7); }
+.qm-ac-ok { display: flex; align-items: center; gap: 0.3rem; color: #2f6b4f; font-weight: 700; }
 .qm-ac-full { color: #b91c1c; font-weight: 700; }
 .qm-ac-check { width: 14px; height: 14px; }
 
@@ -1146,21 +1153,21 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   align-items: center;
   gap: 0.25rem;
   padding: 1.6rem 1rem;
-  border: 2px dashed rgba(43, 26, 18, 0.28);
+  border: 2px dashed rgba(43, 47, 51, 0.28);
   border-radius: 1rem;
-  background: rgba(43, 26, 18, 0.03);
+  background: rgba(43, 47, 51, 0.03);
   cursor: pointer;
   text-align: center;
   transition: border-color 140ms, background 140ms;
 }
-.qm-dropzone:hover { border-color: var(--amber); background: rgba(194, 104, 42, 0.06); }
+.qm-dropzone:hover { border-color: var(--amber); background: rgba(217, 146, 43, 0.06); }
 .qm-dropzone-icon { display: inline-flex; color: var(--amber); }
 .qm-dropzone-icon svg { width: 32px; height: 32px; }
-.qm-dropzone-title { font-weight: 700; font-size: 1.05rem; color: #2b1a12; }
-.qm-dropzone-hint { font-size: 0.85rem; color: rgba(43, 26, 18, 0.7); }
+.qm-dropzone-title { font-weight: 700; font-size: 1.05rem; color: #2b2f33; }
+.qm-dropzone-hint { font-size: 0.85rem; color: rgba(43, 47, 51, 0.7); }
 /* Photo quotes live or die on the photo, so on that path it is the loudest
    thing after the tiles. */
-.qm-dropzone--main { border-color: var(--amber); background: #fff7f0; }
+.qm-dropzone--main { border-color: var(--amber); background: #fbf5ea; }
 
 .qm-filelist { list-style: none; margin: 0.7rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
 .qm-filelist li {
@@ -1168,7 +1175,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
-  background: rgba(43, 26, 18, 0.06);
+  background: rgba(43, 47, 51, 0.06);
   border-radius: 0.5rem;
   padding: 0.45rem 0.7rem;
   font-size: 0.85rem;
@@ -1182,25 +1189,25 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .qm-chips { display: grid; grid-template-columns: repeat(auto-fill, minmax(7.25rem, 1fr)); gap: 0.5rem; }
 .qm-chip {
   border-radius: 999px;
-  border: 1.5px solid rgba(43, 26, 18, 0.22);
+  border: 1.5px solid rgba(43, 47, 51, 0.22);
   background: #fff;
   min-height: 2.9rem;
   padding: 0.6rem 1.1rem;
   font-size: 1rem;
   font-weight: 600;
-  color: #2b1a12;
+  color: #2b2f33;
   cursor: pointer;
   transition: all 130ms;
 }
 .qm-chip:hover { border-color: var(--amber); }
-.qm-chip--active { background: var(--amber); border-color: var(--amber); color: #fff; }
+.qm-chip--active { background: var(--amber); border-color: var(--amber); color: var(--charcoal); }
 /* Already booked. Shown rather than hidden so the choice on offer doesn't
    silently change shape between one visit to this step and the next. */
 .qm-chip--taken {
   opacity: 0.4; cursor: not-allowed; text-decoration: line-through;
-  background: rgba(43, 26, 18, 0.06);
+  background: rgba(43, 47, 51, 0.06);
 }
-.qm-chip--taken:hover { border-color: rgba(43, 26, 18, 0.22); }
+.qm-chip--taken:hover { border-color: rgba(43, 47, 51, 0.22); }
 
 .qm-err { color: #b3402f; font-size: 0.85rem; font-weight: 600; margin: 0.6rem 0 0; }
 
@@ -1209,10 +1216,10 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   margin: 0.5rem 0 0;
   font-size: 0.7rem;
   line-height: 1.35;
-  color: rgba(43, 26, 18, 0.68);
+  color: rgba(43, 47, 51, 0.68);
 }
 @media (min-width: 768px) { .qm-consent { padding: 0 2rem; } }
-.qm-consent-link { color: #8a5a2b; text-decoration: underline; font-weight: 600; }
+.qm-consent-link { color: #8a5a14; text-decoration: underline; font-weight: 600; }
 
 /* ─── Legal prose (privacy policy, terms) ────────────── */
 .legal-prose { color: #cbd5e1; line-height: 1.7; font-size: 1rem; }
@@ -1230,12 +1237,12 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .legal-emphasis {
   padding: 1rem 1.2rem;
   border-left: 3px solid var(--amber);
-  background: rgba(194, 104, 42, 0.08);
+  background: rgba(217, 146, 43, 0.08);
   border-radius: 0.4rem;
 }
 
 .qm-card button:focus-visible, .qm-card a:focus-visible {
-  outline: 3px solid rgba(194, 104, 42, 0.55);
+  outline: 3px solid rgba(217, 146, 43, 0.55);
   outline-offset: 2px;
 }
 
@@ -1250,7 +1257,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   justify-content: space-between;
   gap: 0.75rem;
   padding: 1rem 1.5rem calc(1.3rem + env(safe-area-inset-bottom));
-  border-top: 1px solid rgba(43, 26, 18, 0.1);
+  border-top: 1px solid rgba(43, 47, 51, 0.1);
   background: var(--ivory);
 }
 @media (min-width: 768px) {
@@ -1270,12 +1277,12 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   justify-content: center;
   border-radius: 999px;
   background: #fff;
-  border: 1.5px solid rgba(43, 26, 18, 0.2);
-  color: #2b1a12;
+  border: 1.5px solid rgba(43, 47, 51, 0.2);
+  color: #2b2f33;
   cursor: pointer;
 }
 .qm-back svg { width: 22px; height: 22px; }
-.qm-back:hover { border-color: #2b1a12; }
+.qm-back:hover { border-color: #2b2f33; }
 .qm-back:disabled { opacity: 0.4; cursor: default; }
 .qm-next { flex: 1 1 auto; justify-content: center; min-height: 3.4rem; font-size: 1.08rem; padding: 0.8rem 1.4rem; }
 .qm-next:active:not(:disabled) { transform: scale(0.98); }
@@ -1288,7 +1295,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   height: 56px;
   margin: 0.5rem auto 1rem;
   border-radius: 50%;
-  background: #2f6b46;
+  background: #2f6b4f;
   color: #fff;
   display: flex;
   align-items: center;
@@ -1296,16 +1303,16 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 }
 .qm-check svg { width: 30px; height: 30px; stroke-width: 2.4; }
 .qm-full { width: 100%; justify-content: center; margin-bottom: 0.5rem; }
-.qm-text-btn { background: none; border: none; color: rgba(43, 26, 18, 0.6); font-weight: 600; cursor: pointer; padding: 0.5rem; }
+.qm-text-btn { background: none; border: none; color: rgba(43, 47, 51, 0.6); font-weight: 600; cursor: pointer; padding: 0.5rem; }
 /* The way through the schedule step when no time suits. Underlined so it reads
    as a real option, not fine print - it is how nobody gets stuck there. */
 .qm-skip { display: block; margin: 0.8rem auto 0; padding: 0.4rem; text-decoration: underline; text-underline-offset: 3px; font-size: 0.9rem; text-align: center; }
 .qm-fallback { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; margin-top: 0.8rem; }
 .qm-fallback .qm-text-btn { text-decoration: none; }
-.qm-ref { font-size: 0.85rem; color: rgba(43, 26, 18, 0.65); margin: 0.2rem 0 0.9rem; letter-spacing: 0.02em; }
+.qm-ref { font-size: 0.85rem; color: rgba(43, 47, 51, 0.65); margin: 0.2rem 0 0.9rem; letter-spacing: 0.02em; }
 
 /* ──────────────────────────────────────────────────────────────────────────
-   CRM (crm.raleighconcrete.net) - light admin theme
+   CRM (/crm) - light admin theme
    ────────────────────────────────────────────────────────────────────────── */
 .crm-shell {
   --crm-bg: #12151a;
@@ -1315,7 +1322,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   --crm-border: rgba(255, 255, 255, 0.17);
   --crm-text: #f7f5f1;
   --crm-muted: #adb6c0;
-  --crm-accent: #c2682a;
+  --crm-accent: #d9922b;
   min-height: 100vh;
   background: linear-gradient(180deg, var(--crm-bg), var(--crm-bg2));
   color: var(--crm-text);
@@ -1609,7 +1616,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   padding: 0.5rem 0.25rem 0.45rem; border-radius: 0.5rem; border: 1px solid var(--crm-border);
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-.jb-stage-past { color: var(--crm-text); background: rgba(194, 104, 42, 0.14); border-color: transparent; }
+.jb-stage-past { color: var(--crm-text); background: rgba(217, 146, 43, 0.14); border-color: transparent; }
 .jb-stage-now { color: #fff; background: var(--crm-accent); border-color: var(--crm-accent); }
 
 /* The next step: one sentence and one button. Tone only changes the edge
@@ -1674,18 +1681,18 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .crm-paper .jq-included-head h3, .crm-paper .jq-step-head label { color: var(--crm-text); }
 .crm-paper .jq-count { color: var(--crm-muted); }
 .crm-paper .jq-count-done { color: #4ade80; }
-.crm-paper .jq-step::before { background: rgba(194, 104, 42, 0.4); }
+.crm-paper .jq-step::before { background: rgba(217, 146, 43, 0.4); }
 .crm-paper .jq-step::after { background: var(--crm-surface); box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.35); }
 .crm-paper .jq-step-done::after { background: var(--crm-accent); box-shadow: none; }
 .crm-paper .jq-na { background: transparent; border-color: var(--crm-border); color: var(--crm-muted); }
-.crm-paper .jq-na:hover { border-color: var(--crm-accent); color: #f0a36b; }
+.crm-paper .jq-na:hover { border-color: var(--crm-accent); color: #e8b56a; }
 .crm-paper .jq-step textarea, .crm-paper .jq-field textarea {
   background: #20262e; border: 1px solid var(--crm-border); color: var(--crm-text);
 }
 .crm-paper .jq-step textarea::placeholder { color: rgba(173, 182, 192, 0.7); }
 .crm-paper .jq-field { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.85rem; font-weight: 800; color: var(--crm-muted); }
 .crm-paper .jq-field textarea { padding: 0.7rem; border-radius: 0.6rem; font: inherit; font-weight: 500; }
-.crm-paper .jq-preview-toggle, .crm-paper .cq-step-more { color: #f0a36b; }
+.crm-paper .jq-preview-toggle, .crm-paper .cq-step-more { color: #e8b56a; }
 
 /* The line-item and choice builders. Their rows are forced light on the
    crew's white card; on the owner's page they take the CRM's surfaces. */
@@ -1703,10 +1710,10 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .crm-paper .qo-add-btn, .crm-paper .qc-start {
   background: transparent; border-color: var(--crm-border); color: var(--crm-text);
 }
-.crm-paper .qo-add-btn:hover, .crm-paper .qc-start:hover { border-color: var(--crm-accent); color: #f0a36b; }
+.crm-paper .qo-add-btn:hover, .crm-paper .qc-start:hover { border-color: var(--crm-accent); color: #e8b56a; }
 .crm-paper .qo-remove, .crm-paper .qc-remove { color: #f87171 !important; }
 .crm-paper .qo-kind-optional, .crm-paper .qc-letter { background: rgba(255, 255, 255, 0.08); color: var(--crm-muted); }
-.crm-paper .qo-kind-required, .crm-paper .qc-card-rec .qc-letter { background: rgba(194, 104, 42, 0.22); color: #f0a36b; }
+.crm-paper .qo-kind-required, .crm-paper .qc-card-rec .qc-letter { background: rgba(217, 146, 43, 0.22); color: #e8b56a; }
 
 /* The change-order card on the owner's job page is dark too, but it is not
    inside .crm-paper, so its line items fell back to the crew's light rows and
@@ -1726,10 +1733,10 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .co:not(.co-light) .qo-row-tools button, .co:not(.co-light) .qo-add-btn {
   background: transparent; border-color: var(--crm-border); color: var(--crm-text);
 }
-.co:not(.co-light) .qo-add-btn:hover { border-color: var(--crm-accent); color: #f0a36b; }
+.co:not(.co-light) .qo-add-btn:hover { border-color: var(--crm-accent); color: #e8b56a; }
 .co:not(.co-light) .qo-remove { color: #f87171 !important; }
 .co:not(.co-light) .qo-kind-optional { background: rgba(255, 255, 255, 0.08); color: var(--crm-muted); }
-.co:not(.co-light) .qo-kind-required { background: rgba(194, 104, 42, 0.22); color: #f0a36b; }
+.co:not(.co-light) .qo-kind-required { background: rgba(217, 146, 43, 0.22); color: #e8b56a; }
 .co:not(.co-light) .qo-preset { background: transparent; border-color: var(--crm-border); color: var(--crm-text); }
 .co:not(.co-light) .qo-gap { color: #fbbf24; }
 .co:not(.co-light) .qo-gap-over { color: #f87171; }
@@ -1787,11 +1794,11 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   padding: 0.42rem 0.8rem; border-radius: 0.45rem;
   background: rgba(255, 255, 255, 0.09); border: 1px solid var(--crm-border); color: var(--crm-text);
 }
-.pu-btn:hover { background: var(--amber); border-color: var(--amber); color: #fff; }
+.pu-btn:hover { background: var(--amber); border-color: var(--amber); color: var(--charcoal); }
 .pu-err { color: #f87171; font-size: 0.8rem; font-weight: 600; }
 /* The job page is a light card, so the same control needs light colours. */
 .pu-light .pu-btn { background: #fff; border: 2px solid var(--amber); color: var(--amber-dark); min-height: 44px; display: inline-flex; align-items: center; }
-.pu-light .pu-btn:hover { background: var(--amber); color: #fff; }
+.pu-light .pu-btn:hover { background: var(--amber); color: var(--charcoal); }
 .pu-light .pu-err { color: #b91c1c; }
 
 .crm-photo-head { font-size: 0.8rem; font-weight: 800; color: var(--crm-muted); margin: 1rem 0 0.4rem; text-transform: uppercase; letter-spacing: 0.05em; }
@@ -1801,7 +1808,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .crm-slot-todo { color: #f87171; }
 
 /* Before/after on the crew's finish card. */
-.jf-photos { border: 1px solid #e5e7eb; border-radius: 0.7rem; padding: 0.9rem; margin-bottom: 1rem; background: #faf8f4; }
+.jf-photos { border: 1px solid #e5e7eb; border-radius: 0.7rem; padding: 0.9rem; margin-bottom: 1rem; background: #f7f7f4; }
 .jf-photo-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.9rem; }
 .jf-photo-slot { display: flex; flex-direction: column; gap: 0.2rem; }
 .jf-photo-ok { font-size: 0.82rem; font-weight: 800; color: #15803d; }
@@ -1830,7 +1837,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 
 .crm-check { display: flex; align-items: center; gap: 0.55rem; font-size: 0.9rem; color: var(--crm-text); margin: 0.2rem 0 0.6rem; cursor: pointer; }
 .crm-check input { width: 1.05rem; height: 1.05rem; accent-color: var(--crm-accent); }
-.crm-tempcreds { margin-top: 1rem; padding: 1rem; background: rgba(194, 104, 42, 0.12); border: 1px solid rgba(194, 104, 42, 0.4); border-radius: 0.7rem; color: var(--crm-text); }
+.crm-tempcreds { margin-top: 1rem; padding: 1rem; background: rgba(217, 146, 43, 0.12); border: 1px solid rgba(217, 146, 43, 0.4); border-radius: 0.7rem; color: var(--crm-text); }
 .crm-code { display: inline-block; margin: 0.4rem 0; padding: 0.4rem 0.7rem; background: #15181c; color: #fff; border-radius: 0.4rem; font-family: ui-monospace, monospace; font-size: 0.95rem; }
 
 /* CRM auth screen */
@@ -1857,31 +1864,31 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .crm-auth-form input:focus {
   outline: none;
   border-color: var(--amber);
-  box-shadow: 0 0 0 3px rgba(194, 104, 42, 0.22);
+  box-shadow: 0 0 0 3px rgba(217, 146, 43, 0.22);
 }
 
 /* ── Customer branded quote (/q/[token]) ── */
 .cq-wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 1.5rem; background: linear-gradient(160deg, #1c2024, #33373c); }
-.cq-card { width: 100%; max-width: 520px; background: var(--ivory); border-radius: 1.25rem; padding: 2rem; color: #2b1a12; }
+.cq-card { width: 100%; max-width: 520px; background: var(--ivory); border-radius: 1.25rem; padding: 2rem; color: #2b2f33; }
 .cq-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; }
 .cq-logo { height: 38px; width: auto; }
 .cq-eyebrow { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--amber); }
 .cq-title { font-family: var(--font-headline), sans-serif; font-size: 2rem; margin-bottom: 0.5rem; }
-.cq-lead { color: rgba(43, 26, 18, 0.8); margin-bottom: 1.25rem; }
+.cq-lead { color: rgba(43, 47, 51, 0.8); margin-bottom: 1.25rem; }
 /* flex-wrap so the width:100% price-sub note drops to its own line instead of
    fighting the label and value for room on the same row - the mobile media
    query below masks this by switching to a column layout, but the base (i.e.
    desktop) row needs its own escape hatch. */
 .cq-price { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; background: #fff; border-radius: 0.9rem; padding: 1.1rem 1.25rem; margin-bottom: 1.25rem; border: 2px solid var(--amber); }
-.cq-price-label { font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.06em; color: rgba(43, 26, 18, 0.68); }
-.cq-price-value { font-family: var(--font-headline), sans-serif; font-size: 2.2rem; color: #2b1a12; }
+.cq-price-label { font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.06em; color: rgba(43, 47, 51, 0.68); }
+.cq-price-value { font-family: var(--font-headline), sans-serif; font-size: 2.2rem; color: #2b2f33; }
 .cq-meta { display: grid; gap: 0.5rem; margin-bottom: 1.25rem; }
 .cq-meta > div { display: grid; grid-template-columns: 90px 1fr; font-size: 0.9rem; }
-.cq-meta dt { color: rgba(43, 26, 18, 0.55); font-weight: 700; }
+.cq-meta dt { color: rgba(43, 47, 51, 0.55); font-weight: 700; }
 .cq-meta dd { margin: 0; }
 .cq-summary { background: #fff; border-radius: 0.9rem; padding: 1.1rem 1.25rem; margin-bottom: 1.25rem; }
 .cq-summary h2 { font-family: var(--font-headline), sans-serif; font-size: 1.6rem; line-height: 1; letter-spacing: 0.01em; margin-bottom: 0.4rem; }
-.cq-summary p { white-space: pre-wrap; color: rgba(43, 26, 18, 0.85); }
+.cq-summary p { white-space: pre-wrap; color: rgba(43, 47, 51, 0.85); }
 /* The five sections, as the job happens: one rail down the left, a stop on it
    for each section. Answers run from two words to a paragraph, and a rail is
    what keeps a "Not applicable" and a paragraph looking like the same list
@@ -1895,7 +1902,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 /* The rail: from this stop to the next. The last stop has none. */
 .cq-step::before {
   content: ""; position: absolute; left: 0.34rem; top: 1.1rem; bottom: 0;
-  width: 2px; background: rgba(194, 104, 42, 0.28);
+  width: 2px; background: rgba(217, 146, 43, 0.28);
 }
 .cq-step:last-child::before { display: none; }
 /* The stop. */
@@ -1904,16 +1911,16 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   width: 0.8rem; height: 0.8rem; border-radius: 999px;
   background: var(--amber); box-shadow: 0 0 0 3px #fff;
 }
-.cq-step-label { margin: 0 0 0.25rem; font-size: 1rem; font-weight: 800; line-height: 1.35; color: #2b1a12; }
-.cq-step-text { margin: 0; white-space: pre-wrap; font-size: 0.98rem; line-height: 1.55; color: rgba(43, 26, 18, 0.85); overflow-wrap: anywhere; }
+.cq-step-label { margin: 0 0 0.25rem; font-size: 1rem; font-weight: 800; line-height: 1.35; color: #2b2f33; }
+.cq-step-text { margin: 0; white-space: pre-wrap; font-size: 0.98rem; line-height: 1.55; color: rgba(43, 47, 51, 0.85); overflow-wrap: anywhere; }
 /* Grid, not a wrapping flex row: when the pair doesn't fit, the answer wraps
    inside its own column instead of dropping to a line of its own and hanging
    off the right edge under nothing. */
 .cq-step-short { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: baseline; column-gap: 1rem; }
 .cq-step-short .cq-step-label { margin: 0; }
 .cq-step-short .cq-step-text { text-align: right; font-weight: 600; }
-.cq-step-nothing::after { background: #fff; box-shadow: inset 0 0 0 2px rgba(43, 26, 18, 0.3), 0 0 0 3px #fff; }
-.cq-step-nothing .cq-step-label, .cq-step-nothing .cq-step-text { color: rgba(43, 26, 18, 0.62); font-weight: 600; }
+.cq-step-nothing::after { background: #fff; box-shadow: inset 0 0 0 2px rgba(43, 47, 51, 0.3), 0 0 0 3px #fff; }
+.cq-step-nothing .cq-step-label, .cq-step-nothing .cq-step-text { color: rgba(43, 47, 51, 0.62); font-weight: 600; }
 /* The job details on a quote with options: folded under the decision. A real
    <details>, so it opens with no script and a screen reader says what it is. */
 .cq-details { margin: 0 0 1.25rem; border-radius: 0.9rem; background: #fff; }
@@ -1922,12 +1929,12 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   min-height: 56px; padding: 0.7rem 1.1rem; cursor: pointer; list-style: none;
 }
 .cq-details > summary::-webkit-details-marker { display: none; }
-.cq-details > summary > span:first-child { font-weight: 800; font-size: 1rem; color: #2b1a12; }
+.cq-details > summary > span:first-child { font-weight: 800; font-size: 1rem; color: #2b2f33; }
 .cq-details > summary::after {
   content: "+"; grid-column: 2; grid-row: 1 / span 2; font-size: 1.4rem; font-weight: 700; color: var(--amber-dark);
 }
 .cq-details[open] > summary::after { content: "\2212"; }
-.cq-details-sub { grid-column: 1; font-size: 0.85rem; color: rgba(43, 26, 18, 0.65); }
+.cq-details-sub { grid-column: 1; font-size: 0.85rem; color: rgba(43, 47, 51, 0.65); }
 .cq-details > .cq-summary { margin: 0; padding-top: 0.2rem; }
 .cq-details > .cq-summary > h2 { display: none; }
 
@@ -1940,17 +1947,17 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   color: var(--amber-dark); text-decoration: underline; text-underline-offset: 3px; cursor: pointer;
 }
 /* How long the price is good for, under the number it applies to. */
-.cq-expiry { margin-top: 0.5rem; font-size: 0.82rem; font-weight: 700; color: rgba(43, 26, 18, 0.6); }
+.cq-expiry { margin-top: 0.5rem; font-size: 0.82rem; font-weight: 700; color: rgba(43, 47, 51, 0.6); }
 .cq-cta { display: flex; gap: 0.7rem; flex-wrap: wrap; }
 .cq-cta-stack { flex-direction: column; margin-bottom: 1.25rem; }
 .cq-cta-stack .cq-btn { flex: none; width: 100%; }
 .cq-error { color: #b91c1c; }
 .cq-btn { flex: 1; min-width: 140px; text-align: center; border-radius: 999px; padding: 0.85rem 1.25rem; font-weight: 800; text-decoration: none; }
-.cq-btn-primary { background: #2b1a12; color: #fff; }
-.cq-btn-secondary { background: var(--amber); color: #fff; border: 2px solid var(--amber); }
+.cq-btn-primary { background: #2b2f33; color: #fff; }
+.cq-btn-secondary { background: var(--amber); color: var(--charcoal); border: 2px solid var(--amber); }
 .cq-btn-secondary:hover { background: var(--amber-dark); border-color: var(--amber-dark); }
-.cq-fine { margin-top: 1rem; font-size: 0.85rem; color: rgba(43, 26, 18, 0.7); text-align: center; }
-.cq-price-sub { display: block; width: 100%; font-size: 0.85rem; color: rgba(43, 26, 18, 0.7); }
+.cq-fine { margin-top: 1rem; font-size: 0.85rem; color: rgba(43, 47, 51, 0.7); text-align: center; }
+.cq-price-sub { display: block; width: 100%; font-size: 0.85rem; color: rgba(43, 47, 51, 0.7); }
 /* Column, not a wrapping row: at a row width wide enough to fit two items but
    not three, one pair shares a flex line while the third sits alone. Flex's
    default cross-axis stretch then pads the shorter item in that pair up to
@@ -1959,60 +1966,60 @@ textarea.qm-input { min-height: 0; resize: vertical; }
    where every item is already forced onto its own line. Stacking removes
    the shared-line case entirely so desktop always matches mobile. */
 .cq-trust { list-style: none; margin: 0 0 1.25rem; padding: 0; display: flex; flex-direction: column; gap: 0.45rem; }
-.cq-trust li { font-size: 0.82rem; font-weight: 700; color: rgba(43, 26, 18, 0.75); display: flex; align-items: center; gap: 0.35rem; }
+.cq-trust li { font-size: 0.82rem; font-weight: 700; color: rgba(43, 47, 51, 0.75); display: flex; align-items: center; gap: 0.35rem; }
 .cq-trust li::before { content: "✓"; color: var(--amber); font-weight: 800; }
 .cq-review { margin: 1.1rem 0 0; padding: 0.9rem 1rem; background: #fff; border-left: 3px solid var(--amber); border-radius: 0.6rem; }
-.cq-review p { font-size: 0.9rem; color: rgba(43, 26, 18, 0.85); font-style: italic; }
-.cq-review footer { margin-top: 0.4rem; font-size: 0.78rem; font-weight: 700; color: rgba(43, 26, 18, 0.6); }
+.cq-review p { font-size: 0.9rem; color: rgba(43, 47, 51, 0.85); font-style: italic; }
+.cq-review footer { margin-top: 0.4rem; font-size: 0.78rem; font-weight: 700; color: rgba(43, 47, 51, 0.6); }
 
 /* Full-screen booking confirmation / declined page */
-.cq-confirm { width: 100%; max-width: 520px; background: var(--ivory); border-radius: 1.25rem; padding: 2.5rem 2rem; color: #2b1a12; text-align: center; }
-.cq-confirm-badge { width: 84px; height: 84px; margin: 0 auto 1.25rem; border-radius: 50%; background: var(--amber); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(194, 104, 42, 0.35); }
+.cq-confirm { width: 100%; max-width: 520px; background: var(--ivory); border-radius: 1.25rem; padding: 2.5rem 2rem; color: #2b2f33; text-align: center; }
+.cq-confirm-badge { width: 84px; height: 84px; margin: 0 auto 1.25rem; border-radius: 50%; background: var(--amber); color: var(--charcoal); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(217, 146, 43, 0.35); }
 .cq-confirm-eyebrow { font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: var(--amber-dark); margin-bottom: 0.5rem; }
-.cq-confirm-eyebrow-muted { color: rgba(43, 26, 18, 0.55); }
+.cq-confirm-eyebrow-muted { color: rgba(43, 47, 51, 0.55); }
 .cq-confirm-title { font-family: var(--font-headline), sans-serif; font-size: 2.4rem; line-height: 1.05; margin-bottom: 0.85rem; }
-.cq-confirm-date { font-size: 1.05rem; color: rgba(43, 26, 18, 0.85); margin-bottom: 1rem; }
-.cq-confirm-date strong { color: #2b1a12; }
-.cq-confirm-price { display: inline-flex; align-items: center; gap: 0.6rem; background: #fff; border: 2px solid var(--amber); border-radius: 0.9rem; padding: 0.7rem 1.25rem; margin-bottom: 1.1rem; font-family: var(--font-headline), sans-serif; font-size: 1.8rem; color: #2b1a12; }
-.cq-confirm-save { font-family: var(--font-body), sans-serif; font-size: 0.66rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--amber-dark); background: rgba(194, 104, 42, 0.14); border-radius: 999px; padding: 0.18rem 0.6rem; }
-.cq-confirm-note { color: rgba(43, 26, 18, 0.8); margin-bottom: 1.5rem; line-height: 1.5; }
+.cq-confirm-date { font-size: 1.05rem; color: rgba(43, 47, 51, 0.85); margin-bottom: 1rem; }
+.cq-confirm-date strong { color: #2b2f33; }
+.cq-confirm-price { display: inline-flex; align-items: center; gap: 0.6rem; background: #fff; border: 2px solid var(--amber); border-radius: 0.9rem; padding: 0.7rem 1.25rem; margin-bottom: 1.1rem; font-family: var(--font-headline), sans-serif; font-size: 1.8rem; color: #2b2f33; }
+.cq-confirm-save { font-family: var(--font-body), sans-serif; font-size: 0.66rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--amber-dark); background: rgba(217, 146, 43, 0.14); border-radius: 999px; padding: 0.18rem 0.6rem; }
+.cq-confirm-note { color: rgba(43, 47, 51, 0.8); margin-bottom: 1.5rem; line-height: 1.5; }
 .cq-confirm .cq-cta { margin-bottom: 1.5rem; }
 .cq-confirm-logo { height: 34px; width: auto; opacity: 0.85; margin: 0 auto; }
 
 /* Customer accept / decline / schedule flow */
 .cq-actions { display: flex; gap: 0.7rem; margin-bottom: 1.1rem; }
 .cq-actions .cq-btn { cursor: pointer; border: none; font: inherit; font-weight: 800; }
-.cq-btn-accept { background: var(--amber); color: #fff; border: none; cursor: pointer; }
+.cq-btn-accept { background: var(--amber); color: var(--charcoal); border: none; cursor: pointer; }
 .cq-btn-accept:hover { background: var(--amber-dark); }
 .cq-btn-accept:disabled { opacity: 0.55; cursor: not-allowed; }
-.cq-btn-decline { background: #fff; border: 2px solid #2b1a12; color: #2b1a12; cursor: pointer; }
+.cq-btn-decline { background: #fff; border: 2px solid #2b2f33; color: #2b2f33; cursor: pointer; }
 /* The sentence that answers "what am I agreeing to", against the button it is
    about. Quiet: it removes a worry, it isn't a selling line. */
 .cq-reassure {
   margin: -0.4rem 0 1.1rem; font-size: 0.82rem; line-height: 1.45; text-align: center;
-  color: rgba(43, 26, 18, 0.65);
+  color: rgba(43, 47, 51, 0.65);
 }
 /* Desktop keeps the one real button: the whole card is about 520px wide and
    the decision is never far from the price. */
 .cq-sticky { display: none; }
-.cq-btn-decline:hover { background: #2b1a12; color: #fff; }
+.cq-btn-decline:hover { background: #2b2f33; color: #fff; }
 .cq-offer, .cq-schedule, .cq-result { background: #fff; border: 1px solid #ececec; border-radius: 0.9rem; padding: 1.4rem; margin-bottom: 1.1rem; text-align: center; }
 .cq-offer { border: 2px solid var(--amber); }
-.cq-result-ok { border: 2px solid var(--amber); background: rgba(194, 104, 42, 0.08); }
+.cq-result-ok { border: 2px solid var(--amber); background: rgba(217, 146, 43, 0.08); }
 .cq-offer-eyebrow { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--amber); }
 .cq-result-eyebrow { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--amber-dark); }
-.cq-result:not(.cq-result-ok) .cq-result-eyebrow { color: rgba(43, 26, 18, 0.55); }
-.cq-result-price { font-family: var(--font-headline), sans-serif; font-size: 2rem; color: #2b1a12; margin: 0.2rem 0 0.5rem; }
-.cq-result-save { display: inline-block; font-family: var(--font-body), sans-serif; font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--amber-dark); background: rgba(194, 104, 42, 0.14); border-radius: 999px; padding: 0.15rem 0.55rem; margin-right: 0.5rem; vertical-align: middle; }
-.cq-result-note { color: rgba(43, 26, 18, 0.8); }
+.cq-result:not(.cq-result-ok) .cq-result-eyebrow { color: rgba(43, 47, 51, 0.55); }
+.cq-result-price { font-family: var(--font-headline), sans-serif; font-size: 2rem; color: #2b2f33; margin: 0.2rem 0 0.5rem; }
+.cq-result-save { display: inline-block; font-family: var(--font-body), sans-serif; font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--amber-dark); background: rgba(217, 146, 43, 0.14); border-radius: 999px; padding: 0.15rem 0.55rem; margin-right: 0.5rem; vertical-align: middle; }
+.cq-result-note { color: rgba(43, 47, 51, 0.8); }
 .cq-offer h3, .cq-schedule h3, .cq-result h3 { font-family: var(--font-headline), sans-serif; font-size: 1.5rem; margin: 0.3rem 0 0.6rem; }
 .cq-offer-price { font-size: 1.15rem; margin-bottom: 0.9rem; }
-.cq-offer-price s { color: rgba(43, 26, 18, 0.5); margin-right: 0.4rem; }
+.cq-offer-price s { color: rgba(43, 47, 51, 0.5); margin-right: 0.4rem; }
 .cq-offer-price strong { color: var(--amber); }
 .cq-offer .cq-btn, .cq-schedule .cq-btn { width: 100%; display: block; cursor: pointer; border: none; font: inherit; font-weight: 800; margin-bottom: 0.6rem; }
-.cq-result p { color: rgba(43, 26, 18, 0.8); }
-.cq-date { width: 100%; padding: 0.75rem; border: 2px solid rgba(43, 26, 18, 0.2); border-radius: 0.6rem; font: inherit; margin-bottom: 0.8rem; }
-.cq-textlink { background: none; border: none; color: rgba(43, 26, 18, 0.6); text-decoration: underline; cursor: pointer; font: inherit; }
+.cq-result p { color: rgba(43, 47, 51, 0.8); }
+.cq-date { width: 100%; padding: 0.75rem; border: 2px solid rgba(43, 47, 51, 0.2); border-radius: 0.6rem; font: inherit; margin-bottom: 0.8rem; }
+.cq-textlink { background: none; border: none; color: rgba(43, 47, 51, 0.6); text-decoration: underline; cursor: pointer; font: inherit; }
 .cq-textlink:disabled { opacity: 0.5; }
 .cq-err { color: #b91c1c; font-weight: 600; font-size: 0.85rem; margin-bottom: 0.6rem; }
 .job-logo { height: 40px; width: auto; margin-bottom: 0.75rem; }
@@ -2056,7 +2063,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .job-when { display: flex; flex-direction: column; gap: 0.1rem; }
 .job-when-label { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.09em; color: #6b7280; }
 /* Same display face the rest of the site uses for its big numbers (.crm-stat
-   strong, .cq-price-value): Bebas Neue reads as bold on its own weight, which
+   strong, .cq-price-value): the slab headline face reads as bold, which
    is what actually made these two facts hard to pick out before - plain body
    text at a big size looks large, not bold. amber-dark over amber on the time
    for a touch more contrast reading it outdoors. */
@@ -2082,7 +2089,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .job-meta dt { color: #374151; font-weight: 800; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; align-self: center; }
 .job-meta dd { margin: 0; color: #0f172a; font-weight: 600; }
 .job-meta a { color: #b45309; font-weight: 800; text-decoration: underline; text-underline-offset: 2px; }
-.job-details { background: #faf8f4; border-radius: 0.7rem; padding: 1rem; margin-bottom: 1.25rem; }
+.job-details { background: #f7f7f4; border-radius: 0.7rem; padding: 1rem; margin-bottom: 1.25rem; }
 .job-details h2 { font-weight: 800; font-size: 0.9rem; margin-bottom: 0.3rem; }
 .job-details p { white-space: pre-wrap; color: #374151; }
 .job-muted { color: #6b7280; }
@@ -2121,7 +2128,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   .job-wrap { padding: 0.75rem; }
   .job-card { padding: 1.2rem 1rem; }
   .job-key { padding: 0.95rem 1rem; }
-  /* Bebas is condensed, so it needs more size than the old body face did to
+  /* The headline face needs more size than the body face does to
      read at the same weight on a phone held at arm's length. */
   .job-when-day, .job-when-time { font-size: 1.75rem; }
   .job-meta > div { grid-template-columns: 1fr; gap: 0.15rem; padding: 0.65rem 0; }
@@ -2145,14 +2152,14 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .js-time select, .js-time input[type="time"] { padding: 0.65rem 0.7rem; border: 1px solid #d1d5db; border-radius: 0.6rem; font: inherit; font-weight: 600; background: #fff; min-height: 48px; }
 .js-choices { display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 0.9rem; }
 .js-choice { display: flex; align-items: center; justify-content: space-between; gap: 0.7rem; width: 100%; text-align: left; background: #fff; border: 2px solid var(--amber); border-radius: 0.7rem; padding: 0.85rem 1rem; cursor: pointer; font: inherit; min-height: 56px; }
-.js-choice:active { background: rgba(194, 104, 42, 0.08); }
+.js-choice:active { background: rgba(217, 146, 43, 0.08); }
 .js-choice:disabled { opacity: 0.55; }
 .js-choice-date { font-weight: 800; color: #1f2328; }
 /* The hour the customer asked for on that day, beside the day itself. Set in
    the amber the rest of the page uses for a time so it reads as part of the
    appointment rather than as a second, competing label. */
 .js-choice-time { flex: none; font-weight: 800; color: var(--amber-dark); font-size: 0.92rem; white-space: nowrap; }
-.js-choice-cta { flex: none; background: var(--amber); color: #fff; font-weight: 800; font-size: 0.8rem; border-radius: 999px; padding: 0.45rem 0.85rem; white-space: nowrap; }
+.js-choice-cta { flex: none; background: var(--amber); color: var(--charcoal); font-weight: 800; font-size: 0.8rem; border-radius: 999px; padding: 0.45rem 0.85rem; white-space: nowrap; }
 /* Was sitting flush against whatever came before it (the confirm button on an
    offered slot, or the day-choice buttons) - close enough to read as part of
    that element instead of its own, separate option. */
@@ -2180,7 +2187,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   text-transform: none; letter-spacing: normal;
 }
 .jd-echo-bad { color: #b91c1c; }
-.js-confirm { background: var(--amber); color: #fff; border: none; border-radius: 999px; padding: 0.7rem 1.2rem; font: inherit; font-weight: 800; cursor: pointer; min-height: 48px; }
+.js-confirm { background: var(--amber); color: var(--charcoal); border: none; border-radius: 999px; padding: 0.7rem 1.2rem; font: inherit; font-weight: 800; cursor: pointer; min-height: 48px; }
 .js-confirm:disabled { opacity: 0.55; }
 .js-err { margin-top: 0.7rem; color: #b91c1c; font-weight: 700; font-size: 0.9rem; }
 .js-ok { margin-top: 0.7rem; color: #15803d; font-weight: 700; font-size: 0.9rem; }
@@ -2195,13 +2202,13 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   border: 2px solid var(--amber); border-radius: 999px; padding: 0.6rem 1.1rem;
   font: inherit; font-weight: 800; cursor: pointer;
 }
-.jr-open:active { background: rgba(194, 104, 42, 0.08); }
+.jr-open:active { background: rgba(217, 146, 43, 0.08); }
 /* Open, it's an inset panel rather than another bordered card: it belongs to
    the date above it, and a second box inside the key block would read as a
    second appointment. */
 .jr-form {
   display: flex; flex-direction: column; gap: 0.7rem;
-  background: #faf8f4; border: 1px solid #ddd8ce; border-radius: 0.7rem;
+  background: #f7f7f4; border: 1px solid #ddd8ce; border-radius: 0.7rem;
   padding: 0.85rem 0.95rem;
 }
 .jr-fields { display: flex; gap: 0.6rem; flex-wrap: wrap; }
@@ -2267,7 +2274,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .jq-card, .jf-card, .jf-done, .jv-card { border-color: #d1d5db; }
 /* Waiting on the customer: a status, not an action. Muted so it doesn't read as
    something the crew has failed to do. */
-.jq-waiting { background: #faf8f4; }
+.jq-waiting { background: #f7f7f4; }
 .jq-waiting .js-title { color: #4b5563; }
 .jq-form { display: flex; flex-direction: column; gap: 0.85rem; }
 .jq-field { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.85rem; font-weight: 800; color: #374151; }
@@ -2294,18 +2301,18 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   border: 2px solid var(--amber); border-radius: 0.9rem; background: #fff;
   padding: 0.85rem 1rem 0.9rem;
 }
-.jq-price:focus-within { box-shadow: 0 0 0 3px rgba(194, 104, 42, 0.18); }
+.jq-price:focus-within { box-shadow: 0 0 0 3px rgba(217, 146, 43, 0.18); }
 .jq-price-label { font-size: 0.8rem; font-weight: 800; color: #4b5563; }
 .jq-price-row { display: flex; align-items: baseline; gap: 0.15rem; }
-.jq-price-sign { font-family: var(--font-headline), sans-serif; font-size: 2.2rem; line-height: 1; color: #2b1a12; }
+.jq-price-sign { font-family: var(--font-headline), sans-serif; font-size: 2.2rem; line-height: 1; color: #2b2f33; }
 .jq-price-row input {
   flex: 1 1 auto; min-width: 0; width: 100%; border: none; background: transparent; padding: 0;
   font-family: var(--font-headline), sans-serif; font-size: 2.6rem; line-height: 1.05; letter-spacing: 0.01em;
-  color: #2b1a12; font-variant-numeric: tabular-nums;
+  color: #2b2f33; font-variant-numeric: tabular-nums;
 }
 .jq-price-row input:focus { outline: none; }
-.jq-price-row input::placeholder { color: rgba(43, 26, 18, 0.28); }
-.jq-price-row input[readonly] { color: #2b1a12; }
+.jq-price-row input::placeholder { color: rgba(43, 47, 51, 0.28); }
+.jq-price-row input[readonly] { color: #2b2f33; }
 /* No spinner arrows: nobody prices a driveway a dollar at a time. */
 .jq-price-row input::-webkit-outer-spin-button,
 .jq-price-row input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
@@ -2313,7 +2320,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 
 .jq-included { background: var(--ivory); border-radius: 0.9rem; padding: 0.95rem 0.9rem 0.3rem; }
 .jq-included-head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.75rem; margin-bottom: 0.85rem; }
-.jq-included-head h3 { font-family: var(--font-headline), sans-serif; font-size: 1.55rem; line-height: 1; letter-spacing: 0.01em; color: #2b1a12; margin: 0; }
+.jq-included-head h3 { font-family: var(--font-headline), sans-serif; font-size: 1.55rem; line-height: 1; letter-spacing: 0.01em; color: #2b2f33; margin: 0; }
 .jq-count { font-size: 0.85rem; font-weight: 800; color: #6b7280; white-space: nowrap; }
 .jq-count-done { color: #15803d; }
 
@@ -2323,17 +2330,17 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .jq-step { position: relative; padding: 0 0 1rem 1.6rem; }
 .jq-step::before {
   content: ""; position: absolute; left: 0.34rem; top: 1.1rem; bottom: 0;
-  width: 2px; background: rgba(194, 104, 42, 0.28);
+  width: 2px; background: rgba(217, 146, 43, 0.28);
 }
 .jq-step:last-child::before { display: none; }
 .jq-step::after {
   content: ""; position: absolute; left: 0; top: 0.35rem;
   width: 0.8rem; height: 0.8rem; border-radius: 999px;
-  background: var(--ivory); box-shadow: inset 0 0 0 2px rgba(43, 26, 18, 0.3);
+  background: var(--ivory); box-shadow: inset 0 0 0 2px rgba(43, 47, 51, 0.3);
 }
 .jq-step-done::after { background: var(--amber); box-shadow: none; }
 .jq-step-head { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; min-height: 1.6rem; margin-bottom: 0.35rem; }
-.jq-step-head label { font-size: 1rem; font-weight: 800; color: #2b1a12; }
+.jq-step-head label { font-size: 1rem; font-weight: 800; color: #2b2f33; }
 .jq-na {
   flex: none; min-height: 36px; padding: 0 0.8rem; border-radius: 999px;
   border: 1.5px solid #d1d5db; background: #fff; color: #4b5563;
@@ -2351,13 +2358,13 @@ textarea.qm-input { min-height: 0; resize: vertical; }
    optional, which is the shape a pick-one quote comes out in by mistake. */
 .jq-pickone {
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.6rem 1rem;
-  border: 1px solid rgba(194, 104, 42, 0.45); border-left: 4px solid var(--amber);
-  background: rgba(194, 104, 42, 0.08); border-radius: 0.7rem; padding: 0.8rem 0.95rem;
+  border: 1px solid rgba(217, 146, 43, 0.45); border-left: 4px solid var(--amber);
+  background: rgba(217, 146, 43, 0.08); border-radius: 0.7rem; padding: 0.8rem 0.95rem;
 }
 .jq-pickone p { margin: 0; flex: 1 1 18rem; font-size: 0.92rem; line-height: 1.45; color: #374151; }
 .jq-pickone-btn {
   flex: none; min-height: 44px; padding: 0 1.1rem; border-radius: 999px; border: none;
-  background: var(--amber); color: #fff; font: inherit; font-weight: 800; cursor: pointer;
+  background: var(--amber); color: var(--charcoal); font: inherit; font-weight: 800; cursor: pointer;
 }
 .jq-pickone-btn:hover { background: var(--amber-dark); }
 
@@ -2368,7 +2375,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 }
 /* The customer's page in miniature: their ivory, their classes, their order. */
 .jq-preview {
-  background: var(--ivory); color: #2b1a12; border: 1px dashed rgba(43, 26, 18, 0.3);
+  background: var(--ivory); color: #2b2f33; border: 1px dashed rgba(43, 47, 51, 0.3);
   border-radius: 0.9rem; padding: 0.9rem 0.9rem 0.2rem;
 }
 .jq-preview-note { font-size: 0.85rem; font-weight: 700; color: #4b5563; margin: 0 0 0.6rem; }
@@ -2384,7 +2391,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
    above the picker, which starts on it. */
 .jv-asked {
   display: flex; flex-direction: column; gap: 0.1rem;
-  background: #faf8f4; border: 1px solid #ddd8ce; border-radius: 0.7rem;
+  background: #f7f7f4; border: 1px solid #ddd8ce; border-radius: 0.7rem;
   padding: 0.8rem 0.95rem; margin-bottom: 0.85rem;
 }
 .jv-asked-label { font-size: 0.7rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; color: #6b7280; }
@@ -2402,7 +2409,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .jf-checks { list-style: none; margin: 0 0 1rem; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
 .jf-check {
   display: flex; align-items: center; gap: 0.7rem; cursor: pointer;
-  background: #faf8f4; border: 1px solid #ddd8ce; border-radius: 0.6rem;
+  background: #f7f7f4; border: 1px solid #ddd8ce; border-radius: 0.6rem;
   padding: 0.7rem 0.8rem; min-height: 52px; font-size: 0.98rem; color: #1f2328;
 }
 .jf-check input { width: 22px; height: 22px; flex: none; accent-color: var(--amber); }
@@ -2423,7 +2430,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   background: var(--crm-surface); border: 1px solid var(--crm-border); border-radius: 0.9rem;
   max-height: calc(100vh - 200px);
 }
-.kb-col-over { outline: 2px dashed var(--amber); background: rgba(194, 104, 42, 0.1); }
+.kb-col-over { outline: 2px dashed var(--amber); background: rgba(217, 146, 43, 0.1); }
 .kb-col-head { display: flex; align-items: center; justify-content: space-between; padding: 0.7rem 0.85rem; border-bottom: 1px solid var(--crm-border); border-top: 3px solid var(--crm-muted); border-radius: 0.9rem 0.9rem 0 0; }
 .kb-col-title { font-weight: 800; font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.06em; }
 .kb-col-count { background: rgba(255, 255, 255, 0.1); border-radius: 999px; padding: 0.05rem 0.55rem; font-size: 0.72rem; font-weight: 800; }
@@ -2437,7 +2444,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .kb-col-body { padding: 0.65rem; overflow-y: auto; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
 .kb-empty { color: var(--crm-muted); font-size: 0.78rem; text-align: center; padding: 0.9rem 0; border: 1px dashed var(--crm-border); border-radius: 0.6rem; }
 .kb-card { background: var(--crm-surface-solid); border: 1px solid var(--crm-border); border-radius: 0.7rem; padding: 0.8rem; cursor: pointer; transition: transform 0.1s, border-color 0.1s, box-shadow 0.1s; }
-.kb-card:hover { border-color: rgba(194, 104, 42, 0.6); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3); }
+.kb-card:hover { border-color: rgba(217, 146, 43, 0.6); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3); }
 .kb-card-dragging { opacity: 0.45; }
 .kb-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.5rem; }
 .kb-card-name { font-family: var(--font-headline), sans-serif; font-size: 1.2rem; line-height: 1.05; }
@@ -2449,7 +2456,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .kb-pill-plans { background: rgba(148, 163, 184, 0.22); color: #cbd5e1; }
 .kb-pill-inperson { background: rgba(250, 204, 21, 0.18); color: #fde047; }
 .kb-pill-view { background: rgba(74, 222, 128, 0.18); color: #86efac; }
-.kb-pill-assigned { background: rgba(194, 104, 42, 0.24); color: #f0b489; }
+.kb-pill-assigned { background: rgba(217, 146, 43, 0.24); color: #f0b489; }
 .kb-pill-date { background: rgba(96, 165, 250, 0.18); color: #93c5fd; }
 /* A practice lead. Outlined rather than filled, so it reads as a note ABOUT
    the card rather than another fact on it. */
@@ -2482,7 +2489,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .kb-stale-item strong { color: #f87171; }
 .kb-quick { display: flex; gap: 0.4rem; margin-top: 0.6rem; }
 .kb-quick-btn { flex: 1; text-align: center; text-decoration: none; font-size: 0.78rem; font-weight: 800; padding: 0.42rem; border-radius: 0.45rem; background: rgba(255, 255, 255, 0.09); border: 1px solid var(--crm-border); color: var(--crm-text); }
-.kb-quick-btn:hover { background: var(--amber); border-color: var(--amber); color: #fff; }
+.kb-quick-btn:hover { background: var(--amber); border-color: var(--amber); color: var(--charcoal); }
 .kb-card-tools { margin-top: 0.55rem; }
 /* Both phone-only. On a desk the chips are replaced by the columns themselves
    and the controls are always on show, so neither costs anything here. */
@@ -2517,7 +2524,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
      which the column heading already uses, moves onto the chip. */
   .kb-stage-on { background: rgba(255, 255, 255, 0.1); color: var(--crm-text); }
   .kb-stage-n { background: rgba(255, 255, 255, 0.12); border-radius: 999px; padding: 0.05rem 0.45rem; font-size: 0.72rem; }
-  .kb-stage-on .kb-stage-n { background: var(--amber); color: #fff; }
+  .kb-stage-on .kb-stage-n { background: var(--amber); color: var(--charcoal); }
 
   .kb-cols { flex-direction: column; overflow-x: visible; gap: 1rem; padding-bottom: 0; }
   /* One column, the chosen one. Its heading goes too: the selected chip above
@@ -2571,10 +2578,10 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 
 /* Contractor onboarding form (/join/[token]) - light card, dark text */
 .join-form { display: flex; flex-direction: column; gap: 0.85rem; }
-.join-field { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.9rem; font-weight: 700; color: #2b1a12; }
-.join-field input { padding: 0.7rem 0.75rem; border: 2px solid rgba(43, 26, 18, 0.2); border-radius: 0.6rem; font: inherit; font-weight: 400; background: #fff; color: #2b1a12; }
+.join-field { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.9rem; font-weight: 700; color: #2b2f33; }
+.join-field input { padding: 0.7rem 0.75rem; border: 2px solid rgba(43, 47, 51, 0.2); border-radius: 0.6rem; font: inherit; font-weight: 400; background: #fff; color: #2b2f33; }
 .join-field input:focus { outline: none; border-color: var(--amber); }
-.join-note { font-size: 0.85rem; color: rgba(43, 26, 18, 0.7); background: #fff; border-radius: 0.6rem; padding: 0.6rem 0.75rem; }
+.join-note { font-size: 0.85rem; color: rgba(43, 47, 51, 0.7); background: #fff; border-radius: 0.6rem; padding: 0.6rem 0.75rem; }
 .join-submit { width: 100%; display: block; cursor: pointer; border: none; font: inherit; font-weight: 800; }
 .join-signin { display: inline-block; margin-top: 0.6rem; text-decoration: none; }
 
@@ -2610,7 +2617,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .wh-days legend { font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.75; margin-bottom: 0.45rem; }
 .wh-day { display: inline-flex; align-items: center; gap: 0.35rem; border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 999px; padding: 0.35rem 0.7rem; font-size: 0.82rem; font-weight: 800; cursor: pointer; min-height: 38px; }
 .wh-day input { accent-color: var(--amber); }
-.wh-day-on { background: rgba(194, 104, 42, 0.24); border-color: rgba(194, 104, 42, 0.55); }
+.wh-day-on { background: rgba(217, 146, 43, 0.24); border-color: rgba(217, 146, 43, 0.55); }
 /* The panel's output, spelled out. Two hour pickers and seven checkboxes do not
    tell anybody how many appointments a day that adds up to. */
 .wh-preview { margin-top: 0.6rem; line-height: 1.7; }
@@ -2627,15 +2634,15 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .cq-picks { list-style: none; margin: 0 0 0.8rem; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
 .cq-pick { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; background: #fff; border: 2px solid var(--amber); border-radius: 0.7rem; padding: 0.75rem 0.9rem; font-size: 0.95rem; text-align: left; min-height: 52px; }
 .cq-pick em { display: block; font-style: normal; color: #b45309; font-size: 0.82rem; }
-.cq-pick-taken { border-color: rgba(43, 26, 18, 0.25); }
+.cq-pick-taken { border-color: rgba(43, 47, 51, 0.25); }
 /* Each chosen day carries its own start time, so somebody who wants an early
    Monday and a later Friday can say so without three separate steps. */
-.cq-pick-time { flex: none; padding: 0.4rem 0.5rem; border: 1px solid rgba(43, 26, 18, 0.22); border-radius: 0.5rem; font: inherit; font-weight: 700; background: #fff; min-height: 40px; }
+.cq-pick-time { flex: none; padding: 0.4rem 0.5rem; border: 1px solid rgba(43, 47, 51, 0.22); border-radius: 0.5rem; font: inherit; font-weight: 700; background: #fff; min-height: 40px; }
 .cq-pick-add { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; align-items: end; }
-.cq-pick-field { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.8rem; font-weight: 800; color: rgba(43, 26, 18, 0.7); text-transform: uppercase; letter-spacing: 0.04em; }
+.cq-pick-field { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.8rem; font-weight: 800; color: rgba(43, 47, 51, 0.7); text-transform: uppercase; letter-spacing: 0.04em; }
 .cq-pick-field .cq-date { margin-bottom: 0; }
-.cq-pick button { background: rgba(43, 26, 18, 0.06); border: none; border-radius: 50%; width: 36px; height: 36px; flex: none; font-size: 1.2rem; line-height: 1; cursor: pointer; color: rgba(43, 26, 18, 0.6); }
-.cq-pick button:hover { color: #2b1a12; background: rgba(43, 26, 18, 0.12); }
+.cq-pick button { background: rgba(43, 47, 51, 0.06); border: none; border-radius: 50%; width: 36px; height: 36px; flex: none; font-size: 1.2rem; line-height: 1; cursor: pointer; color: rgba(43, 47, 51, 0.6); }
+.cq-pick button:hover { color: #2b2f33; background: rgba(43, 47, 51, 0.12); }
 
 /* Mobile: the quote page is used almost exclusively on a phone. Full-bleed
    card, thumb-sized targets, and the price impossible to miss. */
@@ -2669,9 +2676,9 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   .cq-sticky-price { display: flex; flex-direction: column; line-height: 1.1; min-width: 0; }
   .cq-sticky-price > span {
     font-size: 0.66rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em;
-    color: rgba(43, 26, 18, 0.6);
+    color: rgba(43, 47, 51, 0.6);
   }
-  .cq-sticky-price > strong { font-family: var(--font-headline), sans-serif; font-size: 1.5rem; color: #2b1a12; }
+  .cq-sticky-price > strong { font-family: var(--font-headline), sans-serif; font-size: 1.5rem; color: #2b2f33; }
   .cq-sticky .cq-btn { flex: 1; min-width: 0; min-height: 48px; }
   /* Room for the bar, so the last line of the card is never sitting under it. */
   .cq-card { padding-bottom: 5.5rem; }
@@ -2757,7 +2764,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 }
 .led-tag-payment { border-color: rgba(74, 222, 128, 0.5); color: #86efac; }
 .led-tag-refund { border-color: rgba(148, 163, 184, 0.5); color: #cbd5e1; }
-.led-tag-settlement { border-color: rgba(194, 104, 42, 0.6); color: #f0b489; }
+.led-tag-settlement { border-color: rgba(217, 146, 43, 0.6); color: #f0b489; }
 
 .led-expand {
   background: none; border: 1px solid var(--crm-border); border-radius: 0.4rem;
@@ -2840,7 +2847,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   background: var(--crm-surface); border: 1px solid var(--crm-border);
   border-radius: 0.9rem; padding: 1rem;
 }
-.sk-card-light { background: #faf8f4; border-color: #e2e5ea; }
+.sk-card-light { background: #f7f7f4; border-color: #e2e5ea; }
 .sk-key { border: 2px solid #e2e5ea; border-radius: 0.9rem; padding: 1rem; margin-bottom: 1.4rem; }
 .sk-key .sk { margin-bottom: 0.6rem; }
 .sk-key .sk:last-child { margin-bottom: 0; }
@@ -2888,7 +2895,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 }
 /* The live one. Amber rather than a heavier weight: this is the number the
    customer is holding, and it is the only row anybody acts on. */
-.qs-row-live { border-color: rgba(194, 104, 42, 0.55); background: rgba(194, 104, 42, 0.08); }
+.qs-row-live { border-color: rgba(217, 146, 43, 0.55); background: rgba(217, 146, 43, 0.08); }
 .qs-n { grid-area: n; font-size: 0.8rem; font-weight: 800; color: var(--crm-muted); }
 /* Right aligned with tabular figures, so $950 and $12,400 line up on their last
    digit. Comparing prices down a column is the only reason this list exists. */
@@ -2969,7 +2976,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .qs-light .qs-add { border-top-color: #e2e5ea; }
 .qs-add-open {
   width: 100%; min-height: 44px; padding: 0.6rem 0.9rem; border-radius: 0.6rem; cursor: pointer;
-  background: var(--amber); border: 1px solid var(--amber); color: #fff; font: inherit; font-weight: 800;
+  background: var(--amber); border: 1px solid var(--amber); color: var(--charcoal); font: inherit; font-weight: 800;
 }
 .qs-add-open:hover { background: var(--amber-dark); border-color: var(--amber-dark); }
 .qs-add-hint { margin: 0.45rem 0 0; font-size: 0.8rem; color: inherit; opacity: 0.72; }
@@ -3000,7 +3007,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .qsm-step legend { display: flex; align-items: center; gap: 0.45rem; font-size: 0.8rem; font-weight: 800; padding: 0 0.35rem; }
 .qsm-letter {
   flex: 0 0 auto; width: 1.4rem; height: 1.4rem; border-radius: 999px; display: grid; place-items: center;
-  font-size: 0.72rem; font-weight: 900; background: rgba(194, 104, 42, 0.18); color: var(--amber);
+  font-size: 0.72rem; font-weight: 900; background: rgba(217, 146, 43, 0.18); color: var(--amber);
 }
 .ao-light .qsm-letter { color: var(--amber-dark); }
 .qsm-row { display: flex; gap: 0.6rem; }
@@ -3018,9 +3025,9 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .qsm-have { margin-top: 0.2rem; }
 .qsm-have-row {
   display: flex; align-items: center; gap: 0.6rem; padding: 0.5rem 0.65rem; margin-bottom: 0.35rem;
-  border-radius: 0.5rem; background: var(--crm-surface-solid, #faf8f4); font-size: 0.9rem;
+  border-radius: 0.5rem; background: var(--crm-surface-solid, #f7f7f4); font-size: 0.9rem;
 }
-.ao-light .qsm-have-row { background: #faf8f4; }
+.ao-light .qsm-have-row { background: #f7f7f4; }
 .qsm-have-row .ao-opt-title, .qsm-preview-list .ao-opt-title { flex: 1 1 auto; min-width: 0; }
 .qsm-rec { margin-top: 0.2rem; }
 .qsm-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
@@ -3030,8 +3037,8 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 .ao-light .qsm-chip { border: 1px solid #d1d5db; }
-.qsm-chip-on { background: var(--amber); border-color: var(--amber); color: #fff; }
-.qsm-preview { border-radius: 0.6rem; padding: 0.75rem 0.8rem; background: rgba(194, 104, 42, 0.1); }
+.qsm-chip-on { background: var(--amber); border-color: var(--amber); color: var(--charcoal); }
+.qsm-preview { border-radius: 0.6rem; padding: 0.75rem 0.8rem; background: rgba(217, 146, 43, 0.1); }
 .qsm-preview-list { list-style: none; margin: 0 0 0.5rem; padding: 0; display: flex; flex-direction: column; gap: 0.35rem; }
 .qsm-preview-list li { display: flex; align-items: center; gap: 0.6rem; font-size: 0.92rem; }
 .qsm-preview-rec .ao-opt-title { font-weight: 800; }
@@ -3040,7 +3047,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 /* Sending, not approving: .ao-go is green because it confirms a customer's
    yes, and this button texts them a second price. Amber is what every other
    send in this app is. */
-.qsm .ao-go { background: var(--amber); border-color: var(--amber); color: #fff; }
+.qsm .ao-go { background: var(--amber); border-color: var(--amber); color: var(--charcoal); }
 .qsm .ao-go:hover:not(:disabled) { background: var(--amber-dark); border-color: var(--amber-dark); }
 
 @media (min-width: 640px) {
@@ -3056,8 +3063,8 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .qs-light { background: #fff; border: 2px solid #e2e5ea; margin-top: 1.5rem; margin-bottom: 0; padding: 1.1rem 1.15rem; }
 .qs-light .qs-title { font-family: inherit; font-weight: 800; font-size: 1rem; }
 .qs-light .qs-count, .qs-light .qs-none { color: #6b7280; }
-.qs-light .qs-row { background: #faf8f4; }
-.qs-light .qs-row-live { border-color: var(--amber); background: rgba(194, 104, 42, 0.07); }
+.qs-light .qs-row { background: #f7f7f4; }
+.qs-light .qs-row-live { border-color: var(--amber); background: rgba(217, 146, 43, 0.07); }
 .qs-light .qs-n, .qs-light .qs-when { color: #6b7280; }
 .qs-light .qs-amount { color: #0f172a; }
 .qs-light .qs-tag { border-color: #d1d5db; color: #6b7280; }
@@ -3184,7 +3191,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 /* Status badges: amber for in-flight, green only for a completed signature so it
    reads at a glance next to the pipeline badges. */
 .ag-badge-pending  { background: rgba(255, 255, 255, 0.1); color: var(--crm-text); }
-.ag-badge-sent     { background: var(--amber); color: #fff; }
+.ag-badge-sent     { background: var(--amber); color: var(--charcoal); }
 .ag-badge-signed   { background: #16a34a; color: #fff; }
 .ag-badge-declined { background: #b91c1c; color: #fff; }
 .ag-badge-void     { background: rgba(255, 255, 255, 0.06); color: var(--crm-muted); }
@@ -3207,7 +3214,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 /* CRM banners (e.g. Google Calendar connect result) */
 .crm-banner { border-radius: 0.6rem; padding: 0.7rem 1rem; margin-bottom: 1rem; font-size: 0.9rem; border: 1px solid; }
 .crm-banner-ok { background: rgba(22, 163, 74, 0.14); border-color: rgba(22, 163, 74, 0.5); color: #c9f3d6; }
-.crm-banner-warn { background: rgba(194, 104, 42, 0.16); border-color: rgba(194, 104, 42, 0.55); color: #f3d8c4; }
+.crm-banner-warn { background: rgba(217, 146, 43, 0.16); border-color: rgba(217, 146, 43, 0.55); color: #f3d8c4; }
 
 /* Google Calendar connect card */
 .cal-gcal { background: var(--crm-surface); border: 1px solid var(--crm-border); border-radius: 0.6rem; margin-bottom: 1rem; }
@@ -3470,7 +3477,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .qo-row-required { background: #fff; border-left: 3px solid var(--amber); }
 .qo-row-head { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.5rem; }
 .qo-kind { font-size: 0.68rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.06em; border-radius: 999px; padding: 0.15rem 0.5rem; }
-.qo-kind-required { background: rgba(194, 104, 42, 0.14); color: var(--amber-dark); }
+.qo-kind-required { background: rgba(217, 146, 43, 0.14); color: var(--amber-dark); }
 .qo-kind-optional { background: #eef2f7; color: #4b5563; }
 .qo-row-tools { display: flex; align-items: center; gap: 0.3rem; }
 .qo-row-tools button { background: #fff; border: 1px solid #d1d5db; border-radius: 0.35rem; padding: 0.1rem 0.4rem; font: inherit; font-size: 0.8rem; cursor: pointer; color: #4b5563; }
@@ -3513,22 +3520,22 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .cq-opts { background: #fff; border-radius: 0.9rem; padding: 1.1rem 1.25rem; margin-bottom: 1.25rem; }
 .cq-opts-title { font-weight: 800; font-size: 0.95rem; margin-bottom: 0.6rem; }
 .cq-opt-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.7rem; }
-.cq-opt { border: 2px solid rgba(43, 26, 18, 0.12); border-radius: 0.75rem; padding: 0.85rem 0.95rem; transition: border-color 0.15s, background 0.15s; }
-.cq-opt-on { border-color: var(--amber); background: rgba(194, 104, 42, 0.06); }
+.cq-opt { border: 2px solid rgba(43, 47, 51, 0.12); border-radius: 0.75rem; padding: 0.85rem 0.95rem; transition: border-color 0.15s, background 0.15s; }
+.cq-opt-on { border-color: var(--amber); background: rgba(217, 146, 43, 0.06); }
 .cq-opt-off { opacity: 0.6; }
 .cq-opt-head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.6rem; }
 .cq-opt-title { font-weight: 800; }
 .cq-opt-price { font-family: var(--font-headline), sans-serif; font-size: 1.3rem; white-space: nowrap; }
-.cq-opt-desc { font-size: 0.88rem; color: rgba(43, 26, 18, 0.75); margin: 0.3rem 0 0; white-space: pre-wrap; }
+.cq-opt-desc { font-size: 0.88rem; color: rgba(43, 47, 51, 0.75); margin: 0.3rem 0 0; white-space: pre-wrap; }
 .cq-opt-included { display: inline-block; margin-top: 0.5rem; font-size: 0.7rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.06em; color: var(--amber-dark); }
 .cq-opt-choice { display: flex; gap: 0.5rem; margin-top: 0.65rem; }
 /* Big enough to hit with a thumb, because that is the only way this is used. */
-.cq-opt-btn { flex: 1 1 0; padding: 0.6rem 0.5rem; border: 2px solid rgba(43, 26, 18, 0.2); border-radius: 0.55rem; background: #fff; font: inherit; font-weight: 800; font-size: 0.9rem; color: #2b1a12; cursor: pointer; }
-.cq-opt-btn:hover { border-color: #2b1a12; }
-.cq-opt-btn-yes { background: var(--amber); border-color: var(--amber); color: #fff; }
-.cq-opt-btn-no { background: #2b1a12; border-color: #2b1a12; color: #fff; }
-.cq-opt-total { display: flex; align-items: baseline; justify-content: space-between; gap: 0.6rem; margin-top: 1rem; padding-top: 0.8rem; border-top: 2px solid rgba(43, 26, 18, 0.12); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.06em; color: rgba(43, 26, 18, 0.6); }
-.cq-opt-total strong { font-family: var(--font-headline), sans-serif; font-size: 2rem; color: #2b1a12; letter-spacing: 0; }
+.cq-opt-btn { flex: 1 1 0; padding: 0.6rem 0.5rem; border: 2px solid rgba(43, 47, 51, 0.2); border-radius: 0.55rem; background: #fff; font: inherit; font-weight: 800; font-size: 0.9rem; color: #2b2f33; cursor: pointer; }
+.cq-opt-btn:hover { border-color: #2b2f33; }
+.cq-opt-btn-yes { background: var(--amber); border-color: var(--amber); color: var(--charcoal); }
+.cq-opt-btn-no { background: #2b2f33; border-color: #2b2f33; color: #fff; }
+.cq-opt-total { display: flex; align-items: baseline; justify-content: space-between; gap: 0.6rem; margin-top: 1rem; padding-top: 0.8rem; border-top: 2px solid rgba(43, 47, 51, 0.12); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.06em; color: rgba(43, 47, 51, 0.6); }
+.cq-opt-total strong { font-family: var(--font-headline), sans-serif; font-size: 2rem; color: #2b2f33; letter-spacing: 0; }
 .cq-opt-todo { margin-top: 0.5rem; color: var(--amber-dark); font-weight: 700; }
 .cq-expiry-line { text-align: center; margin-bottom: 1.25rem; }
 .cq-sched-scope { margin-bottom: 0.9rem; }
@@ -3573,19 +3580,19 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .qc-card-rec { border-left-color: var(--amber); }
 .qc-card-head { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.5rem; }
 .qc-letter { font-size: 0.68rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.06em; border-radius: 999px; padding: 0.15rem 0.55rem; background: #eef2f7; color: #4b5563; }
-.qc-card-rec .qc-letter { background: rgba(194, 104, 42, 0.14); color: var(--amber-dark); }
+.qc-card-rec .qc-letter { background: rgba(217, 146, 43, 0.14); color: var(--amber-dark); }
 .qc-card-tools { display: flex; align-items: center; gap: 0.3rem; }
 .qc-card-tools button { background: #fff; border: 1px solid #d1d5db; border-radius: 0.35rem; padding: 0.1rem 0.4rem; font: inherit; font-size: 0.8rem; cursor: pointer; color: #4b5563; }
 .qc-card-tools button:disabled { opacity: 0.4; cursor: not-allowed; }
 .qc-remove { color: #b91c1c !important; }
 .qc-card-main { display: flex; gap: 0.6rem; }
 .qc-rec { display: flex; align-items: center; gap: 0.45rem; font-size: 0.82rem; font-weight: 700; color: #374151; cursor: pointer; }
-/* Amber as a tint behind inherited text, not as the text colour: #a8551f is
+/* Amber as a tint behind inherited text, not as the text colour: #b8771c is
    legible on the crew's white card and muddy on the CRM's dark one, and this
    line has to carry on both. */
 .qc-warn {
   margin: 0.7rem 0 0; font-size: 0.8rem; font-weight: 700; color: inherit;
-  background: rgba(194, 104, 42, 0.16); border-left: 3px solid var(--amber);
+  background: rgba(217, 146, 43, 0.16); border-left: 3px solid var(--amber);
   border-radius: 0.35rem; padding: 0.5rem 0.65rem;
 }
 .qc-lead-note { margin: 0.7rem 0 0; font-size: 0.8rem; color: inherit; opacity: 0.75; }
@@ -3608,32 +3615,32 @@ textarea.qm-input { min-height: 0; resize: vertical; }
    price and fills the card's width, so the tap target is the whole thing. */
 .cq-alt-card {
   display: flex; flex-direction: column; gap: 0.35rem;
-  border: 2px solid rgba(43, 26, 18, 0.14); border-radius: 0.8rem; background: #fff;
-  padding: 0.95rem 1rem; color: #2b1a12; cursor: pointer;
+  border: 2px solid rgba(43, 47, 51, 0.14); border-radius: 0.8rem; background: #fff;
+  padding: 0.95rem 1rem; color: #2b2f33; cursor: pointer;
   transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
 }
-.cq-alt-card:hover { border-color: rgba(43, 26, 18, 0.4); }
+.cq-alt-card:hover { border-color: rgba(43, 47, 51, 0.4); }
 .cq-alt-card:active { transform: scale(0.99); }
 .cq-alt {
   display: flex; flex-direction: column; gap: 0.35rem; width: 100%; text-align: left;
   border: 0; background: none; padding: 0; font: inherit; color: inherit; cursor: pointer;
 }
-.cq-alt:focus-visible { outline: 3px solid rgba(194, 104, 42, 0.5); outline-offset: 6px; border-radius: 0.4rem; }
-.cq-alt-on { border-color: var(--amber); background: rgba(194, 104, 42, 0.07); box-shadow: 0 2px 14px rgba(194, 104, 42, 0.14); }
+.cq-alt:focus-visible { outline: 3px solid rgba(217, 146, 43, 0.5); outline-offset: 6px; border-radius: 0.4rem; }
+.cq-alt-on { border-color: var(--amber); background: rgba(217, 146, 43, 0.07); box-shadow: 0 2px 14px rgba(217, 146, 43, 0.14); }
 .cq-alt-card .cq-step-more, .cq-opt .cq-step-more { min-height: 40px; font-size: 0.9rem; align-self: flex-start; }
 .cq-alt-top { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
-.cq-alt-letter { font-size: 0.68rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(43, 26, 18, 0.55); }
-.cq-alt-flag { font-size: 0.66rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.06em; color: #fff; background: var(--amber); border-radius: 999px; padding: 0.18rem 0.55rem; }
+.cq-alt-letter { font-size: 0.68rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(43, 47, 51, 0.55); }
+.cq-alt-flag { font-size: 0.66rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.06em; color: var(--charcoal); background: var(--amber); border-radius: 999px; padding: 0.18rem 0.55rem; }
 .cq-alt-head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.6rem; }
 .cq-alt-title { font-weight: 800; font-size: 1.05rem; }
 .cq-alt-price { font-family: var(--font-headline), sans-serif; font-size: 1.5rem; white-space: nowrap; }
-.cq-alt-desc { margin: 0; font-size: 0.92rem; line-height: 1.45; color: rgba(43, 26, 18, 0.78); white-space: pre-wrap; }
-.cq-alt-mark { margin-top: 0.2rem; font-size: 0.85rem; font-weight: 800; color: rgba(43, 26, 18, 0.62); }
+.cq-alt-desc { margin: 0; font-size: 0.92rem; line-height: 1.45; color: rgba(43, 47, 51, 0.78); white-space: pre-wrap; }
+.cq-alt-mark { margin-top: 0.2rem; font-size: 0.85rem; font-weight: 800; color: rgba(43, 47, 51, 0.62); }
 .cq-alt-on .cq-alt-mark { color: var(--amber-dark); }
 .cq-confirm-item-pick { font-weight: 800; }
 
 /* Crew: the option they picked, leading what goes on the truck. */
-.jo-scope-pick { background: rgba(194, 104, 42, 0.07); }
+.jo-scope-pick { background: rgba(217, 146, 43, 0.07); }
 
 /* Crew, on the phone: which option the customer said yes to. */
 .ao-picks { gap: 0.4rem; margin-bottom: 0.9rem; }
@@ -3642,11 +3649,11 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   padding: 0.55rem 0.7rem; border: 1px solid var(--crm-border); border-radius: 0.5rem;
   background: var(--crm-surface-solid); color: inherit; font: inherit; cursor: pointer;
 }
-.ao-light .ao-pick { border-color: #d1d5db; background: #faf8f4; }
+.ao-light .ao-pick { border-color: #d1d5db; background: #f7f7f4; }
 .ao-pick .ao-opt-title { flex: 1 1 auto; }
 .ao-pick-letter { flex: 0 0 auto; width: 1.4rem; height: 1.4rem; border-radius: 999px; display: grid; place-items: center; font-size: 0.72rem; font-weight: 900; background: rgba(127, 127, 127, 0.28); }
 .ao-pick.ao-on { border-color: var(--amber); box-shadow: inset 0 0 0 1px var(--amber); }
-.ao-pick.ao-on .ao-pick-letter { background: var(--amber); color: #fff; }
+.ao-pick.ao-on .ao-pick-letter { background: var(--amber); color: var(--charcoal); }
 
 @media (max-width: 560px) {
   .qo-row-main { flex-direction: column; }
@@ -3663,14 +3670,14 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 
 /* The deposit choice, offered at the moment they approve. */
 .cq-pay { display: flex; flex-direction: column; gap: 0.55rem; }
-.cq-pay-lead { font-size: 0.9rem; color: rgba(43, 26, 18, 0.75); margin: 0 0 0.15rem; }
+.cq-pay-lead { font-size: 0.9rem; color: rgba(43, 47, 51, 0.75); margin: 0 0 0.15rem; }
 /* Second, not lesser. A customer paying the crew in cash has chosen, not
    refused, so this reads as an alternative rather than a way out. */
-.cq-pay-alt { background: #fff; color: #2b1a12; border: 2px solid rgba(43, 26, 18, 0.25); cursor: pointer; font: inherit; font-weight: 800; }
-.cq-pay-alt:hover { border-color: #2b1a12; }
+.cq-pay-alt { background: #fff; color: #2b2f33; border: 2px solid rgba(43, 47, 51, 0.25); cursor: pointer; font: inherit; font-weight: 800; }
+.cq-pay-alt:hover { border-color: #2b2f33; }
 .cq-pay-alt:disabled { opacity: 0.55; cursor: not-allowed; }
 .cq-pay-fine { margin-top: 0.1rem; }
-.cq-confirm-paid { font-size: 0.95rem; color: rgba(43, 26, 18, 0.75); margin-bottom: 1rem; }
+.cq-confirm-paid { font-size: 0.95rem; color: rgba(43, 47, 51, 0.75); margin-bottom: 1rem; }
 .cq-confirm-pay { display: inline-flex; margin-bottom: 1.25rem; }
 
 .pay-card { display: flex; flex-direction: column; }
@@ -3678,52 +3685,52 @@ textarea.qm-input { min-height: 0; resize: vertical; }
    decides anything, and it is read at arm's length. */
 .pay-due { background: #fff; border: 2px solid var(--amber); border-radius: 0.9rem; padding: 1.1rem 1.25rem; margin-bottom: 1.1rem; }
 .pay-due-clear { border-color: rgba(22, 163, 74, 0.55); }
-.pay-due-label { display: block; font-weight: 700; text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.08em; color: rgba(43, 26, 18, 0.55); }
-.pay-due-value { display: block; font-family: var(--font-headline), sans-serif; font-size: 2.8rem; line-height: 1.05; color: #2b1a12; font-variant-numeric: tabular-nums; }
-.pay-bar { height: 6px; border-radius: 999px; background: rgba(43, 26, 18, 0.12); overflow: hidden; margin: 0.7rem 0 0.6rem; }
+.pay-due-label { display: block; font-weight: 700; text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.08em; color: rgba(43, 47, 51, 0.55); }
+.pay-due-value { display: block; font-family: var(--font-headline), sans-serif; font-size: 2.8rem; line-height: 1.05; color: #2b2f33; font-variant-numeric: tabular-nums; }
+.pay-bar { height: 6px; border-radius: 999px; background: rgba(43, 47, 51, 0.12); overflow: hidden; margin: 0.7rem 0 0.6rem; }
 .pay-bar span { display: block; height: 100%; background: var(--amber); border-radius: 999px; }
 .pay-due-clear .pay-bar span { background: #16a34a; }
 .pay-split { display: flex; gap: 1.5rem; margin: 0; font-size: 0.85rem; }
-.pay-split dt { color: rgba(43, 26, 18, 0.55); font-weight: 700; text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.05em; }
+.pay-split dt { color: rgba(43, 47, 51, 0.55); font-weight: 700; text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.05em; }
 .pay-split dd { margin: 0; font-weight: 800; font-variant-numeric: tabular-nums; }
 
 /* Every payment on the job, cash included. */
 .pay-history { list-style: none; margin: 0 0 1.25rem; padding: 0; display: flex; flex-direction: column; gap: 0.3rem; }
-.pay-history li { display: grid; grid-template-columns: 4.5rem 1fr auto; gap: 0.6rem; align-items: baseline; font-size: 0.88rem; padding: 0.45rem 0.7rem; background: rgba(43, 26, 18, 0.04); border-radius: 0.5rem; }
-.pay-history-when { color: rgba(43, 26, 18, 0.55); }
+.pay-history li { display: grid; grid-template-columns: 4.5rem 1fr auto; gap: 0.6rem; align-items: baseline; font-size: 0.88rem; padding: 0.45rem 0.7rem; background: rgba(43, 47, 51, 0.04); border-radius: 0.5rem; }
+.pay-history-when { color: rgba(43, 47, 51, 0.55); }
 .pay-history-how { font-weight: 700; }
 .pay-history-amount { font-weight: 800; font-variant-numeric: tabular-nums; }
-.pay-history-amount em { font-style: normal; font-weight: 600; color: rgba(43, 26, 18, 0.55); }
+.pay-history-amount em { font-style: normal; font-weight: 600; color: rgba(43, 47, 51, 0.55); }
 
 .pay-receipt { background: rgba(22, 163, 74, 0.1); border: 1px solid rgba(22, 163, 74, 0.4); border-radius: 0.9rem; padding: 1rem 1.15rem; margin-bottom: 1.1rem; color: #14532d; }
 .pay-receipt-eyebrow { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin: 0; }
 .pay-receipt strong { display: block; font-family: var(--font-headline), sans-serif; font-size: 2rem; line-height: 1.1; }
 .pay-receipt p { margin: 0.25rem 0 0; font-size: 0.9rem; }
-.pay-note { background: rgba(43, 26, 18, 0.06); border-radius: 0.7rem; padding: 0.75rem 0.9rem; margin-bottom: 1.1rem; font-size: 0.88rem; color: rgba(43, 26, 18, 0.8); }
+.pay-note { background: rgba(43, 47, 51, 0.06); border-radius: 0.7rem; padding: 0.75rem 0.9rem; margin-bottom: 1.1rem; font-size: 0.88rem; color: rgba(43, 47, 51, 0.8); }
 
 .pay-form { display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 1.25rem; }
 .pay-choices { display: flex; flex-direction: column; gap: 0.5rem; }
 /* One tap picks the amount. The number leads and the explanation follows it,
    because the number is what is being agreed to. */
-.pay-choice { display: flex; flex-direction: column; align-items: flex-start; gap: 0.1rem; width: 100%; text-align: left; padding: 0.8rem 1rem; border: 2px solid rgba(43, 26, 18, 0.18); border-radius: 0.7rem; background: #fff; font: inherit; color: #2b1a12; cursor: pointer; }
-.pay-choice:hover { border-color: rgba(43, 26, 18, 0.45); }
+.pay-choice { display: flex; flex-direction: column; align-items: flex-start; gap: 0.1rem; width: 100%; text-align: left; padding: 0.8rem 1rem; border: 2px solid rgba(43, 47, 51, 0.18); border-radius: 0.7rem; background: #fff; font: inherit; color: #2b2f33; cursor: pointer; }
+.pay-choice:hover { border-color: rgba(43, 47, 51, 0.45); }
 .pay-choice-on { border-color: var(--amber); box-shadow: inset 0 0 0 1px var(--amber); }
 .pay-choice:disabled { opacity: 0.6; cursor: not-allowed; }
 .pay-choice-amount { font-family: var(--font-headline), sans-serif; font-size: 1.7rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
-.pay-choice-note { font-size: 0.82rem; color: rgba(43, 26, 18, 0.7); }
+.pay-choice-note { font-size: 0.82rem; color: rgba(43, 47, 51, 0.7); }
 .pay-choice-other .pay-choice-amount { font-size: 1.15rem; }
-.pay-custom { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(43, 26, 18, 0.6); }
-.pay-custom-field { display: flex; align-items: center; gap: 0.3rem; background: #fff; border: 2px solid rgba(43, 26, 18, 0.2); border-radius: 0.6rem; padding: 0.5rem 0.75rem; font-family: var(--font-headline), sans-serif; font-size: 1.5rem; color: #2b1a12; }
+.pay-custom { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(43, 47, 51, 0.6); }
+.pay-custom-field { display: flex; align-items: center; gap: 0.3rem; background: #fff; border: 2px solid rgba(43, 47, 51, 0.2); border-radius: 0.6rem; padding: 0.5rem 0.75rem; font-family: var(--font-headline), sans-serif; font-size: 1.5rem; color: #2b2f33; }
 .pay-custom-field input { flex: 1 1 auto; min-width: 0; border: none; outline: none; background: transparent; font: inherit; color: inherit; font-variant-numeric: tabular-nums; }
 .pay-custom-field:focus-within { border-color: var(--amber); }
 .pay-custom-hint { font-weight: 600; text-transform: none; letter-spacing: 0; }
 .pay-go { width: 100%; text-align: center; }
 .pay-err { background: rgba(185, 28, 28, 0.1); border: 1px solid rgba(185, 28, 28, 0.35); border-radius: 0.6rem; padding: 0.6rem 0.8rem; margin: 0; font-size: 0.88rem; font-weight: 700; color: #991b1b; }
-.pay-fine { font-size: 0.78rem; color: rgba(43, 26, 18, 0.6); margin: 0; line-height: 1.45; }
+.pay-fine { font-size: 0.78rem; color: rgba(43, 47, 51, 0.6); margin: 0; line-height: 1.45; }
 .pay-done { font-size: 1rem; }
 .pay-offline { background: #fff; border-radius: 0.9rem; padding: 1.1rem 1.25rem; margin-bottom: 1.25rem; }
 .pay-offline h2 { font-weight: 800; font-size: 0.95rem; margin-bottom: 0.35rem; }
-.pay-offline p { font-size: 0.9rem; color: rgba(43, 26, 18, 0.8); margin: 0; }
+.pay-offline p { font-size: 0.9rem; color: rgba(43, 47, 51, 0.8); margin: 0; }
 
 @media (max-width: 640px) {
   .pay-due-value { font-size: 3.2rem; }
@@ -3767,7 +3774,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 /* Thumb-sized, because this is filled in one-handed while holding something. */
 .jp-methods { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .jp-method { flex: 1 1 30%; min-height: 46px; padding: 0.5rem 0.6rem; border: 2px solid #d1d5db; border-radius: 0.55rem; background: #fff; font: inherit; font-weight: 800; font-size: 0.88rem; color: #374151; cursor: pointer; }
-.jp-method-on { border-color: var(--amber); background: var(--amber); color: #fff; }
+.jp-method-on { border-color: var(--amber); background: var(--amber); color: var(--charcoal); }
 .jp-method:disabled { opacity: 0.55; cursor: not-allowed; }
 .jp-field { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; }
 .jp-amount { display: flex; align-items: center; gap: 0.35rem; border: 1px solid #d1d5db; border-radius: 0.6rem; padding: 0.55rem 0.75rem; background: #fff; font-size: 1.4rem; font-weight: 800; color: #1f2328; }
@@ -3802,7 +3809,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .cash-methods li { position: relative; display: flex; align-items: baseline; justify-content: space-between; gap: 0.75rem; padding: 0.55rem 0.7rem; border-radius: 0.5rem; background: var(--crm-surface-solid); overflow: hidden; }
 .cash-methods span { position: relative; z-index: 1; font-weight: 700; }
 .cash-methods strong { position: relative; z-index: 1; font-variant-numeric: tabular-nums; }
-.cash-methods i { position: absolute; inset: 0 auto 0 0; background: rgba(194, 104, 42, 0.22); }
+.cash-methods i { position: absolute; inset: 0 auto 0 0; background: rgba(217, 146, 43, 0.22); }
 
 .cash-table td { font-variant-numeric: tabular-nums; }
 .cash-note { margin-top: 0.8rem; }
@@ -3898,7 +3905,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 0.7rem;
   padding: 0.55rem 0.7rem; border-radius: 0.5rem; background: var(--crm-surface-solid); font-size: 0.9rem;
 }
-.ao-light .ao-opt { background: #faf8f4; }
+.ao-light .ao-opt { background: #f7f7f4; }
 .ao-opt-title { font-weight: 700; min-width: 0; }
 .ao-opt-amount { font-weight: 800; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .ao-opt-tag { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: var(--crm-muted); white-space: nowrap; }
@@ -3943,9 +3950,9 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 
 .ao-warn {
   font-size: 0.82rem; line-height: 1.5; padding: 0.6rem 0.7rem; border-radius: 0.5rem;
-  border: 1px solid rgba(194, 104, 42, 0.45); background: rgba(194, 104, 42, 0.1); color: inherit;
+  border: 1px solid rgba(217, 146, 43, 0.45); background: rgba(217, 146, 43, 0.1); color: inherit;
 }
-.ao-light .ao-warn { background: rgba(194, 104, 42, 0.07); }
+.ao-light .ao-warn { background: rgba(217, 146, 43, 0.07); }
 .ao-acts { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
 .ao-go {
   flex: 1; background: #16a34a; color: #fff; border: none; border-radius: 999px;
@@ -4021,7 +4028,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 /* What the customer will see, worked out live. The deposit row is why this
    panel exists, so it is never collapsed into a single "balance" figure. */
 .co-sums { display: flex; flex-direction: column; gap: 0.3rem; margin: 0; padding: 0.7rem 0.8rem; border-radius: 0.6rem; background: var(--crm-surface-solid); }
-.co-light .co-sums { background: #faf8f4; }
+.co-light .co-sums { background: #f7f7f4; }
 .co-sums > div { display: flex; justify-content: space-between; align-items: baseline; gap: 0.8rem; font-size: 0.9rem; }
 .co-sums dt { color: var(--crm-muted); }
 .co-light .co-sums dt { color: #6b7280; }
@@ -4040,7 +4047,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   font-size: 0.92rem; line-height: 1.55; padding: 0.7rem 0.8rem; border-radius: 0.6rem;
   border-left: 3px solid var(--crm-accent); background: var(--crm-surface-solid); margin-bottom: 0.8rem;
 }
-.co-light .co-note-back { background: #faf8f4; border-left-color: var(--amber); }
+.co-light .co-note-back { background: #f7f7f4; border-left-color: var(--amber); }
 
 .co-warn {
   font-size: 0.85rem; line-height: 1.5; padding: 0.6rem 0.7rem; border-radius: 0.5rem;
@@ -4087,7 +4094,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
    means nothing without it. */
 .cr-note-body {
   font-size: 1.02rem; line-height: 1.6; color: #1f2328; padding: 0.85rem 0.95rem;
-  background: #faf8f4; border-radius: 0.7rem; margin-bottom: 0.9rem;
+  background: #f7f7f4; border-radius: 0.7rem; margin-bottom: 0.9rem;
 }
 .cr-date { font-size: 0.95rem; color: #374151; margin-bottom: 0.9rem; }
 .cr-note { font-size: 0.95rem; line-height: 1.55; color: #374151; margin-bottom: 0.5rem; }
@@ -4136,7 +4143,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   padding: 0.9rem 0.95rem; border-radius: 0.7rem; margin-bottom: 0.9rem;
   border: 1px dashed var(--crm-border); background: var(--crm-surface-solid);
 }
-.co-light .co-preview { border-color: #d1d5db; background: #faf8f4; }
+.co-light .co-preview { border-color: #d1d5db; background: #f7f7f4; }
 .co-preview .co-sums { background: none; padding: 0; }
 .co-light .co-preview .co-sums { background: none; }
 .co-held { font-size: 0.88rem; color: var(--crm-muted); margin-bottom: 0.6rem; }
@@ -4148,7 +4155,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   display: grid; grid-template-columns: 1fr auto auto; gap: 0.7rem; align-items: baseline;
   padding: 0.45rem 0.65rem; border-radius: 0.45rem; background: var(--crm-surface-solid); font-size: 0.88rem;
 }
-.co-light .co-ledger-row { background: #faf8f4; }
+.co-light .co-ledger-row { background: #f7f7f4; }
 /* A row the balance does not count - voided, pending, failed. Struck through so
    it reads as history rather than as money. */
 .co-ledger-out { opacity: 0.55; }
@@ -4223,7 +4230,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .qo-preset:hover { border-color: var(--amber); color: var(--amber-dark); }
 .qo-preset:active { transform: translateY(1px); }
 .crm-paper .qo-preset { background: transparent; border-color: var(--crm-border); color: var(--crm-text); }
-.crm-paper .qo-preset:hover { border-color: var(--crm-accent); color: #f0a36b; }
+.crm-paper .qo-preset:hover { border-color: var(--crm-accent); color: #e8b56a; }
 
 /* The gap between the lines and the price the customer already has. */
 .qo-gap { margin: 0.45rem 0 0; font-size: 0.82rem; font-weight: 700; color: #92400e; }
@@ -4262,7 +4269,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .cq-breakdown .cq-opt, .cq-breakdown .cq-opt-on {
   border: 0; border-radius: 0; background: none; padding: 0.7rem 0;
 }
-.cq-breakdown .cq-opt + .cq-opt { border-top: 1px solid rgba(43, 26, 18, 0.1); }
+.cq-breakdown .cq-opt + .cq-opt { border-top: 1px solid rgba(43, 47, 51, 0.1); }
 .cq-breakdown .cq-opt-price { font-size: 1.1rem; font-variant-numeric: tabular-nums; }
 .jq-preview-breakdown { margin-bottom: 0.9rem; }
 
@@ -4303,7 +4310,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
   --crm-border: #d8cfc1;
   --crm-surface-solid: #fff;
   background: #f6f1e9;
-  border: 1px solid #e0d5c4;
+  border: 1px solid #d9d9d3;
   border-left: 4px solid var(--amber);
   color: #1f2328;
 }
@@ -4315,24 +4322,24 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .co-light .co-field textarea:focus, .co-light .co-field input:focus { outline: 2px solid var(--amber); outline-offset: 1px; border-color: var(--amber); }
 .co-light .co-open { background: #fff; border-color: #cbbfad; color: #1f2328; }
 .co-light .co-open:hover { border-color: var(--amber); color: var(--amber-dark); }
-.co-light .co-go { background: var(--amber); color: #fff; }
+.co-light .co-go { background: var(--amber); color: var(--charcoal); }
 .co-light .co-go:hover:not(:disabled) { background: var(--amber-dark); }
 .co-light .co-go:disabled { background: #d9cbb8; color: #fff; opacity: 1; }
 .co-light .co-cancel { color: #3f4650; }
-.co-light .co-sums { background: #fff; border: 1px solid #e0d5c4; }
+.co-light .co-sums { background: #fff; border: 1px solid #d9d9d3; }
 .co-light .co-sums dt { color: #4b5563; }
-.co-light .co-preview { background: #fff; border: 1px solid #e0d5c4; }
+.co-light .co-preview { background: #fff; border: 1px solid #d9d9d3; }
 .co-light .co-note-back { background: #fff; border-left-color: var(--amber); color: #1f2328; }
 .co-light .co-preview .co-note-back { background: #f6f1e9; }
-.co-light .co-ledger-row { background: #fff; border: 1px solid #e0d5c4; }
+.co-light .co-ledger-row { background: #fff; border: 1px solid #d9d9d3; }
 .co-light .co-lines-rows li + li { border-top-color: #ece4d8; }
 .co-light .co-warn { border-width: 1px; }
 .co-light .co-check { color: #1f2328; }
 /* The breakdown editor inside the card: a white sheet on the tint, each line a
    white row with the amber edge that marks it part of the job. */
-.co-light .qo-box { background: #fff; border-color: #e0d5c4; }
+.co-light .qo-box { background: #fff; border-color: #d9d9d3; }
 .co-light .qo-box legend { color: #1f2328; background: #fff; border-radius: 0.3rem; }
-.co-light .qo-row { border-color: #e0d5c4; }
+.co-light .qo-row { border-color: #d9d9d3; }
 .co-light .qo-row-required { background: #fdfbf8; }
 .co-light .qo-field input, .co-light .qo-field textarea { border-color: #cbbfad; }
 .co-light .co-preview .co-sums { border: 0; background: none; }
@@ -4362,7 +4369,7 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .co-light .co-field em.co-deposit-err { color: #b91c1c; }
 /* The "due now" row: the one figure the customer acts on first. */
 .co-sums-now { border-top: 1px dashed var(--crm-border); margin-top: 0.2rem; padding-top: 0.45rem; }
-.co-light .co-sums-now { border-top-color: #e0d5c4; }
+.co-light .co-sums-now { border-top-color: #d9d9d3; }
 .co-sums-now dt, .co-sums-now dd { font-weight: 800; color: var(--amber) !important; }
 .co-light .co-sums-now dt, .co-light .co-sums-now dd { color: var(--amber-dark) !important; }
 

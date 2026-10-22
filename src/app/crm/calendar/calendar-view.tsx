@@ -101,7 +101,7 @@ const VIEW_KEY = "rcg-cal-view";
 
 // UTC getters throughout, deliberately: a month grid is pure calendar
 // arithmetic, the same in every timezone. Local Date parts drag in DST shifts
-// and the viewer's zone (while "today" comes from Raleigh); UTC removes the
+// and the viewer's zone (while "today" comes from Springfield); UTC removes the
 // clock entirely.
 function ymd(d: Date): string {
   return `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, "0")}-${String(d.getUTCDate()).padStart(2, "0")}`;
@@ -178,7 +178,7 @@ export function CalendarView({
   const t = dict(locale);
   const MONTHS = useMemo(() => monthNames(locale), [locale]);
   const DOW = useMemo(() => weekdayNames(locale), [locale]);
-  // Raleigh's today, not the viewer's, so a phone in another zone (or set
+  // Springfield's today, not the viewer's, so a phone in another zone (or set
   // wrong) doesn't ring the wrong cell.
   const todayStr = todayYmd();
   const [todayY, todayM] = todayStr.split("-").map(Number);

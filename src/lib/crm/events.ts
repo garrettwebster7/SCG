@@ -11,7 +11,7 @@ const statusLabel = (v: unknown) => STATUS_LABELS[String(v) as keyof typeof STAT
 // Log money is in CENTS. Named for its unit because quote_revised below has a local helper in DOLLARS.
 const centsUsd = (v: unknown) => (v == null ? "$0.00" : usd(Number(v) || 0));
 
-// Raleigh time, e.g. "tomorrow at 8:00 AM".
+// Springfield time, e.g. "tomorrow at 8:00 AM".
 const heldWhen = (v: unknown) => {
   const d = new Date(String(v));
   return Number.isNaN(d.getTime()) ? "in the morning" : clockLabel(d);

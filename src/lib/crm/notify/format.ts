@@ -5,10 +5,12 @@ import { firstNameOf, dollars, visitDateOf } from "../constants";
 
 // Used only in the FIRST text a customer gets. After that the business speaks,
 // since anyone may pick up the phone.
-export const OWNER_NAME = (process.env.OWNER_NAME || "Noah").trim();
-// Google review link for the job-complete thank-you; env overrides without a deploy.
-export const REVIEW_URL = (process.env.GOOGLE_REVIEW_URL || "https://g.page/r/Cf1V-s7AJLEaEAI/review").trim();
-export const BUSINESS = "Raleigh Concrete Group";
+export const OWNER_NAME = (process.env.OWNER_NAME || "").trim();
+// Google review link for the job-complete thank-you; unset leaves the ask out.
+export const REVIEW_URL = (process.env.GOOGLE_REVIEW_URL || "").trim();
+export const BUSINESS = "Springfield Concrete Group";
+// "this is Sam with Springfield Concrete Group", or just the business with no OWNER_NAME set.
+export const INTRO = OWNER_NAME ? `this is ${OWNER_NAME} with ${BUSINESS}` : `this is ${BUSINESS}`;
 
 // Opt-out notice: only in the FIRST message to someone; repeating it trains
 // people to skip it. STOP works on every message regardless, since the carrier

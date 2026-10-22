@@ -11,7 +11,7 @@ import {
 import type { QueueHealth } from "@/lib/crm/queries";
 import { DRIFT_TOLERANCE_SECONDS, type ClockCheck } from "@/lib/crm/time-check";
 
-// Every date is rendered in Raleigh time and texts are held 7pm-8am; both are silently wrong if the
+// Every date is rendered in Springfield time and texts are held 7pm-8am; both are silently wrong if the
 // clock is, and a clock never reports its own failure.
 export function ClockCard({ check, queue }: { check: ClockCheck; queue: QueueHealth }) {
   const at = now();
@@ -39,7 +39,7 @@ export function ClockCard({ check, queue }: { check: ClockCheck; queue: QueueHea
         <div>
           <dt>Zone</dt>
           <dd>
-            {BUSINESS_TZ} - Eastern, so EST in winter and EDT in summer. Every date in the CRM, on the job pages and in
+            {BUSINESS_TZ} - Central, so CST in winter and CDT in summer. Every date in the CRM, on the job pages and in
             the texts is written in this zone, whatever the server or the phone reading it is set to.
           </dd>
         </div>

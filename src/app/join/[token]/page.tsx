@@ -9,7 +9,7 @@ import { JoinForm } from "./join-form";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: { absolute: "Join the crew | Raleigh Concrete Group" },
+  title: { absolute: "Join the crew | Springfield Concrete Group" },
   robots: { index: false, follow: false },
 };
 
@@ -30,10 +30,10 @@ export default async function JoinPage({ params }: { params: Promise<{ token: st
             {t.join.invalidNote}
           </p>
           <Image
-            src="/images/logo_horizontal.png"
+            src="/images/scg-logo-horizontal.png"
             alt={businessName}
-            width={967}
-            height={243}
+            width={715}
+            height={138}
             className="cq-confirm-logo"
             priority
           />
@@ -50,10 +50,10 @@ export default async function JoinPage({ params }: { params: Promise<{ token: st
       <div className="cq-card">
         <header className="cq-head">
           <Image
-            src="/images/logo_horizontal.png"
+            src="/images/scg-logo-horizontal.png"
             alt={businessName}
-            width={967}
-            height={243}
+            width={715}
+            height={138}
             className="cq-logo"
             priority
           />

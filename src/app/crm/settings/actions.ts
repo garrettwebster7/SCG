@@ -25,7 +25,7 @@ export async function saveSettings(_prev: SaveState, formData: FormData): Promis
   const fullName = String(formData.get("full_name") ?? "").trim().slice(0, 120);
   const phone = normalizePhone(String(formData.get("phone") ?? ""));
   if (phone === "invalid") {
-    return { ok: false, error: "Enter a valid US phone number, e.g. (919) 555-1234." };
+    return { ok: false, error: "Enter a valid US phone number, e.g. (217) 555-1234." };
   }
 
   // Only locales we ship, so a tampered form can't violate the locale check constraint.
@@ -112,7 +112,7 @@ export async function sendTestSms(_prev: TestSmsState, formData: FormData): Prom
   const results = await Promise.all(
     targets.map(async (to) => {
       // Ignores quiet hours, like every staff-facing text (only customer texts are held).
-      const r = await sendSmsResult(to, `Raleigh Concrete Group CRM test message (${stamp}). Notifications are working.`);
+      const r = await sendSmsResult(to, `Springfield Concrete Group CRM test message (${stamp}). Notifications are working.`);
       return {
         to,
         from: r.from ?? null,

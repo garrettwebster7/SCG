@@ -84,7 +84,7 @@ export async function createContractor(_prev: AddState, formData: FormData): Pro
     if (!phone) {
       smsNote = "Add a phone number to text their login.";
     } else {
-      const msg = loginMessage("Your Raleigh Concrete Group CRM login is ready.", email, password);
+      const msg = loginMessage("Your Springfield Concrete Group CRM login is ready.", email, password);
       const res = await sendSmsResult(phone, msg);
       smsSent = res.ok;
       // Ignores quiet hours: staff-facing.
@@ -128,7 +128,7 @@ export async function resetContractorPassword(_prev: ResetState, formData: FormD
     if (!contractor.phone) {
       smsNote = "No phone number on file. Share the password manually.";
     } else {
-      const msg = loginMessage("Your Raleigh Concrete Group CRM password was reset.", contractor.email, password);
+      const msg = loginMessage("Your Springfield Concrete Group CRM password was reset.", contractor.email, password);
       const sms = await sendSmsResult(contractor.phone, msg);
       smsSent = sms.ok;
       if (!sms.ok) smsNote = `Couldn't text them (${sms.detail || sms.status || "unknown error"}). Share the password manually.`;
@@ -161,7 +161,7 @@ export async function updateContractorContact(
   let phone: string | null = null;
   if (rawPhone !== "") {
     phone = toE164(rawPhone);
-    if (!phone) return { ok: false, error: "Enter a valid US number, e.g. (919) 555-1234." };
+    if (!phone) return { ok: false, error: "Enter a valid US number, e.g. (217) 555-1234." };
   }
 
   if (!EMAIL_RE.test(email)) return { ok: false, error: "Enter a valid email." };
@@ -212,7 +212,7 @@ export async function sendContractorInvite(
   if (!rawPhone) return { ok: false, error: "Enter the phone number to text the invite to." };
 
   const phone = toE164(rawPhone);
-  if (!phone) return { ok: false, error: "Enter a valid US number, e.g. (919) 555-1234." };
+  if (!phone) return { ok: false, error: "Enter a valid US number, e.g. (217) 555-1234." };
 
   const token = newInviteToken();
   if (!(await createInvite({ token, phone, fullName, createdBy: session.staff.id }))) {
@@ -221,7 +221,7 @@ export async function sendContractorInvite(
 
   const link = `${SITE_ORIGIN}/join/${token}`;
   const msg = [
-    `${session.staff.full_name || "Raleigh Concrete Group"} invited you to join the Raleigh Concrete Group crew.`,
+    `${session.staff.full_name || "Springfield Concrete Group"} invited you to join the Springfield Concrete Group crew.`,
     "",
     "Set up your login here:",
     link,

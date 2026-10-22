@@ -33,7 +33,7 @@ test("median is the middle value, and the mean of the middle two", () => {
 test("counts each attempt once per step, however often it passed through", () => {
   const rows: FunnelRow[] = [
     // A: all the way through, bounced back to contact once by the server.
-    row("a", "open", { path: "/raleigh" }),
+    row("a", "open", { path: "/springfield" }),
     row("a", "view", { step: "choice" }),
     row("a", "done", { step: "choice", ms: 2000, mode: "online" }),
     row("a", "view", { step: "contact", mode: "online" }),
@@ -48,7 +48,7 @@ test("counts each attempt once per step, however often it passed through", () =>
     row("a", "view", { step: "schedule", mode: "online" }),
     row("a", "submit", { step: "schedule", ms: 120000, mode: "online" }),
     // B: gave up on contact with the address unfinished, closed twice.
-    row("b", "open", { path: "/raleigh" }),
+    row("b", "open", { path: "/springfield" }),
     row("b", "view", { step: "choice" }),
     row("b", "done", { step: "choice", ms: 3000, mode: "inperson" }),
     row("b", "view", { step: "contact", mode: "inperson" }),
@@ -89,7 +89,7 @@ test("counts each attempt once per step, however often it passed through", () =>
     { key: "inperson", opened: 1, submitted: 0 },
     { key: "online", opened: 1, submitted: 1 },
   ]);
-  assert.deepEqual(s.byPath, [{ key: "/raleigh", opened: 2, submitted: 1 }]);
+  assert.deepEqual(s.byPath, [{ key: "/springfield", opened: 2, submitted: 1 }]);
   assert.deepEqual(s.byDevice, [
     { key: "mobile", opened: 2, submitted: 1 },
     { key: "desktop", opened: 1, submitted: 0 },

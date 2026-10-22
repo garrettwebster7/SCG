@@ -140,7 +140,7 @@ async function loadDrafts(days: number): Promise<Draft[] | null> {
 
 function whenShort(iso: string): string {
   return new Date(iso).toLocaleString("en-US", {
-    timeZone: "America/New_York",
+    timeZone: "America/Chicago",
     month: "short",
     day: "numeric",
     hour: "numeric",

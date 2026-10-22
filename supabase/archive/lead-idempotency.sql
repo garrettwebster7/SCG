@@ -1,4 +1,4 @@
--- Raleigh Concrete Group - one lead per filled-in quote form
+-- Springfield Concrete Group - one lead per filled-in quote form
 -- Run once in Supabase -> SQL Editor. Safe to re-run. (Applied to the live
 -- database on 23 Sep 2026.)
 --

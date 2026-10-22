@@ -60,7 +60,7 @@ export async function POST(request: Request) {
   const phone = rawPhone.trim() ? toE164(rawPhone) : null;
   if (rawPhone.trim() && !phone) {
     return NextResponse.json(
-      { ok: false, error: "Enter a valid US mobile number, e.g. (919) 555-1234." },
+      { ok: false, error: "Enter a valid US mobile number, e.g. (217) 555-1234." },
       { status: 400 },
     );
   }

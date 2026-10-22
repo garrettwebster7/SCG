@@ -6,4 +6,4 @@ Disallow: /q/
 Disallow: /job/
 Disallow: /confirm
 
-Sitemap: https://www.raleighconcrete.net/sitemap.xml
+Sitemap: https://www.springfieldconcretegroup.com/sitemap.xml

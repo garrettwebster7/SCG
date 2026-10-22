@@ -1,24 +1,29 @@
-import { businessName, phoneDisplay, services } from "@/lib/site-data";
+import { businessName, phoneDisplay, phoneHref, services } from "@/lib/site-data";
 
-export const SITE_URL = "https://www.raleighconcrete.net";
+// TODO: set NEXT_PUBLIC_SITE_URL in Vercel once the domain is live; the fallback is a placeholder.
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.springfieldconcretegroup.com").replace(/\/$/, "");
 export const BUSINESS_ID = `${SITE_URL}/#business`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 
 // Service-area business: locality/region and areaServed only, no street address.
 export const SERVICE_AREAS = [
-  "Raleigh",
-  "Cary",
-  "Apex",
-  "Wake Forest",
-  "Durham",
-  "Chapel Hill",
-  "Morrisville",
-  "Garner",
-  "Holly Springs",
-  "Knightdale",
+  "Springfield",
+  "Chatham",
+  "Rochester",
+  "Sherman",
+  "Riverton",
+  "Jacksonville",
+  "Taylorville",
+  "Petersburg",
+  "Auburn",
+  "New Berlin",
+  "Pleasant Plains",
+  "Williamsville",
+  "Leland Grove",
 ];
+const REGION = "IL";
 
-const PHONE_E164 = "+19198733919";
+const PHONE_E164 = phoneHref.replace(/^tel:/, "");
 
 export function localBusinessSchema() {
   return {
@@ -28,24 +33,23 @@ export function localBusinessSchema() {
     name: businessName,
     url: SITE_URL,
     telephone: PHONE_E164,
-    image: `${SITE_URL}/images/logo_horizontal_light.png`,
-    logo: `${SITE_URL}/images/logo_horizontal_light.png`,
+    image: `${SITE_URL}/images/scg-logo-stacked.png`,
+    logo: `${SITE_URL}/images/scg-logo-stacked.png`,
     description:
-      "Concrete and hardscaping contractor in Raleigh, NC. Driveways, patios, walkways, retaining walls, stamped concrete and pavers for residential and commercial clients across the Triangle.",
-    foundingDate: "2020",
+      "Concrete contractor in Springfield, IL. Driveways, patios, walkways, slabs, steps, repairs and stamped concrete for homeowners and property owners across Central Illinois.",
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Raleigh",
-      addressRegion: "NC",
+      addressLocality: "Springfield",
+      addressRegion: REGION,
       addressCountry: "US",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 35.7796,
-      longitude: -78.6382,
+      latitude: 39.7817,
+      longitude: -89.6501,
     },
-    areaServed: SERVICE_AREAS.map((city) => ({ "@type": "City", name: `${city}, NC` })),
+    areaServed: SERVICE_AREAS.map((city) => ({ "@type": "City", name: `${city}, ${REGION}` })),
     knowsAbout: services.map((s) => s.name),
     openingHoursSpecification: [
       {
@@ -86,7 +90,7 @@ export function serviceSchema(opts: {
     ...(opts.image ? { image: `${SITE_URL}${opts.image}` } : {}),
     description: opts.description,
     provider: { "@id": BUSINESS_ID },
-    areaServed: SERVICE_AREAS.map((city) => ({ "@type": "City", name: `${city}, NC` })),
+    areaServed: SERVICE_AREAS.map((city) => ({ "@type": "City", name: `${city}, ${REGION}` })),
   };
 }
 

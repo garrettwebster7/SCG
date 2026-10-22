@@ -1,4 +1,4 @@
--- Raleigh Concrete Group - correcting a payment somebody keyed in wrong
+-- Springfield Concrete Group - correcting a payment somebody keyed in wrong
 -- Run this AFTER payments.sql, once, in Supabase -> SQL Editor. Safe to re-run.
 --
 -- Why this file exists.
