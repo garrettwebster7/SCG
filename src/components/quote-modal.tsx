@@ -777,8 +777,8 @@ function Modal({ onClose }: { onClose: () => void }) {
                     : !isLastStep
                       ? "Next"
                       : mode === "inperson"
-                        ? "Book My Free Quote"
-                        : "Get My Free Quote"}
+                        ? "Book My Free Quote!"
+                        : "Get My Free Quote!"}
               </button>
             </div>
             )}

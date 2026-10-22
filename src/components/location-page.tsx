@@ -171,7 +171,7 @@ export function LocationPage({ locationKey }: LocationPageProps) {
           </div>
           <div className="mt-8 text-center">
             <a href="#quote" className="cta-primary">
-              Get My Free Quote
+              Get My Free Quote!
             </a>
           </div>
         </section>
