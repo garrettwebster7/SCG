@@ -11,8 +11,8 @@ type BeforeAfterSliderProps = {
 };
 
 // Position lives in a CSS variable (--ba-pos) written straight to the DOM, not React state, so dragging
-// never re-renders and stays smooth. Desktop: the divider follows the mouse. Touch: horizontal drags move
-// it while vertical swipes still scroll the page (touch-action: pan-y). A tap or click glides to the spot.
+// never re-renders and stays smooth. The divider moves only while the round handle is pressed and held;
+// hovering or tapping the photo does nothing, and swipes over the photo scroll the page as usual.
 export function BeforeAfterSlider({
   beforeSrc,
   afterSrc,
@@ -32,7 +32,7 @@ export function BeforeAfterSlider({
     cancelAnimationFrame(frame.current);
     frame.current = requestAnimationFrame(() => {
       el.style.setProperty("--ba-pos", `${pos.current}%`);
-      el.setAttribute("aria-valuenow", String(Math.round(pos.current)));
+      el.querySelector(".ba-handle")?.setAttribute("aria-valuenow", String(Math.round(pos.current)));
     });
   }, []);
 
@@ -41,18 +41,19 @@ export function BeforeAfterSlider({
     return ((clientX - rect.left) / rect.width) * 100;
   };
 
-  const onPointerDown = (e: React.PointerEvent) => {
+  const onPointerDown = (e: React.PointerEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     dragging.current = true;
-    apply(pctAt(e.clientX), true);
-    if (e.pointerType !== "touch") containerRef.current?.setPointerCapture(e.pointerId);
+    e.currentTarget.setPointerCapture(e.pointerId);
+    containerRef.current?.classList.add("ba-dragging");
   };
   const onPointerMove = (e: React.PointerEvent) => {
-    // Mouse/pen follow on hover; touch moves only while the finger is down.
-    if (e.pointerType === "touch" && !dragging.current) return;
+    if (!dragging.current) return;
     apply(pctAt(e.clientX));
   };
   const onPointerEnd = () => {
     dragging.current = false;
+    containerRef.current?.classList.remove("ba-dragging");
   };
 
   const onKeyDown = (e: React.KeyboardEvent) => {
@@ -72,18 +73,6 @@ export function BeforeAfterSlider({
       ref={containerRef}
       className="ba-slider"
       style={{ "--ba-pos": "50%" } as React.CSSProperties}
-      onPointerDown={onPointerDown}
-      onPointerMove={onPointerMove}
-      onPointerUp={onPointerEnd}
-      onPointerCancel={onPointerEnd}
-      onPointerLeave={onPointerEnd}
-      onKeyDown={onKeyDown}
-      tabIndex={0}
-      role="slider"
-      aria-label={`Before and after comparison: ${afterAlt.replace(/ after$/, "")}`}
-      aria-valuemin={0}
-      aria-valuemax={100}
-      aria-valuenow={50}
     >
       {/* After: base layer, full width. */}
       <div className="ba-layer ba-after">
@@ -97,12 +86,25 @@ export function BeforeAfterSlider({
         <span className="ba-label ba-label-left">Before</span>
       </div>
 
-      <div className="ba-divider" aria-hidden="true">
-        <div className="ba-handle">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <div className="ba-divider">
+        <button
+          type="button"
+          className="ba-handle"
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={onPointerEnd}
+          onPointerCancel={onPointerEnd}
+          onKeyDown={onKeyDown}
+          role="slider"
+          aria-label={`Drag to compare before and after: ${afterAlt.replace(/ after$/, "")}`}
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-valuenow={50}
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M8 7l-5 5 5 5V7zm8 0v10l5-5-5-5z" />
           </svg>
-        </div>
+        </button>
       </div>
     </div>
   );

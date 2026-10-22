@@ -583,13 +583,10 @@ button.marquee-item:hover { border-color: rgba(217, 146, 43, 0.6); }
   aspect-ratio: 16 / 9;
   border-radius: 1.25rem;
   overflow: hidden;
-  cursor: ew-resize;
   user-select: none;
   -webkit-user-select: none;
-  touch-action: pan-y;
   -webkit-tap-highlight-color: transparent;
 }
-.ba-slider:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
 .ba-layer { position: absolute; inset: 0; }
 .ba-img { object-fit: cover; pointer-events: none; }
 .ba-before { clip-path: inset(0 calc(100% - var(--ba-pos, 50%)) 0 0); will-change: clip-path; }
@@ -615,18 +612,26 @@ button.marquee-item:hover { border-color: rgba(217, 146, 43, 0.6); }
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
+  border: none;
+  padding: 0;
   border-radius: 50%;
   background: #fff;
   color: #1c1f24;
+  pointer-events: auto;
+  cursor: grab;
+  touch-action: none;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 2px 12px rgba(0,0,0,0.5);
   transition: transform 0.15s ease;
 }
-.ba-slider:active .ba-handle { transform: translate(-50%, -50%) scale(1.08); }
+.ba-handle:hover { transform: translate(-50%, -50%) scale(1.06); }
+.ba-dragging .ba-handle { transform: translate(-50%, -50%) scale(1.1); cursor: grabbing; }
+.ba-dragging { cursor: grabbing; }
+.ba-handle:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
 .ba-label {
   position: absolute;
   bottom: 0.75rem;
