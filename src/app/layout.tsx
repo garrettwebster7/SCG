@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Roboto_Slab } from "next/font/google";
+import { Inter, Oswald } from "next/font/google";
 
 import { Clarity } from "@/components/clarity";
 import { JsonLd } from "@/components/json-ld";
@@ -9,9 +9,9 @@ import { localBusinessSchema, websiteSchema } from "@/lib/seo";
 import { siteUrl } from "@/lib/site-data";
 import "./globals.css";
 
-const headline = Roboto_Slab({
+const headline = Oswald({
   variable: "--font-headline",
-  weight: ["700", "800", "900"],
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
 });
 

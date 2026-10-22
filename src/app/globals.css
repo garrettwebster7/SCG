@@ -42,9 +42,10 @@ body {
 
 /* ─── Typography ─────────────────────────────────────── */
 .font-headline {
-  font-family: var(--font-headline), serif;
-  font-weight: 800;
-  letter-spacing: -0.005em;
+  font-family: var(--font-headline), 'Arial Narrow', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.01em;
 }
 
 /* ─── Buttons ────────────────────────────────────────── */
@@ -188,14 +189,16 @@ button.marquee-item:hover { border-color: rgba(217, 146, 43, 0.6); }
   line-height: 0.92;
 }
 .brand-line-1 {
-  font-family: var(--font-headline), sans-serif;
+  font-family: var(--font-headline), 'Arial Narrow', sans-serif;
+  text-transform: uppercase;
   font-size: 1.7rem;
   letter-spacing: 0.02em;
   color: var(--ivory);
   text-transform: uppercase;
 }
 .brand-line-2 {
-  font-family: var(--font-headline), sans-serif;
+  font-family: var(--font-headline), 'Arial Narrow', sans-serif;
+  text-transform: uppercase;
   font-size: 1.1rem;
   letter-spacing: 0.34em;
   color: var(--amber);
@@ -520,7 +523,8 @@ button.marquee-item:hover { border-color: rgba(217, 146, 43, 0.6); }
   padding: 0.9rem 1rem;
 }
 .stat-value {
-  font-family: var(--font-headline), sans-serif;
+  font-family: var(--font-headline), 'Arial Narrow', sans-serif;
+  text-transform: uppercase;
   font-size: 1.7rem;
   line-height: 1;
   color: var(--ivory);
@@ -553,13 +557,15 @@ button.marquee-item:hover { border-color: rgba(217, 146, 43, 0.6); }
   border-radius: 999px;
   background: var(--amber);
   color: var(--charcoal);
-  font-family: var(--font-headline), sans-serif;
+  font-family: var(--font-headline), 'Arial Narrow', sans-serif;
+  text-transform: uppercase;
   font-size: 1.5rem;
   line-height: 1;
   box-shadow: 0 8px 22px rgba(217, 146, 43, 0.45);
 }
 .process-title {
-  font-family: var(--font-headline), sans-serif;
+  font-family: var(--font-headline), 'Arial Narrow', sans-serif;
+  text-transform: uppercase;
   font-size: 1.5rem;
   color: var(--ivory);
   margin-bottom: 0.5rem;
@@ -972,7 +978,8 @@ button.marquee-item:hover { border-color: rgba(217, 146, 43, 0.6); }
 .qm-step-head .qm-sub { margin-bottom: 0; }
 
 .qm-title {
-  font-family: var(--font-headline), sans-serif;
+  font-family: var(--font-headline), 'Arial Narrow', sans-serif;
+  text-transform: uppercase;
   font-size: 2.2rem;
   line-height: 1.02;
   letter-spacing: 0.01em;
@@ -1051,7 +1058,8 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .qm-choice-icon svg { width: 26px; height: 26px; }
 .qm-choice-text { display: flex; flex-direction: column; gap: 0.2rem; min-width: 0; }
 .qm-choice-title {
-  font-family: var(--font-headline), sans-serif;
+  font-family: var(--font-headline), 'Arial Narrow', sans-serif;
+  text-transform: uppercase;
   font-size: 1.6rem;
   line-height: 1;
   color: #2b2f33;
@@ -1226,7 +1234,8 @@ textarea.qm-input { min-height: 0; resize: vertical; }
 .legal-prose p { margin: 0 0 1.1rem; }
 .legal-prose h2 {
   margin: 2.2rem 0 0.8rem;
-  font-family: var(--font-headline);
+  font-family: var(--font-headline), 'Arial Narrow', sans-serif;
+  text-transform: uppercase;
   font-size: 1.9rem;
   color: var(--ivory);
 }
