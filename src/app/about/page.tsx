@@ -10,7 +10,6 @@ import {
   locationKeys,
   locations,
   phoneDisplay,
-  trustImage,
 } from "@/lib/site-data";
 
 export const metadata: Metadata = {
@@ -61,10 +60,10 @@ export default function AboutPage() {
             </div>
             <div className="overflow-hidden rounded-2xl border border-white/10">
               <Image
-                src={trustImage}
+                src="/images/contractor_reviewing_estimate.jpg"
                 alt="Springfield Concrete Group walking a homeowner through their quote"
-                width={1000}
-                height={750}
+                width={1200}
+                height={896}
                 className="h-full w-full object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 quality={90}
