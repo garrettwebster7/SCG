@@ -21,7 +21,6 @@ import {
   residentialNav,
   tagline,
   testimonials,
-  trustImage,
   whyScg,
 } from "@/lib/site-data";
 
@@ -162,10 +161,10 @@ export default function Home() {
           <div className="grid items-center gap-8 md:grid-cols-2">
             <div className="overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/50">
               <Image
-                src={trustImage}
-                alt="A Springfield Concrete Group crew lead walking a homeowner through their free estimate"
-                width={1200}
-                height={900}
+                src="/images/crew_finishing_driveway.jpg"
+                alt="Springfield Concrete Group crew bull-floating a freshly poured residential driveway"
+                width={1352}
+                height={784}
                 className="h-full w-full object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 quality={90}
